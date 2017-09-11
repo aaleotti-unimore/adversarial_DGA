@@ -1,12 +1,13 @@
 import socket
+
 if socket.gethostname() == "classificatoredga":
     print("Hi! i'm on kula!")
     import sys
+
     sys.path.append("../detect_DGA")
 
 import random as rn
 
-import pydot
 import pandas as pd
 import tensorflow as tf
 from keras.layers import Dense
@@ -16,10 +17,8 @@ from sklearn.preprocessing import LabelBinarizer
 from sklearn.utils import shuffle
 from keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
 
 from features.features_extractors import *
 from features.features_testing import *
@@ -82,23 +81,29 @@ def create_baseline():
     # create model
     model = Sequential()
     model.add(Dense(9, input_dim=9, kernel_initializer='normal', activation='relu'))
-    model.add(Dense(4, kernel_initializer='normal',activation='relu'))
+    model.add(Dense(4, kernel_initializer='normal', activation='relu'))
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
     # Compile model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.summary()
     return model
 
 
 def cross_val(n_samples=None):
+    _cachedir = mkdtemp()
+    _memory = joblib.Memory(cachedir=_cachedir, verbose=0)
     X, y = __load_both_datasets(n_samples)
     estimators = []
     estimators.append(('standardize', StandardScaler()))
     estimators.append(('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0)))
-    pipeline = Pipeline(estimators)
+    pipeline = Pipeline(estimators, memory=_memory)
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
     results = cross_val_score(pipeline, X, y, cv=kfold)
     print("Results: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
+    model = pipeline.named_steps['mlp'].build_fn()
+    # model.summary()
+    plot_model(model, to_file="model.png", show_layer_names=True, show_shapes=True)
+    logger.info("network diagram plotted to model.png")
+    save_model(model)
 
 
 def __load_both_datasets(n_samples=None):
@@ -150,8 +155,10 @@ def save_model(model):
     # saving model
     json_model = model.to_json()
     open('model_architecture.json', 'w').write(json_model)
+    logger.info("model saved to model_architecture.json")
     # saving weights
     model.save_weights('model_weights.h5', overwrite=True)
+    logger.info("model weights saved to model_weights.h5")
 
 
 def load_model():
@@ -163,7 +170,7 @@ def load_model():
 
 
 if __name__ == '__main__':
-    cross_val(1000)
+    cross_val()
     pass
     # prova()
     # test_sup()
