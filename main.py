@@ -1,7 +1,9 @@
 import socket
 if socket.gethostname() == "classificatoredga":
+    print("Hi! i'm on kula!")
     import sys
-    sys.path.append("../detectDGA")
+    sys.path.append("../detect_DGA")
+
 import random as rn
 
 import pydot
