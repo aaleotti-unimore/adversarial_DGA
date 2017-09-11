@@ -1,5 +1,9 @@
-import random as rn
 import socket
+if socket.gethostname() == "classificatoredga":
+    import sys
+    sys.path.add("../detectDGA")
+import random as rn
+
 import pydot
 import pandas as pd
 import tensorflow as tf
