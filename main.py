@@ -7,7 +7,7 @@ if socket.gethostname() == "classificatoredga":
     sys.path.append("../detect_DGA")
 
 import random as rn
-
+import numpy as np
 import pandas as pd
 import tensorflow as tf
 from keras.layers import Dense
@@ -64,12 +64,12 @@ pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', None)
 
 pd.options.display.float_format = '{:.2f}'.format
-np.set_printoptions(precision=3, suppress=True)
 
 lb = LabelBinarizer()
 
+logger = logging.getLogger(__name__)
+
 if socket.gethostname() == "classificatoredga":
-    logger = logging.getLogger(__name__)
     hdlr = logging.FileHandler('results.log')
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
     hdlr.setFormatter(formatter)
@@ -96,14 +96,16 @@ def cross_val(n_samples=None):
     estimators.append(('standardize', StandardScaler()))
     estimators.append(('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0)))
     pipeline = Pipeline(estimators, memory=_memory)
+    logger.debug("Starting StratifiedKFold")
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
+    logger.debug("Endend StratifiedKFold")
     results = cross_val_score(pipeline, X, y, cv=kfold)
-    print("Results: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
+    logger.info("Results: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
     model = pipeline.named_steps['mlp'].build_fn()
     # model.summary()
     plot_model(model, to_file="model.png", show_layer_names=True, show_shapes=True)
     logger.info("network diagram plotted to model.png")
-    save_model(model)
+    __save_model(model)
 
 
 def __load_both_datasets(n_samples=None):
@@ -118,40 +120,7 @@ def __load_both_datasets(n_samples=None):
     return shuffle(X, y, random_state=RandomState())
 
 
-def neuralnetwork(n_samples=None):
-    X, y = __load_both_datasets(n_samples)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.90)
-
-    logger.debug("X: %s" % str(X.shape))
-    logger.debug("y: %s" % str(y.shape))
-
-    model = Sequential()
-    model.add(Dense(18, input_dim=9, activation='relu'))
-    model.add(Dense(9, activation='relu'))
-    model.add(Dense(1, activation='sigmoid'))
-    from keras.callbacks import EarlyStopping
-    early_stopping = EarlyStopping(monitor='accuracy', patience=2)
-
-    # Compile model
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-    logger.info("fitting...")
-    model.summary()
-    model.fit(X_train, y_train,
-              epochs=150,
-              batch_size=100,
-              verbose=1,
-              # callbacks=[early_stopping],
-              validation_split=0.10
-              )
-    # print(history.history)
-    logger.info("fitting completed")
-    model.save("model.h5")
-    scores = model.evaluate(X_test, y_test)
-    print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1] * 100))
-    plot_model(model, to_file="model.png")
-
-
-def save_model(model):
+def __save_model(model):
     # saving model
     json_model = model.to_json()
     open('model_architecture.json', 'w').write(json_model)
@@ -161,7 +130,7 @@ def save_model(model):
     logger.info("model weights saved to model_weights.h5")
 
 
-def load_model():
+def __load_model():
     # loading model
     model = model_from_json(open('model_architecture.json').read())
     model.load_weights('model_weights.h5')
