@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$/../detect_DGA">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/../detect_DGA" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/.idea" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/.idea/dictionaries" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/.idea/inspectionProfiles" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/datas" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/datasets" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/datasets/suppobox" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/features" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/models" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/models/10Fold" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/models/graph" />
+            <path value="file://$PROJECT_DIR$/../detect_DGA/models/reports" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

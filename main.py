@@ -1,17 +1,11 @@
-import sys
-import logging
-import numpy as np
 import pandas as pd
-import random, string
-import pprint
-
-sys.path.append('/home/archeffect/PycharmProjects/detect_DGA/')
-import detect_DGA
-from features import data_generator
-from features.features_extractors import *
+from keras.layers import Dense
+from keras.models import Sequential
+from keras.utils import plot_model
 from sklearn.preprocessing import LabelBinarizer
-from sklearn.pipeline import FeatureUnion
-from sklearn.metrics import classification_report
+
+from features.features_extractors import *
+from features.features_testing import *
 
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
@@ -23,84 +17,45 @@ np.set_printoptions(precision=3, suppress=True)
 lb = LabelBinarizer()
 
 logger = logging.getLogger(__name__)
-
-n_samples = 20
-n_jobs_pipeline = 2
-
-ft = FeatureUnion(
-    transformer_list=[
-        ('mcr', MCRExtractor()),
-        ('ns1', NormalityScoreExtractor(1)),
-        ('ns2', NormalityScoreExtractor(2)),
-        ('ns3', NormalityScoreExtractor(3)),
-        ('ns4', NormalityScoreExtractor(4)),
-        ('ns5', NormalityScoreExtractor(5)),
-        ('len', DomainNameLength()),
-        ('vcr', VowelConsonantRatio()),
-        ('ncr', NumCharRatio()),
-    ],
-    n_jobs=n_jobs_pipeline
-)
+hdlr = logging.FileHandler('results.log')
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
 
 
-def load_legit_dataset():
-    logger.info("samples %s" % n_samples)
-    path = 'dataset/all_legit.txt'
-    df = pd.read_csv(path, sep=' ', header=None, names=['domain', 'type'], usecols=['domain']).sample(n_samples,
-                                                                                                      random_state=np.random.RandomState())
-    df['type'] = 1
-    X = DomainExtractor().transform(df['domain'].values.reshape(-1, 1))
-    y = np.ravel(df['type'].values)
-    return X, y
+def neuralnetwork():
+    X1, y1 = load_features_dataset()
+    X2, y2 = load_features_dataset(
+        dataset=os.path.join(basedir, "datas/suppobox_dataset.csv"))
+    X = np.concatenate((X1, X2), axis=0)
+    y = np.concatenate((y1, y2), axis=0)
 
+    from sklearn.utils import shuffle
+    X, y = shuffle(X, y, random_state=RandomState())
 
-def prova(X, y):
-    features = ft.transform(X)
-    y_pred = detect_DGA.detect(X)
-    df = pd.DataFrame(
-        np.c_[X, features, y, y_pred],
-        columns=['domain', 'mcr', 'ns1', 'ns2', 'ns3', 'ns4', 'ns5', 'len', 'vcr', 'ncr', 'label', 'prediction'])
+    logger.debug("X: %s" % str(X.shape))
+    logger.debug("y: %s" % str(y.shape))
+    np.random.seed(42)
 
-    df['mcr'] = df['mcr'].apply(pd.to_numeric)
-    df['ns1'] = df['ns1'].apply(pd.to_numeric)
-    df['ns2'] = df['ns2'].apply(pd.to_numeric)
-    df['ns3'] = df['ns3'].apply(pd.to_numeric)
-    df['ns4'] = df['ns4'].apply(pd.to_numeric)
-    df['ns5'] = df['ns5'].apply(pd.to_numeric)
-    df['ncr'] = df['ncr'].apply(pd.to_numeric)
-    df['vcr'] = df['vcr'].apply(pd.to_numeric)
-    df['len'] = df['len'].apply(pd.to_numeric)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random_state=RandomState())
 
-    print(df)
-    print("")
-    print("MEAN")
-    print(pd.DataFrame(np.mean(features, axis=0).reshape(1, 9),
-                       columns=['mcr', 'ns1', 'ns2', 'ns3', 'ns4', 'ns5', 'len', 'vcr', 'ncr']))
-    print("")
-    print(classification_report(y_true=y, y_pred=y_pred))
-
-
-def __random_line(afile):
-    import random
-    lines = open(afile).read().splitlines()
-    return random.choice(lines)
-
-
-def test_sup():
-    engdict = "dataset/suppodict.txt"
-
-    N = 1000
-    li = []
-    for i in range(0, N):
-        w1 = __random_line(engdict)
-        w1 += __random_line(engdict)
-        li.append(w1)
-
-    X = pd.DataFrame(li)
-    y = np.zeros(len(X), dtype=int)
-    prova(X, y)
+    model = Sequential()
+    model.add(Dense(18, input_dim=9, activation='relu'))
+    model.add(Dense(9, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
+    # Compile model
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+    logger.info("fitting...")
+    model.fit(X_train, y_train, epochs=150, batch_size=10, verbose=0)
+    logger.info("fitting completed")
+    model.save("model.h5")
+    scores = model.evaluate(X_test, y_test)
+    print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1] * 100))
+    plot_model(model, to_file="model.png")
 
 
 if __name__ == '__main__':
+    neuralnetwork()
+    pass
     # prova()
-    test_sup()
+    # test_sup()
