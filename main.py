@@ -82,6 +82,7 @@ def create_baseline():
     # create model
     model = Sequential()
     model.add(Dense(9, input_dim=9, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(4, kernel_initializer='normal',activation='relu'))
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
     # Compile model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -91,9 +92,12 @@ def create_baseline():
 
 def cross_val(n_samples=None):
     X, y = __load_both_datasets(n_samples)
-    estimator = KerasClassifier(build_fn=create_baseline, nb_epoch=100, batch_size=5, verbose=0)
+    estimators = []
+    estimators.append(('standardize', StandardScaler()))
+    estimators.append(('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0)))
+    pipeline = Pipeline(estimators)
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
-    results = cross_val_score(estimator, X, y, cv=kfold)
+    results = cross_val_score(pipeline, X, y, cv=kfold)
     print("Results: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
 
 
@@ -159,7 +163,7 @@ def load_model():
 
 
 if __name__ == '__main__':
-    cross_val()
+    cross_val(1000)
     pass
     # prova()
     # test_sup()
