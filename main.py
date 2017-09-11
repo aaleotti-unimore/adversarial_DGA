@@ -1,7 +1,7 @@
 import socket
 if socket.gethostname() == "classificatoredga":
     import sys
-    sys.path.add("../detectDGA")
+    sys.path.append("../detectDGA")
 import random as rn
 
 import pydot
