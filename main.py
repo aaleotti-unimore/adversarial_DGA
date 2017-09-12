@@ -69,11 +69,11 @@ lb = LabelBinarizer()
 
 logger = logging.getLogger(__name__)
 
-if socket.gethostname() == "classificatoredga":
-    hdlr = logging.FileHandler('results.log')
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    hdlr.setFormatter(formatter)
-    logger.addHandler(hdlr)
+# if socket.gethostname() == "classificatoredga":
+hdlr = logging.FileHandler('results.log')
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
 
 
 # baseline model
@@ -92,9 +92,8 @@ def cross_val(n_samples=None):
     _cachedir = mkdtemp()
     _memory = joblib.Memory(cachedir=_cachedir, verbose=0)
     X, y = __load_both_datasets(n_samples)
-    estimators = []
-    estimators.append(('standardize', StandardScaler()))
-    estimators.append(('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0)))
+    estimators = [('standardize', StandardScaler()),
+                  ('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0))]
     pipeline = Pipeline(estimators, memory=_memory)
     logger.debug("Starting StratifiedKFold")
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
@@ -139,7 +138,12 @@ def __load_model():
 
 
 if __name__ == '__main__':
-    cross_val()
+    import time
+    n_samples = 100
+    t0 = time.time()
+    logger.info("Starting new training at %s. n of samples: %s" % (time.clock(), n_samples))
+    cross_val(n_samples)
+    logger.info("Elapsed time: %s s" % (time.time() - t0))
     pass
     # prova()
     # test_sup()
