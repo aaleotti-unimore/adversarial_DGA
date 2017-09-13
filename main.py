@@ -155,7 +155,7 @@ def test_model(directory, X, y):
 
 
 if __name__ == '__main__':
-    deploy(1000)
+    deploy(100)
     # X, y = load_both_datasets(n_samples=1000, verbose=True)
     # datasets = {
     #     "legit-dga dataset": load_features_dataset(),
