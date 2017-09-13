@@ -118,6 +118,8 @@ def __save_model(model):
     # saving model
     now = time.strftime("%Y-%m-%d %H:%M")
     directory = "saved models/" + now
+    if socket.gethostname() == "classificatoredga":
+        directory += " kula"
     if not os.path.exists(directory):
         os.makedirs(directory)
     json_model = model.to_json()
@@ -155,7 +157,7 @@ def test_model(directory, X, y):
 
 
 if __name__ == '__main__':
-    deploy(100)
+    deploy()
     # X, y = load_both_datasets(n_samples=1000, verbose=True)
     # datasets = {
     #     "legit-dga dataset": load_features_dataset(),
