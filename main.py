@@ -6,6 +6,7 @@ if socket.gethostname() == "classificatoredga":
 
     sys.path.append("../detect_DGA")
 
+import time
 import random as rn
 import numpy as np
 import pandas as pd
@@ -46,7 +47,7 @@ rn.seed(12345)
 # non-reproducible results.
 # For further details, see: https://stackoverflow.com/questions/42022950/which-seeds-have-to-be-set-where-to-realize-100-reproducibility-of-training-res
 
-session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
+# session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
 
 from keras import backend as K
 
@@ -56,8 +57,8 @@ from keras import backend as K
 
 tf.set_random_seed(1234)
 
-sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
-K.set_session(sess)
+# sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+# K.set_session(sess)
 
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
@@ -85,6 +86,7 @@ def create_baseline():
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
     # Compile model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+    # model.summary()
     return model
 
 
@@ -101,7 +103,7 @@ def cross_val(n_samples=None):
     results = cross_val_score(pipeline, X, y, cv=kfold)
     logger.info("Results: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
     model = pipeline.named_steps['mlp'].build_fn()
-    # model.summary()
+    model.summary()
     plot_model(model, to_file="model.png", show_layer_names=True, show_shapes=True)
     logger.info("network diagram plotted to model.png")
     __save_model(model)
@@ -121,29 +123,48 @@ def __load_both_datasets(n_samples=None):
 
 def __save_model(model):
     # saving model
+    now = time.strftime("%Y-%m-%d %H:%M")
+    directory = "saved models/" + now
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     json_model = model.to_json()
-    open('model_architecture.json', 'w').write(json_model)
+
+    open(os.path.join(directory, 'model_architecture.json'), 'w').write(json_model)
     logger.info("model saved to model_architecture.json")
     # saving weights
-    model.save_weights('model_weights.h5', overwrite=True)
+    model.save_weights(os.path.join(directory, 'model_weights.h5'), overwrite=True)
     logger.info("model weights saved to model_weights.h5")
 
 
-def __load_model():
+def load_model(directory):
     # loading model
-    model = model_from_json(open('model_architecture.json').read())
-    model.load_weights('model_weights.h5')
+    model = model_from_json(open(os.path.join(directory, 'model_architecture.json')).read())
+    model.load_weights(os.path.join(directory, 'model_weights.h5'))
     model.compile(loss='binary_crossentropy', optimizer='adam')
     return model
 
 
-if __name__ == '__main__':
-    import time
+def deploy():
     n_samples = None
     t0 = time.time()
     logger.info("Starting new training at %s. n of samples: %s" % (time.clock(), n_samples))
     cross_val(n_samples)
     logger.info("Elapsed time: %s s" % (time.time() - t0))
+
+
+if __name__ == '__main__':
+    # import pprint
+    #
+    # for i in range(0, 10):
+    #     X, y = load_features_dataset(20)
+    #
+    #     std = StandardScaler().fit(X)
+    #     X = std.transform(X)
+    #     model = load_model("saved models/2017-09-13 14:32")
+    #
+    #     results = model.evaluate(X,y)
+    #     print(results)
+    #     # pprint.pprint(model.metrics_name)
+    #     # logger.info("%s %s" % (model.metrics_names[0], results))
+    deploy()
     pass
-    # prova()
-    # test_sup()
