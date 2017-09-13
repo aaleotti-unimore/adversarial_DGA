@@ -137,8 +137,7 @@ def load_model(directory):
     return model
 
 
-def deploy():
-    n_samples = None
+def deploy(n_samples=None):
     t0 = time.time()
     logger.info("Starting new training at %s. n of samples: %s" % (time.clock(), n_samples))
     cross_val(n_samples)
@@ -156,7 +155,7 @@ def test_model(directory, X, y):
 
 
 if __name__ == '__main__':
-    deploy()
+    deploy(1000)
     # X, y = load_both_datasets(n_samples=1000, verbose=True)
     # datasets = {
     #     "legit-dga dataset": load_features_dataset(),
