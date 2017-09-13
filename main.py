@@ -15,14 +15,17 @@ from keras.layers import Dense
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
 from sklearn.preprocessing import LabelBinarizer
-from sklearn.utils import shuffle
 from keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import StandardScaler
 
+from detect_DGA import detect
 from features.features_extractors import *
 from features.features_testing import *
+from features.data_generator import load_both_datasets, get_balance
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # The below is necessary in Python 3.2.3 onwards to
 # have reproducible behavior for certain hash-based operations.
@@ -93,10 +96,12 @@ def create_baseline():
 def cross_val(n_samples=None):
     _cachedir = mkdtemp()
     _memory = joblib.Memory(cachedir=_cachedir, verbose=0)
-    X, y = __load_both_datasets(n_samples)
+    # X, y = load_both_datasets(n_samples)
+    X, y = load_features_dataset(n_samples)
     estimators = [('standardize', StandardScaler()),
                   ('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0))]
     pipeline = Pipeline(estimators, memory=_memory)
+
     logger.debug("Starting StratifiedKFold")
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
     logger.debug("Endend StratifiedKFold")
@@ -107,18 +112,6 @@ def cross_val(n_samples=None):
     plot_model(model, to_file="model.png", show_layer_names=True, show_shapes=True)
     logger.info("network diagram plotted to model.png")
     __save_model(model)
-
-
-def __load_both_datasets(n_samples=None):
-    X1, y1 = load_features_dataset()
-    X2, y2 = load_features_dataset(
-        dataset=os.path.join(basedir, "datas/suppobox_dataset.csv"))
-    X = np.concatenate((X1, X2), axis=0).astype(float)
-    y = np.concatenate((y1, y2), axis=0).astype(int)
-
-    if n_samples:
-        return shuffle(X, y, random_state=RandomState(), n_samples=n_samples)
-    return shuffle(X, y, random_state=RandomState())
 
 
 def __save_model(model):
@@ -152,19 +145,31 @@ def deploy():
     logger.info("Elapsed time: %s s" % (time.time() - t0))
 
 
+def test_model(directory, X, y):
+    model = load_model(directory)
+    std = StandardScaler()
+    std.fit(X=X)
+    X_std = std.transform(X=X)
+    pred = model.predict(X_std)
+    y_pred = [round(x) for x in pred]
+    print(classification_report(y_pred=y_pred, y_true=y, target_names=['DGA', 'Legit']))
+
+
 if __name__ == '__main__':
-    # import pprint
-    #
-    # for i in range(0, 10):
-    #     X, y = load_features_dataset(20)
-    #
-    #     std = StandardScaler().fit(X)
-    #     X = std.transform(X)
-    #     model = load_model("saved models/2017-09-13 14:32")
-    #
-    #     results = model.evaluate(X,y)
-    #     print(results)
-    #     # pprint.pprint(model.metrics_name)
-    #     # logger.info("%s %s" % (model.metrics_names[0], results))
     deploy()
+    # X, y = load_both_datasets(n_samples=1000, verbose=True)
+    # datasets = {
+    #     "legit-dga dataset": load_features_dataset(),
+    #     "suppobox": load_features_dataset(dataset="suppobox"),
+    #     "legit-dga dataset + suppobox": load_both_datasets()
+    # }
+    #
+    # for key, (X, y) in datasets.iteritems():
+    #     print("")
+    #     print("%s" % key)
+    #     print("Neural Network")
+    #     test_model("saved models/2017-09-13 14:32", X, y)
+    #     print("Random Forest")
+    #     detect(X, y)
+
     pass
