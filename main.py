@@ -139,7 +139,7 @@ def __load_model():
 
 if __name__ == '__main__':
     import time
-    n_samples = 100
+    n_samples = None
     t0 = time.time()
     logger.info("Starting new training at %s. n of samples: %s" % (time.clock(), n_samples))
     cross_val(n_samples)
