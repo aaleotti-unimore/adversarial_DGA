@@ -1,20 +1,21 @@
 import json
-import random as rn
-import socket
-import time
 import logging
 import os
-import numpy as np
-import pandas as pd
+import random as rn
+import socket
+import sys
+import time
 from datetime import datetime
 from tempfile import mkdtemp
 
+import numpy as np
+import pandas as pd
 import tensorflow as tf
-from numpy.random import RandomState
 from keras.layers import Dense
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
 from keras.wrappers.scikit_learn import KerasClassifier
+from numpy.random import RandomState
 from sklearn.externals import joblib
 from sklearn.metrics import classification_report
 from sklearn.model_selection import StratifiedKFold, cross_validate, train_test_split
@@ -22,7 +23,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.preprocessing import StandardScaler
 
-from features.data_generator import load_both_datasets, load_features_dataset
+sys.path.append("../detect_DGA")
+from features.data_generator import load_features_dataset, load_both_datasets
 
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -186,13 +188,13 @@ def compare(model):
 
     for key, (X, y) in datasets.iteritems():
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, shuffle=True, random_state=42)
-        print("")
-        print("%s" % key)
-        print("Neural Network")
+        logger.info("")
+        logger.info("%s" % key)
+        logger.info("Neural Network")
         # model.fit(X_train, y_train)
-        print(model.test_model(X_test, y_test))
-        print("Random Forest")
+        logger.info("\n%s" % model.test_model(X_test, y_test))
+        logger.info("Random Forest")
         forest = joblib.load("../detect_DGA/models/model_RandomForest_2.pkl")
         forest.fit(X_train, y_train)
         y_pred = forest.predict(X_test)
-        print(classification_report(y_pred=y_pred, y_true=y_test, target_names=['DGA', 'Legit']))
+        logger.info("\n%s" % classification_report(y_pred=y_pred, y_true=y_test, target_names=['DGA', 'Legit']))
