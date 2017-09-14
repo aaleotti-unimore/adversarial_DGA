@@ -1,29 +1,23 @@
 import json
-import logging
-import os
+import random as rn
 import socket
 import time
 from datetime import datetime
 from tempfile import mkdtemp
 
-import random as rn
-import pandas as pd
 import tensorflow as tf
-from sklearn.preprocessing import LabelBinarizer
-
-import numpy as np
 from keras.layers import Dense
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
 from keras.wrappers.scikit_learn import KerasClassifier
-from numpy.random.mtrand import RandomState
 from sklearn.externals import joblib
 from sklearn.metrics import classification_report
 from sklearn.model_selection import StratifiedKFold, cross_validate, train_test_split
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelBinarizer
 from sklearn.preprocessing import StandardScaler
 
-from features.data_generator import load_both_datasets, load_features_dataset
+from features.data_generator import *
 
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -178,6 +172,7 @@ def cross_val(n_samples=None):
 
 
 def compare(model):
+    logger.info("Comparing Datasets:")
     datasets = {
         "legit-dga dataset": load_features_dataset(),
         # "suppobox": load_features_dataset(dataset="suppobox"),
@@ -189,10 +184,10 @@ def compare(model):
         print("")
         print("%s" % key)
         print("Neural Network")
-        model.fit(X_train, y_train)
+        # model.fit(X_train, y_train)
         print(model.test_model(X_test, y_test))
         print("Random Forest")
-        forest = joblib.load("/home/archeffect/PycharmProjects/detect_DGA/models/model_RandomForest_2.pkl")
+        forest = joblib.load("../detect_DGA/models/model_RandomForest_2.pkl")
         forest.fit(X_train, y_train)
         y_pred = forest.predict(X_test)
         print(classification_report(y_pred=y_pred, y_true=y_test, target_names=['DGA', 'Legit']))
