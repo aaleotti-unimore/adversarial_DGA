@@ -1,0 +1,34 @@
+2017-09-14 18:53:41,234 INFO _________________________________________________________________
+2017-09-14 18:53:41,234 INFO Layer (type)                 Output Shape              Param #   
+2017-09-14 18:53:41,235 INFO =================================================================
+2017-09-14 18:53:41,235 INFO dense_1 (Dense)              (None, 9)                 90        
+2017-09-14 18:53:41,235 INFO _________________________________________________________________
+2017-09-14 18:53:41,235 INFO dense_2 (Dense)              (None, 128)               1280      
+2017-09-14 18:53:41,236 INFO _________________________________________________________________
+2017-09-14 18:53:41,236 INFO dense_3 (Dense)              (None, 64)                8256      
+2017-09-14 18:53:41,236 INFO _________________________________________________________________
+2017-09-14 18:53:41,236 INFO dense_4 (Dense)              (None, 1)                 65        
+2017-09-14 18:53:41,237 INFO =================================================================
+2017-09-14 18:53:41,237 INFO Total params: 9,691
+2017-09-14 18:53:41,237 INFO Trainable params: 9,691
+2017-09-14 18:53:41,237 INFO Non-trainable params: 0
+2017-09-14 18:53:41,237 INFO _________________________________________________________________
+2017-09-14 18:53:41,238 INFO fit_time: 5.11s (0.65)s
+2017-09-14 18:53:41,238 INFO score_time: 0.03s (0.01)s
+2017-09-14 18:53:41,238 INFO test_f1: 78.22% (15.20%)
+2017-09-14 18:53:41,239 INFO test_precision: 82.29% (16.68%)
+2017-09-14 18:53:41,239 INFO test_recall: 79.33% (21.23%)
+2017-09-14 18:53:41,239 INFO test_roc_auc: 87.10% (12.51%)
+2017-09-14 18:53:41,239 INFO train_f1: 99.35% (0.86%)
+2017-09-14 18:53:41,240 INFO train_precision: 99.79% (0.64%)
+2017-09-14 18:53:41,240 INFO train_recall: 98.93% (1.43%)
+2017-09-14 18:53:41,240 INFO train_roc_auc: 99.94% (0.13%)
+2017-09-14 18:53:41,241 INFO model saved to model_architecture.json
+2017-09-14 18:53:41,302 INFO model weights saved to model_weights.h5
+2017-09-14 18:53:41,374 INFO network diagram plotted to model.png
+2017-09-14 18:53:41,374 INFO Cross Validation Ended. Elapsed time: 0:00:12.813644
+2017-09-14 18:54:49,667 INFO model saved to model_architecture.json
+2017-09-14 18:54:49,677 INFO model weights saved to model_weights.h5
+2017-09-14 18:54:49,758 INFO network diagram plotted to model.png
+2017-09-14 18:55:50,304 INFO model saved to model_architecture.json
+2017-09-14 18:55:50,313 INFO model weights saved to model_weights.h5

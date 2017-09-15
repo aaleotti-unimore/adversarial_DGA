@@ -1,0 +1,49 @@
+2017-09-11 16:25:24,710 DEBUG X: (166326, 9)
+2017-09-11 16:25:24,710 DEBUG y: (166326,)
+2017-09-11 16:25:24,799 INFO fitting...
+2017-09-11 17:10:00,043 INFO fitting completed
+2017-09-12 18:03:59,338 INFO network diagram plotted to model.png
+2017-09-12 18:03:59,339 INFO model saved to model_architecture.json
+2017-09-12 18:03:59,505 INFO model weights saved to model_weights.h5
+2017-09-12 21:48:27,518 INFO Starting new training at 2.602657. n of samples: 100
+2017-09-12 21:48:28,498 DEBUG Starting StratifiedKFold
+2017-09-12 21:48:28,500 DEBUG Endend StratifiedKFold
+2017-09-12 21:49:00,143 INFO Results: 78.59% (13.54%)
+2017-09-12 21:49:00,277 INFO network diagram plotted to model.png
+2017-09-12 21:49:00,278 INFO model saved to model_architecture.json
+2017-09-12 21:49:00,419 INFO model weights saved to model_weights.h5
+2017-09-12 21:49:00,420 INFO Elapsed time: 32.9013679028 s
+2017-09-12 21:56:40,353 INFO Starting new training at 2.429466. n of samples: None
+2017-09-12 21:56:41,397 DEBUG Starting StratifiedKFold
+2017-09-12 21:56:41,398 DEBUG Endend StratifiedKFold
+2017-09-13 10:27:06,262 INFO Results: 88.85% (0.20%)
+2017-09-13 10:27:06,422 INFO network diagram plotted to model.png
+2017-09-13 10:27:06,423 INFO model saved to model_architecture.json
+2017-09-13 10:27:06,588 INFO model weights saved to model_weights.h5
+2017-09-13 10:27:06,588 INFO Elapsed time: 45026.2352099 s
+2017-09-13 13:22:29,708 INFO Starting new training at 2.944553. n of samples: None
+2017-09-13 13:22:30,714 DEBUG Starting StratifiedKFold
+2017-09-13 13:22:30,715 DEBUG Endend StratifiedKFold
+2017-09-13 13:24:10,370 INFO Starting new training at 2.873068. n of samples: None
+2017-09-13 13:24:11,376 DEBUG Starting StratifiedKFold
+2017-09-13 13:24:11,377 DEBUG Endend StratifiedKFold
+2017-09-13 15:09:24,623 INFO Starting new training at 2.689463. n of samples: None
+2017-09-13 15:09:25,417 DEBUG Starting StratifiedKFold
+2017-09-13 15:09:25,418 DEBUG Endend StratifiedKFold
+2017-09-13 16:25:59,103 INFO Starting new training at 2.950355. n of samples: 1000
+2017-09-13 16:25:59,448 DEBUG Starting StratifiedKFold
+2017-09-13 16:25:59,449 DEBUG Endend StratifiedKFold
+2017-09-13 16:27:41,771 INFO Starting new training at 2.912391. n of samples: 100
+2017-09-13 16:27:42,113 DEBUG Starting StratifiedKFold
+2017-09-13 16:27:42,114 DEBUG Endend StratifiedKFold
+2017-09-13 16:28:09,384 INFO Results: 94.09% (6.58%)
+2017-09-13 16:28:09,529 INFO network diagram plotted to model.png
+2017-09-13 16:28:09,530 INFO model saved to model_architecture.json
+2017-09-13 16:28:09,721 INFO model weights saved to model_weights.h5
+2017-09-13 16:28:09,721 INFO Elapsed time: 27.9500291348 s
+2017-09-13 16:29:42,945 INFO Starting new training at 2.934531. n of samples: 100
+2017-09-13 16:29:43,286 DEBUG Starting StratifiedKFold
+2017-09-13 16:29:43,288 DEBUG Endend StratifiedKFold
+2017-09-13 16:35:15,276 INFO Starting new training at 2.918808. n of samples: None
+2017-09-13 16:35:16,077 DEBUG Starting StratifiedKFold
+2017-09-13 16:35:16,078 DEBUG Endend StratifiedKFold
