@@ -115,11 +115,15 @@ class Model:
                 self.logger.info("%s: %.2f%% (%.2f%%)" % (key, value.mean() * 100, value.std() * 100))
             else:
                 self.logger.info("%s: %.2fs (%.2f)s" % (key, value.mean(), value.std()))
+        return results
 
     def get_model(self):
         return self.model
 
     def test_model(self, X, y):
+        std = StandardScaler()
+        std.fit(X=X)
+        X = std.transform(X=X)
         pred = self.model.predict(X)
         y_pred = [round(x) for x in pred]
         return classification_report(y_pred=y_pred, y_true=y, target_names=['DGA', 'Legit'])
@@ -136,10 +140,10 @@ def create_baseline():
     """ baseline model
     """
     model = Sequential()
-    model.add(Dense(9, input_dim=9, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(18, input_dim=9, kernel_initializer='normal', activation='relu'))
     model.add(Dense(128, kernel_initializer='normal', activation='relu'))
-    model.add(Dense(64, kernel_initializer='normal', activation='relu'))
-    # model.add(Dense(9, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(128, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(9, kernel_initializer='normal', activation='relu'))
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
     # Compile model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -150,14 +154,13 @@ def create_baseline():
     return model
 
 
-def cross_val(n_samples=None):
+def cross_val(X, y):
     t0 = datetime.now()
     logger.info("Starting cross validation at %s" % t0)
 
     _cachedir = mkdtemp()
     _memory = joblib.Memory(cachedir=_cachedir, verbose=0)
-    X, y = load_both_datasets(n_samples, verbose=True)
-    # X, y = load_features_dataset(n_samples)
+
     estimators = [('standardize', StandardScaler()),
                   ('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0))]
 
@@ -178,23 +181,10 @@ def cross_val(n_samples=None):
     return model
 
 
-def compare(model):
-    logger.info("Comparing Datasets:")
-    datasets = {
-        "legit-dga dataset": load_features_dataset(),
-        # "suppobox": load_features_dataset(dataset="suppobox"),
-        "legit-dga dataset + suppobox": load_both_datasets()
-    }
-
-    for key, (X, y) in datasets.iteritems():
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, shuffle=True, random_state=42)
-        logger.info("")
-        logger.info("%s" % key)
-        logger.info("Neural Network")
-        # model.fit(X_train, y_train)
-        logger.info("\n%s" % model.test_model(X_test, y_test))
-        logger.info("Random Forest")
-        forest = joblib.load("../detect_DGA/models/model_RandomForest_2.pkl")
-        forest.fit(X_train, y_train)
-        y_pred = forest.predict(X_test)
-        logger.info("\n%s" % classification_report(y_pred=y_pred, y_true=y_test, target_names=['DGA', 'Legit']))
+def compare(X_test, y_test, model):
+    logger.info("Neural Network")
+    logger.info("\n%s" % model.test_model(X_test, y_test))
+    logger.info("Random Forest")
+    forest = joblib.load("../detect_DGA/models/model_RandomForest_2.pkl")
+    y_pred = forest.predict(X_test)
+    logger.info("\n%s" % classification_report(y_pred=y_pred, y_true=y_test, target_names=['DGA', 'Legit']))
