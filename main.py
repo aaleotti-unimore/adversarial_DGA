@@ -15,5 +15,6 @@ if __name__ == '__main__':
     X, y = load_both_datasets()
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10)
     model = cross_val(X_train,y_train)
+    model.fit(X_train, y_train)
     compare(X_test, y_test, model)
     pass
