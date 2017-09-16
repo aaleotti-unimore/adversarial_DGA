@@ -1,3 +1,2 @@
 Using TensorFlow backend.
-INFO:model:Starting cross validation at 2017-09-15 14:15:57.497618
-[Parallel(n_jobs=-1)]: Done   6 out of  10 | elapsed: 103.3min remaining: 68.9min
+INFO:model:Starting cross validation at 2017-09-16 12:45:43.306158
