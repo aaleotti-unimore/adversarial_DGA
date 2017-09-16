@@ -13,8 +13,8 @@ if __name__ == '__main__':
     # model = Model(directory="saved models/2017-09-15 12:41 kula")
     # model.load_results()
     X, y = load_both_datasets()
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
     model = cross_val(X_train,y_train)
     model.fit(X_train, y_train)
-    compare(X_test, y_test, model)
+    print(model.test_model(X_test, y_test))
     pass
