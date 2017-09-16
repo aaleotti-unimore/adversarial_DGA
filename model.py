@@ -8,9 +8,11 @@ import time
 from datetime import datetime
 from tempfile import mkdtemp
 
+from detect_DGA import plot_classification_report
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+from keras.callbacks import EarlyStopping
 from keras.layers import Dense
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
@@ -47,6 +49,8 @@ lb = LabelBinarizer()
 
 logger = logging.getLogger(__name__)
 
+early = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=1, mode='auto')
+
 
 class Model:
     def __init__(self, model=None, directory=None):
@@ -75,14 +79,17 @@ class Model:
     def save_model(self):
         # saving model
         json_model = self.model.to_json()
-        open(os.path.join(self.directory, 'model_architecture.json'), 'w').write(json_model)
-        self.logger.info("model saved to model_architecture.json")
+        dirmod = os.path.join(self.directory, 'model_architecture.json')
+        open(dirmod, 'w').write(json_model)
+        self.logger.info("model saved to %s" % dirmod)
         # saving weights
-        self.model.save_weights(os.path.join(self.directory, 'model_weights.h5'), overwrite=True)
-        self.logger.info("model weights saved to model_weights.h5")
-        plot_model(self.model, to_file=os.path.join(self.directory, "model.png"), show_layer_names=True,
+        dirwe = os.path.join(self.directory, 'model_weights.h5')
+        self.model.save_weights(dirwe, overwrite=True)
+        self.logger.info("model weights saved to %s" % dirwe)
+        dirplo = os.path.join(self.directory, "model.png")
+        plot_model(self.model, to_file=dirplo, show_layer_names=True,
                    show_shapes=True)
-        self.logger.info("network diagram plotted to model.png")
+        self.logger.info("network diagram saved to %s " % dirplo)
 
     def __load_model(self):
         # loading model
@@ -120,20 +127,71 @@ class Model:
     def get_model(self):
         return self.model
 
-    def test_model(self, X, y):
+    def get_directory(self):
+        return self.directory
+
+    def test_model(self, X, y, plot=False):
         std = StandardScaler()
         std.fit(X=X)
         X = std.transform(X=X)
         pred = self.model.predict(X)
         y_pred = [round(x) for x in pred]
-        return classification_report(y_pred=y_pred, y_true=y, target_names=['DGA', 'Legit'])
 
-    def fit(self, X, y):
+        repo = classification_report(y_pred=y_pred, y_true=y, target_names=['DGA', 'Legit'])
+        if plot:
+            plot_classification_report(classification_report=repo,
+                                       directory=self.directory)
+        return repo
+
+    def fit(self, X, y, validation_data, batch_size=5, epochs=100, verbose=0):
         std = StandardScaler()
         std.fit(X=X)
         X = std.transform(X=X)
-        self.model.fit(X, y, verbose=0)
+        self.model.fit(X, y, batch_size=batch_size,
+                       epochs=epochs,
+                       callbacks=[early],
+                       validation_data=validation_data,
+                       verbose=verbose)
         self.save_model()
+
+    def plot_AUC(self, y_score, y_test, ):
+        import matplotlib as plt
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from itertools import cycle
+
+        from sklearn import svm, datasets
+        from sklearn.metrics import roc_curve, auc
+        from sklearn.model_selection import train_test_split
+        from sklearn.preprocessing import label_binarize
+        from sklearn.multiclass import OneVsRestClassifier
+        from scipy import interp
+        # Compute ROC curve and ROC area for each class
+        n_classes = y_test.shape[1]
+
+        fpr = dict()
+        tpr = dict()
+        roc_auc = dict()
+        for i in range(n_classes):
+            fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i])
+            roc_auc[i] = auc(fpr[i], tpr[i])
+
+        # Compute micro-average ROC curve and ROC area
+        fpr["micro"], tpr["micro"], _ = roc_curve(y_test.ravel(), y_score.ravel())
+        roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
+
+        plt.figure()
+        lw = 2
+        plt.plot(fpr[2], tpr[2], color='darkorange',
+                 lw=lw, label='ROC curve (area = %0.2f)' % roc_auc[2])
+        plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        plt.xlim([0.0, 1.0])
+        plt.ylim([0.0, 1.05])
+        plt.xlabel('False Positive Rate')
+        plt.ylabel('True Positive Rate')
+        plt.title('Receiver operating characteristic example')
+        plt.legend(loc="lower right")
+        plt.show()
 
 
 def create_baseline():
@@ -154,7 +212,9 @@ def create_baseline():
     return model
 
 
-def cross_val(X, y):
+def cross_val(X, y, model=None):
+    if not model:
+        model = create_baseline
     t0 = datetime.now()
     logger.info("Starting cross validation at %s" % t0)
 
@@ -162,7 +222,7 @@ def cross_val(X, y):
     _memory = joblib.Memory(cachedir=_cachedir, verbose=0)
 
     estimators = [('standardize', StandardScaler()),
-                  ('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0))]
+                  ('mlp', KerasClassifier(build_fn=model, epochs=100, batch_size=5, verbose=0))]
 
     pipeline = Pipeline(estimators, memory=_memory)
 
