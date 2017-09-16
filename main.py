@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
     ##
     X, y = load_both_datasets()
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 
     model = Model(model=large_baseline())
     model.fit(X_train, y_train, validation_data=(X_test, y_test))
