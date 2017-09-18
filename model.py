@@ -8,7 +8,6 @@ import time
 from datetime import datetime
 from tempfile import mkdtemp
 
-from detect_DGA import plot_classification_report
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -17,16 +16,19 @@ from keras.layers import Dense
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
 from keras.wrappers.scikit_learn import KerasClassifier
+from matplotlib import pyplot as plt
 from numpy.random import RandomState
 from sklearn.externals import joblib
 from sklearn.metrics import classification_report
-from sklearn.model_selection import StratifiedKFold, cross_validate, train_test_split
+from sklearn.metrics import roc_curve, auc
+from sklearn.model_selection import StratifiedKFold, cross_validate
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.preprocessing import StandardScaler
 
+from plot_module import plot_classification_report
+
 sys.path.append("../detect_DGA")
-from features.data_generator import load_features_dataset, load_both_datasets
 
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -62,10 +64,11 @@ class Model:
         else:
             self.directory = self.__make_exp_dir()
 
+        self.formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
         self.logger = logging.getLogger(__name__)
-        hdlr = logging.FileHandler(os.path.join(self.directory, 'results.log'))
-        hdlr.setFormatter(formatter)
-        self.logger.addHandler(hdlr)
+        self.hdlr = logging.FileHandler(os.path.join(self.directory, 'results.log'))
+        self.hdlr.setFormatter(self.formatter)
+        self.logger.addHandler(self.hdlr)
 
     def __make_exp_dir(self):
         directory = "saved models/" + self.now
@@ -130,7 +133,7 @@ class Model:
     def get_directory(self):
         return self.directory
 
-    def test_model(self, X, y, plot=False):
+    def classification_report(self, X, y, plot=False):
         std = StandardScaler()
         std.fit(X=X)
         X = std.transform(X=X)
@@ -154,44 +157,37 @@ class Model:
                        verbose=verbose)
         self.save_model()
 
-    def plot_AUC(self, y_score, y_test, ):
-        import matplotlib as plt
-        import numpy as np
-        import matplotlib.pyplot as plt
-        from itertools import cycle
-
-        from sklearn import svm, datasets
-        from sklearn.metrics import roc_curve, auc
-        from sklearn.model_selection import train_test_split
-        from sklearn.preprocessing import label_binarize
-        from sklearn.multiclass import OneVsRestClassifier
-        from scipy import interp
-        # Compute ROC curve and ROC area for each class
-        n_classes = y_test.shape[1]
-
-        fpr = dict()
-        tpr = dict()
-        roc_auc = dict()
-        for i in range(n_classes):
-            fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i])
-            roc_auc[i] = auc(fpr[i], tpr[i])
-
-        # Compute micro-average ROC curve and ROC area
-        fpr["micro"], tpr["micro"], _ = roc_curve(y_test.ravel(), y_score.ravel())
-        roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
-
+    def plot_AUC(self, X_test, y_test):
+        std = StandardScaler()
+        std.fit(X_test)
+        X_test = std.transform(X_test)
+        y_score = self.model.predict_proba(X_test)
+        fpr, tpr, _ = roc_curve(y_true=y_test, y_score=y_score[:, 0])
+        roc_auc = auc(fpr, tpr)
         plt.figure()
-        lw = 2
-        plt.plot(fpr[2], tpr[2], color='darkorange',
-                 lw=lw, label='ROC curve (area = %0.2f)' % roc_auc[2])
-        plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-        plt.xlim([0.0, 1.0])
-        plt.ylim([0.0, 1.05])
+        plt.plot(fpr, tpr, color='darkorange', label='ROC curve (area = %0.2f)' % roc_auc, lw=1.5,
+                 alpha=.8)
+        plt.plot([0, 1], [0, 1], linestyle='--', lw=1, color='r',
+                 label='Luck', alpha=.8)
+        plt.xlim([0, 1.00])
+        plt.ylim([0, 1.05])
         plt.xlabel('False Positive Rate')
         plt.ylabel('True Positive Rate')
-        plt.title('Receiver operating characteristic example')
+        plt.title('Receiver operating characteristic')
         plt.legend(loc="lower right")
-        plt.show()
+        dirplt = os.path.join(self.directory, 'roc_plot.png')
+        plt.savefig(dirplt, format="png")
+
+    def cross_validate(self, X_train, y_train, scoring=None):
+        if scoring is None:
+            scoring = ['f1', 'precision', 'recall', 'accuracy', 'roc_auc']
+
+        std = StandardScaler()
+        std.fit(X=X_train)
+        X_train = std.transform(X=X_train)
+        kc = KerasClassifier(build_fn=self.model, epochs=100, batch_size=5, verbose=0)
+        kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
+        self.save_results(cross_validate(kc, X_train, y_train, cv=kfold, scoring=scoring, n_jobs=-1, verbose=1))
 
 
 def create_baseline():
@@ -239,12 +235,3 @@ def cross_val(X, y, model=None):
 
     logger.info("Cross Validation Ended. Elapsed time: %s" % (datetime.now() - t0))
     return model
-
-
-def compare(X_test, y_test, model):
-    logger.info("Neural Network")
-    logger.info("\n%s" % model.test_model(X_test, y_test))
-    logger.info("Random Forest")
-    forest = joblib.load("../detect_DGA/models/model_RandomForest_2.pkl")
-    y_pred = forest.predict(X_test)
-    logger.info("\n%s" % classification_report(y_pred=y_pred, y_true=y_test, target_names=['DGA', 'Legit']))

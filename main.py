@@ -8,9 +8,8 @@ from keras.models import Sequential, model_from_json
 sys.path.append("../detect_DGA")
 
 from sklearn.model_selection import train_test_split
-from model import Model, compare, cross_val
+from model import Model, cross_val
 from features.data_generator import *
-from detect_DGA import plot_classification_report
 
 logger = logging.getLogger(__name__)
 
@@ -63,18 +62,20 @@ if __name__ == '__main__':
     X, y = load_both_datasets()
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 
-    model = Model(model=large_baseline())
-    model.fit(X_train, y_train, validation_data=(X_test, y_test))
-    logger.info("\n%s" % model.test_model(X_test, y_test, plot=True))
+    model = Model(directory="saved models/large_baseline")
+    # model.plot_AUC(X_test,y_test)
+    model.cross_validate(X_train,y_train)
+    # model.fit(X_train, y_train, validation_data=(X_test, y_test))
+    # logger.info("\n%s" % model.classification_report(X_test, y_test, plot=True))
     time.sleep(5)
 
-    model2 = Model(model=reduced_baseline())
-    model2.fit(X_train, y_train, validation_data=(X_test, y_test))
-    logger.info("\n%s" % model2.test_model(X_test, y_test, plot=True))
-    time.sleep(5)
-
-    model3 = Model(model=pierazzi_baseline())
-    model3.fit(X_train, y_train, validation_data=(X_test, y_test))
-    logger.info("\n%s" % model3.test_model(X_test, y_test, plot=True))
+    # model2 = Model(model=reduced_baseline())
+    # model2.fit(X_train, y_train, validation_data=(X_test, y_test))
+    # logger.info("\n%s" % model2.classification_report(X_test, y_test, plot=True))
+    # time.sleep(5)
+    #
+    # model3 = Model(model=pierazzi_baseline())
+    # model3.fit(X_train, y_train, validation_data=(X_test, y_test))
+    # logger.info("\n%s" % model3.classification_report(X_test, y_test, plot=True))
 
     pass
