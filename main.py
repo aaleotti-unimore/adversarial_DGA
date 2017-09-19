@@ -31,9 +31,9 @@ if __name__ == '__main__':
     # X_test, y_test = test_suppobox(X_test, y_test)
     # X_test, y_test = test_suppobox(X_test,y_test)
 
-    # model = Model(model=large_baseline(), directory="large BatchNormalized")
-    # model.fit(X_train, y_train, validation_data=(X_test, y_test))
-    # model.classification_report(X_test, y_test, plot=False)
+    model = Model(model=large_baseline(), directory="large BatchNormalized")
+    model.fit(X_train, y_train, validation_data=(X_test, y_test))
+    model.classification_report(X_test, y_test, plot=False)
     # model.plot_AUC(X_test, y_test)
 
     model2 = Model(model=reduced_baseline(), directory="reduced BatchNormalized")

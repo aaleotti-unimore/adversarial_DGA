@@ -171,9 +171,10 @@ class Model:
     def fit(self, X, y, validation_data, batch_size=5, epochs=100, verbose=2):
         dirtemp = os.path.join(self.directory, "tensorboard")
         early = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=2, mode='auto')
-        tensorboard = TensorBoard(log_dir=dirtemp, write_graph=True,
-                                  write_images=True,
-                                  histogram_freq=1)
+        tensorboard = TensorBoard(log_dir=dirtemp,
+                                  write_graph=False,
+                                  write_images=False,
+                                  histogram_freq=0)
 
         std = StandardScaler()
         X = std.fit_transform(X=X)
