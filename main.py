@@ -3,7 +3,9 @@ import logging
 
 import numpy as np
 from sklearn.utils import shuffle
-
+import matplotlib
+# Force matplotlib to not use any Xwindows backend.
+matplotlib.use('Agg')
 sys.path.append("../detect_DGA")
 
 from sklearn.model_selection import train_test_split
@@ -31,13 +33,13 @@ if __name__ == '__main__':
 
     model = Model(model=large_baseline(), directory="large BatchNormalized")
     model.fit(X_train, y_train, validation_data=(X_test, y_test))
-    model.classification_report(X_test, y_test, plot=True)
-    model.plot_AUC(X_test, y_test)
+    model.classification_report(X_test, y_test, plot=False)
+    # model.plot_AUC(X_test, y_test)
 
     model2 = Model(model=reduced_baseline(), directory="reduced BatchNormalized")
     model2.fit(X_train, y_train, validation_data=(X_test, y_test))
-    model2.classification_report(X_test, y_test, plot=True)
-    model2.plot_AUC(X_test, y_test)
+    model2.classification_report(X_test, y_test, plot=False)
+    # model2.plot_AUC(X_test, y_test)
 
     # model3.cross_val(X_train, y_train,save=False)
     pass

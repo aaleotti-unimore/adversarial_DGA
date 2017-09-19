@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 from tempfile import mkdtemp
 
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 
 sys.path.append("../detect_DGA")
 
