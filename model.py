@@ -15,7 +15,7 @@ sys.path.append("../detect_DGA")
 
 import numpy as np
 import tensorflow as tf
-from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, Callback
+from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, Callback, ModelCheckpoint
 from keras.layers import Dense
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
@@ -41,19 +41,6 @@ np.random.seed(42)
 rn.seed(12345)
 
 tf.set_random_seed(1234)
-
-
-class LoggingCallback(Callback):
-    """Callback that logs message at end of epoch.
-    """
-
-    def __init__(self, print_fcn=print):
-        Callback.__init__(self)
-        self.print_fcn = print_fcn
-
-    def on_epoch_end(self, epoch, logs={}):
-        msg = "Epoch: %i, %s" % (epoch, ", ".join("%s: %f" % (k, v) for k, v in logs.iteritems()))
-        self.print_fcn(msg)
 
 
 class Model:
@@ -95,9 +82,9 @@ class Model:
         open(dirmod, 'w').write(json_model)
         self.logger.info("model saved to %s" % dirmod)
         # saving weights
-        dirwe = os.path.join(self.directory, 'model_weights.h5')
-        self.model.save_weights(dirwe, overwrite=True)
-        self.logger.info("model weights saved to %s" % dirwe)
+        # dirwe = os.path.join(self.directory, 'model_weights.h5')
+        # self.model.save_weights(dirwe, overwrite=True)
+        # self.logger.info("model weights saved to %s" % dirwe)
         dirplo = os.path.join(self.directory, "model.png")
         plot_model(self.model, to_file=dirplo, show_layer_names=True,
                    show_shapes=True)
@@ -167,26 +154,31 @@ class Model:
         else:
             print(report)
 
-    def fit(self, X, y, validation_data, batch_size=5, epochs=100, verbose=2):
+    def fit(self, X, y, validation_data, batch_size=5, epochs=100, verbose=2, early=True):
         dirtemp = os.path.join(self.directory, "tensorboard")
-        early = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=2, mode='auto')
-        tensorboard = TensorBoard(log_dir=dirtemp,
-                                  write_graph=False,
-                                  write_images=False,
-                                  histogram_freq=0)
+        dirwe = os.path.join(self.directory, 'model_weights.h5')
 
+        callbacks = [
+            TensorBoard(log_dir=dirtemp,
+                        write_graph=False,
+                        write_images=False,
+                        histogram_freq=0),
+            ModelCheckpoint(dirwe, monitor='val_acc', verbose=2, save_best_only=True, mode='max')
+        ]
+
+        if early:
+            callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=2, verbose=2, mode='auto'))
 
         std = StandardScaler()
         X = std.fit_transform(X=X)
 
-        self.model.fit(X, y, batch_size=batch_size,
-                       epochs=epochs,
-                       callbacks=[early,
-                                  tensorboard,
-                                  LoggingCallback(print_fcn=self.logger.info)],
-                       validation_data=validation_data,
-                       verbose=verbose,
-                       )
+        history = self.model.fit(X, y, batch_size=batch_size,
+                                 epochs=epochs,
+                                 callbacks=callbacks,
+                                 validation_data=validation_data,
+                                 verbose=verbose,
+                                 )
+        self.logger.info("%s " % history.history)
         self.save_model()
 
     def plot_AUC(self, X_test, y_test, save=True):

@@ -1,7 +1,9 @@
 import sys
 import logging
-
+import os
 import numpy as np
+import random as rn
+
 from sklearn.utils import shuffle
 import matplotlib
 
@@ -15,6 +17,14 @@ from features.data_generator import load_features_dataset, load_both_datasets
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+os.environ['PYTHONHASHSEED'] = '0'
+
+np.random.seed(42)
+
+rn.seed(12345)
 
 
 def test_suppobox(X_test, y_test):
@@ -32,10 +42,10 @@ if __name__ == '__main__':
     # X_test, y_test = test_suppobox(X_test, y_test)
     # X_test, y_test = test_suppobox(X_test,y_test)
 
-    model = Model(directory="saved_models/pieraz_BatchNormalized")
-    # model.fit(X_train, y_train, validation_data=(X_test, y_test))
+    model = Model(model=pierazzi_baseline(), directory="pieraz_batchNorm_noearly")
+    model.fit(X_train, y_train, validation_data=(X_test, y_test),early=False)
     model.classification_report(X_test, y_test, plot=True)
-    # model.plot_AUC(X_test, y_test)
+    model.plot_AUC(X_test, y_test)
 
     # model2 = Model(directory="saved_models/reduced BatchNormalized")
     # # model2.fit(X_train, y_train, validation_data=(X_test, y_test))
