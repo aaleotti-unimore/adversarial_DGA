@@ -59,9 +59,8 @@ class LoggingCallback(Callback):
 class Model:
     def __init__(self, model=None, directory=None):
         self.model = model
-
-        self.directory = os.path.join("saved models", directory)
-        if not os.path.exists(self.directory):
+        if not os.path.exists(directory):
+            self.directory = os.path.join("saved_models", directory)
             # crea la cartella
             os.makedirs(self.directory)
 
@@ -214,7 +213,7 @@ class Model:
         plt.legend(loc="lower right")
         if save:
             dirplt = os.path.join(self.directory, 'roc_plot.png')
-            plt.savefig(dirplt, format="png")
+            plt.savefig(dirplt, format="png", bbox_inches='tight')
         else:
             plt.show()
 

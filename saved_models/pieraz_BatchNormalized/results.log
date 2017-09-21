@@ -16,3 +16,11 @@ avg / total       0.86      0.84      0.84     41582
 2017-09-19 18:25:59,491 INFO Starting cross validation at 2017-09-19 18:25:59.491134
 2017-09-19 18:28:03,763 DEBUG model init at saved models/pieraz train:sup test:sup BatchNormalized 
 2017-09-19 18:28:03,763 INFO Starting cross validation at 2017-09-19 18:28:03.763945
+2017-09-21 11:59:45,508 INFO 
+             precision    recall  f1-score   support
+
+        DGA       0.78      0.96      0.86     21215
+      Legit       0.95      0.72      0.82     20367
+
+avg / total       0.86      0.84      0.84     41582
+
