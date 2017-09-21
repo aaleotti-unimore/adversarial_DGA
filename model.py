@@ -176,6 +176,7 @@ class Model:
                                   write_images=False,
                                   histogram_freq=0)
 
+
         std = StandardScaler()
         X = std.fit_transform(X=X)
 
