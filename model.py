@@ -46,7 +46,8 @@ tf.set_random_seed(1234)
 class Model:
     def __init__(self, model=None, directory=None):
         self.model = model
-        if not os.path.exists(directory):
+        self.directory = directory
+        if not os.path.exists(self.directory):
             self.directory = os.path.join("saved_models", directory)
             # crea la cartella
             os.makedirs(self.directory)
@@ -142,6 +143,7 @@ class Model:
         std = StandardScaler()
         std.fit(X=X)
         X = std.transform(X=X)
+        self.model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
         pred = self.model.predict(X)
         y_pred = [round(x) for x in pred]
 
@@ -162,12 +164,12 @@ class Model:
             TensorBoard(log_dir=dirtemp,
                         write_graph=False,
                         write_images=False,
-                        histogram_freq=0),
+                        histogram_freq=2),
             ModelCheckpoint(dirwe, monitor='val_acc', verbose=2, save_best_only=True, mode='max')
         ]
 
         if early:
-            callbacks.append(EarlyStopping(monitor='loss', min_delta=0, patience=2, verbose=2, mode='auto'))
+            callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=2, mode='auto'))
 
         std = StandardScaler()
         X = std.fit_transform(X=X)
@@ -184,6 +186,7 @@ class Model:
     def plot_AUC(self, X_test, y_test, save=True):
         std = StandardScaler()
         X_test = std.fit_transform(X_test)
+        self.model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
         y_score = self.model.predict_proba(X_test)
 
         # y_score = [round(x) for x in y_score]
@@ -283,8 +286,7 @@ def reduced_baseline():
     model.add(BatchNormalization())
     model.add(Activation('sigmoid'))
 
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', 'mae'])
-
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', 'binary_accuracy'])
     return model
 
 
@@ -310,6 +312,6 @@ def pierazzi_baseline(weights_path=None):
     if weights_path:
         model.load_weights(weights_path)
 
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', 'mae'])
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', 'binary_accuracy'])
 
     return model
