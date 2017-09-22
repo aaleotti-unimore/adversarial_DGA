@@ -42,6 +42,7 @@ if __name__ == '__main__':
     # X_test, y_test = test_suppobox(X_test, y_test)
     # X_test, y_test = test_suppobox(X_test,y_test)
 
+
     model = Model(model=pierazzi_baseline(), directory="pieraz_batchNorm_noearly_100_50")
     model.fit(X_train, y_train, batch_size=100, epochs=50, validation_data=(X_test, y_test), early=False)
     model.classification_report(X_test, y_test, plot=True)
