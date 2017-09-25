@@ -16,7 +16,7 @@ sys.path.append("../detect_DGA")
 import numpy as np
 import tensorflow as tf
 from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, Callback, ModelCheckpoint
-from keras.layers import Dense
+from keras.layers import Dense, Dropout
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
 from keras.wrappers.scikit_learn import KerasClassifier
@@ -42,6 +42,12 @@ rn.seed(12345)
 
 tf.set_random_seed(1234)
 
+config = tf.ConfigProto(
+        device_count = {'GPU': 0}
+    )
+sess = tf.Session(config=config)
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 class Model:
     def __init__(self, model=None, directory=None):
@@ -107,14 +113,14 @@ class Model:
                 foo = "%s: %.2f%% (%.2f%%)" % (key, value.mean() * 100, value.std() * 100)
                 if to_console:
                     print(foo)
-                else:
-                    self.logger.info(foo)
+
+                self.logger.info(foo)
             else:
                 foo = "%s: %.2fs (%.2f)s" % (key, value.mean(), value.std())
                 if to_console:
                     print(foo)
-                else:
-                    self.logger.info(foo)
+
+                self.logger.info(foo)
 
     def save_results(self, results):
         self.print_results(results)
@@ -156,7 +162,7 @@ class Model:
         else:
             print(report)
 
-    def fit(self, X, y, validation_data, batch_size=5, epochs=100, verbose=2, early=True):
+    def fit(self, X, y, validation_data=None, validation_split=None, batch_size=5, epochs=100, verbose=2, early=True):
         dirtemp = os.path.join(self.directory, "tensorboard")
         dirwe = os.path.join(self.directory, 'model_weights.h5')
 
@@ -164,7 +170,7 @@ class Model:
             TensorBoard(log_dir=dirtemp,
                         write_graph=False,
                         write_images=False,
-                        histogram_freq=2),
+                        histogram_freq=0),
             ModelCheckpoint(dirwe, monitor='val_acc', verbose=2, save_best_only=True, mode='max')
         ]
 
@@ -174,13 +180,13 @@ class Model:
         std = StandardScaler()
         X = std.fit_transform(X=X)
 
-        history = self.model.fit(X, y, batch_size=batch_size,
-                                 epochs=epochs,
-                                 callbacks=callbacks,
-                                 validation_data=validation_data,
-                                 verbose=verbose,
-                                 )
-        self.logger.info("%s " % history.history)
+        self.model.fit(X, y, batch_size=batch_size,
+                       epochs=epochs,
+                       callbacks=callbacks,
+                       validation_data=validation_data,
+                       validation_split=validation_split,
+                       verbose=verbose,
+                       )
         self.save_model()
 
     def plot_AUC(self, X_test, y_test, save=True):
@@ -220,7 +226,7 @@ class Model:
         _memory = joblib.Memory(cachedir=_cachedir, verbose=2)
         pipeline = Pipeline(
             [('standardize', StandardScaler()),
-             ('mlp', KerasClassifier(build_fn=pierazzi_baseline,
+             ('mlp', KerasClassifier(build_fn=pierazzi_normalized_baseline,
                                      epochs=100,
                                      batch_size=5,
                                      verbose=2))],
@@ -290,28 +296,64 @@ def reduced_baseline():
     return model
 
 
-def pierazzi_baseline(weights_path=None):
+def pierazzi_normalized_baseline(weights_path=None):
     model = Sequential()
 
     model.add(Dense(9, input_dim=9, kernel_initializer='normal', use_bias=False))
-    model.add(BatchNormalization())
+    model.add(BatchNormalization(momentum=0.9))
+    model.add(Dropout(0.2))
     model.add(Activation('relu'))
 
     model.add(Dense(128, kernel_initializer='normal', use_bias=False))
-    model.add(BatchNormalization())
+    model.add(BatchNormalization(momentum=0.9))
+    model.add(Dropout(0.2))
     model.add(Activation('relu'))
 
     model.add(Dense(64, kernel_initializer='normal', use_bias=False))
-    model.add(BatchNormalization())
+    model.add(BatchNormalization(momentum=0.9))
+    model.add(Dropout(0.2))
     model.add(Activation('relu'))
 
     model.add(Dense(1, kernel_initializer='normal', use_bias=False))
-    model.add(BatchNormalization())
     model.add(Activation('sigmoid'))
 
     if weights_path:
         model.load_weights(weights_path)
 
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', 'binary_accuracy'])
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+def pierazzi_baseline(weights_path=None):
+    model = Sequential()
+
+    model.add(Dense(9, input_dim=9, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(128, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(64, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
+
+    if weights_path:
+        model.load_weights(weights_path)
+
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+def verysmall_baseline(weights_path=None):
+    model = Sequential()
+
+    model.add(Dense(9, input_dim=9, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
+
+    if weights_path:
+        model.load_weights(weights_path)
+
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     return model

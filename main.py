@@ -1,18 +1,19 @@
-import sys
 import logging
 import os
-import numpy as np
 import random as rn
-
-from sklearn.utils import shuffle
+import sys
+import tensorflow as tf
+import keras as K
 import matplotlib
+import numpy as np
+from sklearn.utils import shuffle
 
 # Force matplotlib to not use any Xwindows backend.
 matplotlib.use('Agg')
 sys.path.append("../detect_DGA")
 
 from sklearn.model_selection import train_test_split
-from model import Model, pierazzi_baseline, large_baseline, reduced_baseline
+from model import Model, pierazzi_baseline, pierazzi_normalized_baseline, verysmall_baseline
 from features.data_generator import load_features_dataset, load_both_datasets
 
 logging.basicConfig(level=logging.DEBUG)
@@ -35,24 +36,19 @@ def test_suppobox(X_test, y_test):
 
 
 if __name__ == '__main__':
-    # model = Model(directory="saved models/2017-09-15 12:41 kula")
-    # model.load_results()
     X, y = load_both_datasets()
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
-    # X_test, y_test = test_suppobox(X_test, y_test)
-    # X_test, y_test = test_suppobox(X_test,y_test)
+    test_split = 0.33
+    # batch_size = 30
+    epochs = 60
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split)
+    batch_size = 40
+    # for batch_size in range(10, 110, 10):
+    # model = Model(directory="saved_models/test_60/verysmall_35")
+    # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
+    # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
+    # model.classification_report(X_test, y_test, plot=False)
+    from gan import generate_dataset
 
-
-    model = Model(model=pierazzi_baseline(), directory="pieraz_batchNorm_noearly_100_50")
-    model.fit(X_train, y_train, batch_size=100, epochs=50, validation_data=(X_test, y_test), early=False)
-    model.classification_report(X_test, y_test, plot=True)
-    model.plot_AUC(X_test, y_test)
-    # model = Model(directory="saved_models/pieraz_batchNorm_noearly_100_20")
-    # model.plot_AUC(X_test,y_test)
-    # model2 = Model(directory="saved_models/reduced BatchNormalized")
-    # # model2.fit(X_train, y_train, validation_data=(X_test, y_test))
-    # model2.classification_report(X_test, y_test, plot=True)
-    # # model2.plot_AUC(X_test, y_test)
-
-    # model3.cross_val(X_train, y_train,save=False)
+    X, y = generate_dataset()
+    # model.plot_AUC(X_test, y_test)
     pass
