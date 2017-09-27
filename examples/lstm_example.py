@@ -38,7 +38,7 @@ char_indices = dict((c, i) for i, c in enumerate(chars))
 indices_char = dict((i, c) for i, c in enumerate(chars))
 
 # cut the text in semi-redundant sequences of maxlen characters
-maxlen = 40
+maxlen = 15
 step = 3
 sentences = []
 next_chars = []
@@ -63,7 +63,7 @@ model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
 
 optimizer = RMSprop(lr=0.01)
-model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=optimizer)
 
 
 def sample(preds, temperature=1.0):
@@ -75,13 +75,14 @@ def sample(preds, temperature=1.0):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
+
 dirtemp = "saved_models/lstm/tensorboard"
 callbacks = [
-            TensorBoard(log_dir=dirtemp,
-                        write_graph=False,
-                        write_images=False,
-                        histogram_freq=0),
-        ]
+    TensorBoard(log_dir=dirtemp,
+                write_graph=False,
+                write_images=False,
+                histogram_freq=0),
+]
 
 # train the model, output generated text after each iteration
 for iteration in range(1, 60):
@@ -115,6 +116,7 @@ for iteration in range(1, 60):
 
         for i in range(400):
             x = np.zeros((1, maxlen, len(chars)))
+            print(x)
             for t, char in enumerate(sentence):
                 x[0, t, char_indices[char]] = 1.
 
@@ -130,5 +132,5 @@ for iteration in range(1, 60):
 
         print()
 
-        with open("saved_models/lstm/generated.txt",'a') as f:
+        with open("saved_models/lstm/generated.txt", 'a') as f:
             f.write(generated)
