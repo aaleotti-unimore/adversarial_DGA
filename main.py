@@ -35,13 +35,16 @@ def test_suppobox(X_test, y_test):
 
 
 if __name__ == '__main__':
-    X, y = load_both_datasets()
-    test_split = 0.33
+
+
+
+    # X, y = load_both_datasets()
+    # test_split = 0.33
     # batch_size = 30
-    epochs = 60
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split)
-    batch_size = 40
-    # for batch_size in range(10, 110, 10):
+    # epochs = 60
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split)
+    # batch_size = 40
+    # # for batch_size in range(10, 110, 10):
     # model = Model(directory="saved_models/test_60/verysmall_35")
     # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
     # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)

@@ -120,5 +120,5 @@ for iteration in range(1, 60):
 
         print()
 
-        with open("saved_models/lstm/generated%s" % iteration,'w') as f:
+        with open("saved_models/lstm/generated" % iteration,'a') as f:
             f.write(generated)
