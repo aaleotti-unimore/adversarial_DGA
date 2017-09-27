@@ -11,6 +11,7 @@ from __future__ import print_function
 import tensorflow as tf
 import os
 from keras.models import Sequential
+from keras.callbacks import TensorBoard
 from keras.layers import Dense, Activation
 from keras.layers import LSTM
 from keras.optimizers import RMSprop
@@ -74,15 +75,24 @@ def sample(preds, temperature=1.0):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
+dirtemp = "saved_models/lstm/tensorboard"
+callbacks = [
+            TensorBoard(log_dir=dirtemp,
+                        write_graph=False,
+                        write_images=False,
+                        histogram_freq=0),
+        ]
 
 # train the model, output generated text after each iteration
 for iteration in range(1, 60):
     print()
     print('-' * 50)
     print('Iteration', iteration)
+
     model.fit(X, y,
-              # validation_split=0.10,
+              validation_split=0.10,
               # metrics=['accuracy'],
+              callbacks=callbacks,
               batch_size=128,
               epochs=1)
 
