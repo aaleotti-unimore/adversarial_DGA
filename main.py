@@ -7,7 +7,6 @@ import keras as K
 import matplotlib
 import numpy as np
 from sklearn.utils import shuffle
-
 # Force matplotlib to not use any Xwindows backend.
 matplotlib.use('Agg')
 sys.path.append("../detect_DGA")
@@ -47,8 +46,6 @@ if __name__ == '__main__':
     # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
     # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
     # model.classification_report(X_test, y_test, plot=False)
-    from gan import generate_dataset
 
-    X, y = generate_dataset()
     # model.plot_AUC(X_test, y_test)
     pass
