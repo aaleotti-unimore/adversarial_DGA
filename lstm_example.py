@@ -20,8 +20,8 @@ import random
 import sys
 
 config = tf.ConfigProto(
-        device_count = {'GPU': 0}
-    )
+    device_count={'GPU': 0}
+)
 sess = tf.Session(config=config)
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
@@ -81,10 +81,17 @@ for iteration in range(1, 60):
     print('-' * 50)
     print('Iteration', iteration)
     model.fit(X, y,
+              # validation_split=0.10,
+              # metrics=['accuracy'],
               batch_size=128,
               epochs=1)
 
     start_index = random.randint(0, len(text) - maxlen - 1)
+
+    json_model = model.to_json()
+    dirmod = os.path.join('saved_models/lstm/model_architecture.json')
+    open(dirmod, 'w').write(json_model)
+    model.save_weights('saved_models/lstm/model_weitghts.h5', overwrite=True)
 
     for diversity in [0.2, 0.5, 1.0, 1.2]:
         print()
@@ -93,7 +100,7 @@ for iteration in range(1, 60):
         generated = ''
         sentence = text[start_index: start_index + maxlen]
         generated += sentence
-        print('----- Generating with seed: "' + sentence + '"')
+        print('----- Generating with seed: ' + sentence)
         sys.stdout.write(generated)
 
         for i in range(400):
@@ -110,4 +117,8 @@ for iteration in range(1, 60):
 
             sys.stdout.write(next_char)
             sys.stdout.flush()
+
         print()
+
+        with open("saved_models/lstm/generated%s" % iteration,'w') as f:
+            f.write(generated)
