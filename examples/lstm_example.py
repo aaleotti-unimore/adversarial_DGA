@@ -28,7 +28,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = ''
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 # path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-path = 'dataset/xaa'
+path = '/home/archeffect/PycharmProjects/adversarial_DGA/dataset/xaa'
 text = open(path).read().lower()
 print('corpus length:', len(text))
 
@@ -93,16 +93,16 @@ for iteration in range(1, 60):
     model.fit(X, y,
               validation_split=0.10,
               # metrics=['accuracy'],
-              callbacks=callbacks,
+              # callbacks=callbacks,
               batch_size=128,
               epochs=1)
 
     start_index = random.randint(0, len(text) - maxlen - 1)
 
     json_model = model.to_json()
-    dirmod = os.path.join('saved_models/lstm/model_architecture.json')
+    dirmod = os.path.join('saved_models/lstm2/model_architecture.json')
     open(dirmod, 'w').write(json_model)
-    model.save_weights('saved_models/lstm/model_weitghts.h5', overwrite=True)
+    model.save_weights('saved_models/lstm2/model_weitghts.h5', overwrite=True)
 
     for diversity in [0.2, 0.5, 1.0, 1.2]:
         print()
@@ -116,21 +116,26 @@ for iteration in range(1, 60):
 
         for i in range(400):
             x = np.zeros((1, maxlen, len(chars)))
-            print(x)
+
+
             for t, char in enumerate(sentence):
                 x[0, t, char_indices[char]] = 1.
 
+            print(x)
             preds = model.predict(x, verbose=0)[0]
+            print(preds)
             next_index = sample(preds, diversity)
             next_char = indices_char[next_index]
 
             generated += next_char
+            print(generated)
             sentence = sentence[1:] + next_char
+            print(sentence)
 
             sys.stdout.write(next_char)
             sys.stdout.flush()
 
         print()
 
-        with open("saved_models/lstm/generated.txt", 'a') as f:
+        with open("saved_models/lstm2/generated.txt", 'a') as f:
             f.write(generated)
