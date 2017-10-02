@@ -20,6 +20,11 @@ import numpy as np
 import random
 import sys
 
+generator_path = '../dataset/xaa'
+lstm_path = "../saved_models/lstm2"
+
+dirtemp = os.path.join(lstm_path, "tensorboard")
+
 config = tf.ConfigProto(
     device_count={'GPU': 0}
 )
@@ -28,8 +33,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = ''
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 # path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-path = '/home/archeffect/PycharmProjects/adversarial_DGA/dataset/xaa'
-text = open(path).read().lower()
+text = open(generator_path).read().lower()
 print('corpus length:', len(text))
 
 chars = sorted(list(set(text)))
@@ -76,7 +80,6 @@ def sample(preds, temperature=1.0):
     return np.argmax(probas)
 
 
-dirtemp = "saved_models/lstm/tensorboard"
 callbacks = [
     TensorBoard(log_dir=dirtemp,
                 write_graph=False,
@@ -100,9 +103,9 @@ for iteration in range(1, 60):
     start_index = random.randint(0, len(text) - maxlen - 1)
 
     json_model = model.to_json()
-    dirmod = os.path.join('saved_models/lstm2/model_architecture.json')
+    dirmod = os.path.join(lstm_path, 'model_architecture.json')
     open(dirmod, 'w').write(json_model)
-    model.save_weights('saved_models/lstm2/model_weitghts.h5', overwrite=True)
+    model.save_weights(os.path.join(lstm_path, 'model_weitghts.h5'), overwrite=True)
 
     for diversity in [0.2, 0.5, 1.0, 1.2]:
         print()
@@ -116,7 +119,6 @@ for iteration in range(1, 60):
 
         for i in range(400):
             x = np.zeros((1, maxlen, len(chars)))
-
 
             for t, char in enumerate(sentence):
                 x[0, t, char_indices[char]] = 1.
@@ -137,5 +139,5 @@ for iteration in range(1, 60):
 
         print()
 
-        with open("saved_models/lstm2/generated.txt", 'a') as f:
+        with open(os.path.join(lstm_path, "generated.txt"), 'a') as f:
             f.write(generated)
