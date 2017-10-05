@@ -43,11 +43,12 @@ rn.seed(12345)
 tf.set_random_seed(1234)
 
 config = tf.ConfigProto(
-        device_count = {'GPU': 0}
-    )
+    device_count={'GPU': 0}
+)
 sess = tf.Session(config=config)
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
 
 class Model:
     def __init__(self, model=None, directory=None):
@@ -162,7 +163,7 @@ class Model:
         else:
             print(report)
 
-    def fit(self, X, y, validation_data=None, validation_split=None, batch_size=5, epochs=100, verbose=2, early=True):
+    def fit(self, X, y, stdscaler=True, validation_data=None, validation_split=None, batch_size=5, epochs=100, verbose=2, early=True):
         dirtemp = os.path.join(self.directory, "tensorboard")
         dirwe = os.path.join(self.directory, 'model_weights.h5')
 
@@ -177,8 +178,9 @@ class Model:
         if early:
             callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=2, mode='auto'))
 
-        std = StandardScaler()
-        X = std.fit_transform(X=X)
+        if stdscaler:
+            std = StandardScaler()
+            X = std.fit_transform(X=X)
 
         self.model.fit(X, y, batch_size=batch_size,
                        epochs=epochs,
@@ -218,35 +220,36 @@ class Model:
         else:
             plt.show()
 
-    def cross_val(self, X, y, save=False):
-        t0 = datetime.now()
-        self.logger.info("Starting cross validation at %s" % t0)
-
-        _cachedir = mkdtemp()
-        _memory = joblib.Memory(cachedir=_cachedir, verbose=2)
-        pipeline = Pipeline(
-            [('standardize', StandardScaler()),
-             ('mlp', KerasClassifier(build_fn=pierazzi_normalized_baseline,
-                                     epochs=100,
-                                     batch_size=5,
-                                     verbose=2))],
-            memory=_memory)
-
-        kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
-
-        results = cross_validate(pipeline, X, y, cv=kfold, n_jobs=-1, verbose=2,
-                                 scoring=['precision', 'recall', 'f1', 'roc_auc'])
-
-        self.logger.info("Cross Validation Ended. Elapsed time: %s" % (datetime.now() - t0))
-        if save:
-            time.sleep(2)
-            model = Model(pipeline.named_steps['mlp'].build_fn())
-            model.get_model().summary(print_fn=self.logger.info)
-
-            model.save_results(results)
-            model.save_model()
-
-            return model
+    def __cross_val(self, X, y, save=False):
+        #     t0 = datetime.now()
+        #     self.logger.info("Starting cross validation at %s" % t0)
+        #
+        #     _cachedir = mkdtemp()
+        #     _memory = joblib.Memory(cachedir=_cachedir, verbose=2)
+        #     pipeline = Pipeline(
+        #         [('standardize', StandardScaler()),
+        #          ('mlp', KerasClassifier(build_fn=pierazzi_normalized_baseline,
+        #                                  epochs=100,
+        #                                  batch_size=5,
+        #                                  verbose=2))],
+        #         memory=_memory)
+        #
+        #     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=RandomState())
+        #
+        #     results = cross_validate(pipeline, X, y, cv=kfold, n_jobs=-1, verbose=2,
+        #                              scoring=['precision', 'recall', 'f1', 'roc_auc'])
+        #
+        #     self.logger.info("Cross Validation Ended. Elapsed time: %s" % (datetime.now() - t0))
+        #     if save:
+        #         time.sleep(2)
+        #         model = Model(pipeline.named_steps['mlp'].build_fn())
+        #         model.get_model().summary(print_fn=self.logger.info)
+        #
+        #         model.save_results(results)
+        #         model.save_model()
+        #
+        #         return model
+        pass
 
 
 def large_baseline():
@@ -356,4 +359,17 @@ def verysmall_baseline(weights_path=None):
 
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+    return model
+
+
+def lstm_baseline(maxlen, chars):
+    from keras.layers import LSTM
+    from keras.optimizers import RMSprop
+
+    model = Sequential()
+    model.add(LSTM(128, input_shape=(maxlen, len(chars))))
+    model.add(Dense(len(chars)))
+    model.add(Activation('softmax'))
+    optimizer = RMSprop(lr=0.01)
+    model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=optimizer)
     return model
