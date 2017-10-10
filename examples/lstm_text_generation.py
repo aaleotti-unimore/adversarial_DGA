@@ -34,6 +34,7 @@ maxlen = 40
 step = 3
 sentences = []
 next_chars = []
+
 for i in range(0, len(text) - maxlen, step):
     sentences.append(text[i: i + maxlen])
     next_chars.append(text[i + maxlen])

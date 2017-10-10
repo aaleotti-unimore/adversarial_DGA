@@ -12,6 +12,7 @@ import string
 import pandas as pd
 import numpy as np
 import time
+from numpy.random import RandomState
 from tensorflow.examples.tutorials.mnist import input_data
 
 from keras.models import Sequential
@@ -21,7 +22,23 @@ from keras.layers import LeakyReLU, Dropout
 from keras.layers import BatchNormalization
 from keras.optimizers import Adam, RMSprop
 
+from pandas import read_csv
+from keras.layers import Conv1D, MaxPooling1D, Embedding
+from keras.layers import Dense, Input
+from keras.layers import Dropout
+from keras.layers import LSTM, RepeatVector
+from keras.layers.merge import concatenate
+from keras.models import Model
+from keras.preprocessing import sequence
+from keras.preprocessing.text import Tokenizer
+from keras.utils.vis_utils import plot_model
+from sklearn.preprocessing import LabelBinarizer
+from keras.optimizers import RMSprop
+from keras.models import Sequential
+
 import matplotlib.pyplot as plt
+
+import logging
 
 
 class ElapsedTimer(object):
@@ -41,11 +58,11 @@ class ElapsedTimer(object):
 
 
 class DCGAN(object):
-    def __init__(self, img_rows=28, img_cols=28, channel=1):
+    def __init__(self, timesteps, word_index):
+        self.timesteps = timesteps
+        self.word_index = word_index
+        self.dim = 128
 
-        self.img_rows = img_rows
-        self.img_cols = img_cols
-        self.channel = channel
         self.D = None  # discriminator
         self.G = None  # generator
         self.AM = None  # adversarial model
@@ -55,64 +72,62 @@ class DCGAN(object):
     def discriminator(self):
         if self.D:
             return self.D
-        self.D = Sequential(name="discriminator")
-        depth = 64
-        dropout = 0.4
-        # In: 28 x 28 x 1, depth = 1
-        # Out: 14 x 14 x 1, depth=64
-        input_shape = (self.img_rows, self.img_cols, self.channel)
-        self.D.add(Dense(9, input_dim=9, kernel_initializer='normal', use_bias=False))
-        self.D.add(Dropout(dropout))
-        self.D.add(Activation('relu'))
+        dropout = 0.1
+        filters = [20, 10]
+        kernels = [2, 3]
+        enc_convs = []
+        d = 20  # lunghezza vettore embedded
+        # In: (batch_size, timesteps),
+        # Out: (batch_size, 128)
+        enc_inputs = Input(shape=(self.timesteps,),name="Discriminator_Input")
+        encoded = Embedding(self.word_index, d, input_length=self.timesteps)(enc_inputs)
+        for i in range(2):
+            conv = Conv1D(filters[i],
+                          kernels[i],
+                          padding='same',
+                          activation='relu',
+                          strides=1)(encoded)
+            conv = Dropout(dropout)(conv)
+            conv = MaxPooling1D()(conv)
+            enc_convs.append(conv)
 
-        self.D.add(Dense(128, kernel_initializer='normal', use_bias=False))
-        self.D.add(Dropout(dropout))
-        self.D.add(Activation('relu'))
-
-        self.D.add(Dense(64, kernel_initializer='normal', use_bias=False))
-        self.D.add(Dropout(dropout))
-        self.D.add(Activation('relu'))
-
-        self.D.add(Dense(1, kernel_initializer='normal', use_bias=False))
-        self.D.add(Activation('sigmoid'))
+        encoded = concatenate(enc_convs)
+        encoded = LSTM(128)(encoded)
+        self.D = Model(inputs=enc_inputs, outputs=encoded, name='Discriminator')
         self.D.summary()
+        plot_model(self.D, to_file="discriminator.png", show_shapes=True)
+
         return self.D
 
     def generator(self):
         if self.G:
             return self.G
-        self.G = Sequential(name="generator")
-        dropout = 0.4
-        depth = 64 + 64 + 64 + 64
-        dim = 7
-        # In: 100
-        # Out: dim x dim x depth
-        self.G.add(Dense(dim * dim * depth, input_dim=100))
-        self.G.add(BatchNormalization(momentum=0.9))
-        self.G.add(Activation('relu'))
-        self.G.add(Reshape((dim, dim, depth)))
-        self.G.add(Dropout(dropout))
+        dropout = 0.1
+        filters = [20, 10]
+        kernels = [2, 3]
+        dec_convs = []
 
-        # In: dim x dim x depth
-        # Out: 2*dim x 2*dim x depth/2
-        self.G.add(UpSampling2D())
-        self.G.add(Conv2DTranspose(int(depth / 2), 5, padding='same'))
-        self.G.add(BatchNormalization(momentum=0.9))
-        self.G.add(Activation('relu'))
+        # In: (batch_size, 128),
+        # Out: (batch_size, timesteps, word_index)
+        dec_inputs = Input(shape=(self.dim,),name="Generator_Input")
+        decoded = RepeatVector(self.timesteps)(dec_inputs)
+        decoded = LSTM(128, return_sequences=True)(decoded)
 
-        self.G.add(UpSampling2D())
-        self.G.add(Conv2DTranspose(int(depth / 4), 5, padding='same'))
-        self.G.add(BatchNormalization(momentum=0.9))
-        self.G.add(Activation('relu'))
+        for i in range(2):
+            conv = Conv1D(filters[i],
+                          kernels[i],
+                          padding='same',
+                          activation='relu',
+                          strides=1)(decoded)
+            conv = Dropout(dropout)(conv)
+            dec_convs.append(conv)
 
-        self.G.add(Conv2DTranspose(int(depth / 8), 5, padding='same'))
-        self.G.add(BatchNormalization(momentum=0.9))
-        self.G.add(Activation('relu'))
+        decoded = concatenate(dec_convs)
+        decoded = Dense(self.word_index, activation='sigmoid')(decoded)
 
-        # Out: 28 x 28 x 1 grayscale image [0.0,1.0] per pix
-        self.G.add(Conv2DTranspose(1, 5, padding='same'))
-        self.G.add(Activation('sigmoid'))
+        self.G = Model(inputs=dec_inputs, outputs=decoded, name='Generator')
         self.G.summary()
+        plot_model(self.G, to_file="generator.png", show_shapes=True)
         return self.G
 
     def discriminator_model(self):
@@ -136,97 +151,79 @@ class DCGAN(object):
                         metrics=['accuracy'])
         return self.AM
 
+    def sample(self, preds, temperature=1.0):
+        # helper function to sample an index from a probability array
+        preds = np.asarray(preds).astype('float32')
+        preds = np.log(preds) / temperature
+        exp_preds = np.exp(preds)
+        preds = exp_preds / np.sum(exp_preds)
+        probas = np.random.multinomial(1, preds, 1)
+        return np.argmax(probas)
+
 
 class MNIST_DCGAN(object):
     def __init__(self):
-        self.img_rows = 28
-        self.img_cols = 28
-        self.channel = 1
+        self.logger = logging.getLogger(__name__)
+        self.x_train, word_index = self.build_dataset(n_samples=None)
 
-        self.x_train = input_data.read_data_sets("mnist", \
-                                                 one_hot=True).train.images
-        self.x_train = self.x_train.reshape(-1, self.img_rows, \
-                                            self.img_cols, 1).astype(np.float32)
-
-        self.DCGAN = DCGAN()
+        self.DCGAN = DCGAN(timesteps=self.x_train.shape[1], word_index=word_index)
         self.discriminator = self.DCGAN.discriminator_model()
         self.adversarial = self.DCGAN.adversarial_model()
         self.generator = self.DCGAN.generator()
 
     def train(self, train_steps=2000, batch_size=256, save_interval=0):
+
         noise_input = None
         if save_interval > 0:
             noise_input = np.random.uniform(-1.0, 1.0, size=[16, 100])
         for i in range(train_steps):
-            images_train = self.x_train[np.random.randint(0,
-                                                          self.x_train.shape[0], size=batch_size), :, :, :]
-            noise = np.random.uniform(-1.0, 1.0, size=[batch_size, 100])
-            images_fake = self.generator.predict(noise)
-            x = np.concatenate((images_train, images_fake))
-            y = np.ones([2 * batch_size, 1])
-            y[batch_size:, :] = 0
+            domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size), :]
+            noise = np.random.normal(-0.02, 0.02, size=[batch_size, 128])  # random noise
+            domains_fake = self.generator.predict(noise)  # fake domains
+            x = np.concatenate((domains_train, domains_fake))  # legit and fake domains
+            y = np.ones([2 * batch_size, 1])  # dimensione 2x batch size di 1
+            y[batch_size:, :] = 0  # prima meta, images_train, a zero
             d_loss = self.discriminator.train_on_batch(x, y)
 
             y = np.ones([batch_size, 1])
-            noise = np.random.uniform(-1.0, 1.0, size=[batch_size, 100])
+            noise = np.random.normal(-0.02, 0.02, size=[batch_size, 128])  # random noise
             a_loss = self.adversarial.train_on_batch(noise, y)
             log_mesg = "%d: [D loss: %f, acc: %f]" % (i, d_loss[0], d_loss[1])
             log_mesg = "%s  [A loss: %f, acc: %f]" % (log_mesg, a_loss[0], a_loss[1])
             print(log_mesg)
-            if save_interval > 0:
-                if (i + 1) % save_interval == 0:
-                    self.plot_images(save2file=True, samples=noise_input.shape[0], \
-                                     noise=noise_input, step=(i + 1))
 
-    def plot_images(self, save2file=False, fake=True, samples=16, noise=None, step=0):
-        filename = 'mnist.png'
-        if fake:
-            if noise is None:
-                noise = np.random.uniform(-1.0, 1.0, size=[samples, 100])
-            else:
-                filename = "mnist_%d.png" % step
-            images = self.generator.predict(noise)
-        else:
-            i = np.random.randint(0, self.x_train.shape[0], samples)
-            images = self.x_train[i, :, :, :]
+    def build_dataset(self, n_samples=None):
+        # fix random seed for reproducibility
+        np.random.seed(7)
+        path = "/home/archeffect/PycharmProjects/adversarial_DGA/dataset/legitdomains.txt"
+        n_samples = 256
 
-        plt.figure(figsize=(10, 10))
-        for i in range(images.shape[0]):
-            plt.subplot(4, 4, i + 1)
-            image = images[i, :, :, :]
-            image = np.reshape(image, [self.img_rows, self.img_cols])
-            plt.imshow(image, cmap='gray')
-            plt.axis('off')
-        plt.tight_layout()
-        if save2file:
-            plt.savefig(filename)
-            plt.close('all')
-        else:
-            plt.show()
+        # loading db
+        lb = LabelBinarizer()
+        df = pd.DataFrame(pd.read_csv("dataset/legitdomains.txt", sep=" ", header=None, names=['domain']))
+        if n_samples:
+            df = df.sample(n=n_samples, random_state=42)
+        X_ = df['domain'].values
+        # y = np.ravel(lb.fit_transform(df['class'].values))
 
+        # preprocessing text
+        maxlen = 15
+        tk = Tokenizer(char_level=True)
+        tk.fit_on_texts(string.lowercase + string.digits + '-' + '.')
+        print("word index: %s" % len(tk.word_index))
+        seq = tk.texts_to_sequences(X_)
+        # for x, s in zip(X_, seq):
+        #     print(x, s)
+        # print("")
+        X = sequence.pad_sequences(seq, maxlen=maxlen)
+        print("X shape after padding: " + str(X.shape))
+        # print(X)
 
+        return X, len(tk.word_index)
 
-
-def generate_dataset():
-    li = []
-    for N in range(6, 10):
-        for i in range(0, 100):
-            li.append(string_generator(N))
-
-    X = pd.DataFrame(li)
-    y = np.chararray([len(li), 1], itemsize=3)
-    y[:] = "dga"
-
-    return X, y
-
-
-def string_generator(N):
-    return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(N))
 
 if __name__ == '__main__':
     mnist_dcgan = MNIST_DCGAN()
     timer = ElapsedTimer()
     mnist_dcgan.train(train_steps=10000, batch_size=256, save_interval=500)
     timer.elapsed_time()
-    mnist_dcgan.plot_images(fake=True)
-    mnist_dcgan.plot_images(fake=False, save2file=True)
