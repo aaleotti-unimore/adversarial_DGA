@@ -79,14 +79,15 @@ class DCGAN(object):
         d = 20  # lunghezza vettore embedded
         # In: (batch_size, timesteps),
         # Out: (batch_size, 128)
-        enc_inputs = Input(shape=(self.timesteps,),name="Discriminator_Input")
-        encoded = Embedding(self.word_index, d, input_length=self.timesteps)(enc_inputs)
+        enc_inputs = Input(shape=(self.timesteps,20), name="Discriminator_Input")
+        # encoded = Embedding(self.word_index, d, input_length=self.timesteps)(enc_inputs)
         for i in range(2):
             conv = Conv1D(filters[i],
                           kernels[i],
                           padding='same',
                           activation='relu',
-                          strides=1)(encoded)
+                          strides=1)(enc_inputs)
+
             conv = Dropout(dropout)(conv)
             conv = MaxPooling1D()(conv)
             enc_convs.append(conv)
@@ -109,9 +110,9 @@ class DCGAN(object):
 
         # In: (batch_size, 128),
         # Out: (batch_size, timesteps, word_index)
-        dec_inputs = Input(shape=(self.dim,),name="Generator_Input")
-        decoded = RepeatVector(self.timesteps)(dec_inputs)
-        decoded = LSTM(128, return_sequences=True)(decoded)
+        dec_inputs = Input(shape=(self.dim,), name="Generator_Input")
+        decoded = RepeatVector(self.timesteps, name="gen_repeate_vec")(dec_inputs)
+        decoded = LSTM(128, return_sequences=True, name="gen_LSTM")(decoded)
 
         for i in range(2):
             conv = Conv1D(filters[i],
@@ -123,7 +124,7 @@ class DCGAN(object):
             dec_convs.append(conv)
 
         decoded = concatenate(dec_convs)
-        decoded = Dense(self.word_index, activation='sigmoid')(decoded)
+        decoded = Dense(20, activation='sigmoid', name="gen_dense")(decoded)
 
         self.G = Model(inputs=dec_inputs, outputs=decoded, name='Generator')
         self.G.summary()
@@ -146,6 +147,9 @@ class DCGAN(object):
         optimizer = RMSprop(lr=0.0001, decay=3e-8)
         self.AM = Sequential()
         self.AM.add(self.generator())
+        # self.AM.summary()
+        print(self.AM.output_shape)
+        print(self.discriminator().input_shape)
         self.AM.add(self.discriminator())
         self.AM.compile(loss='binary_crossentropy', optimizer=optimizer, \
                         metrics=['accuracy'])
@@ -162,6 +166,7 @@ class DCGAN(object):
 
 
 class MNIST_DCGAN(object):
+
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.x_train, word_index = self.build_dataset(n_samples=None)
@@ -179,10 +184,33 @@ class MNIST_DCGAN(object):
         for i in range(train_steps):
             domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size), :]
             noise = np.random.normal(-0.02, 0.02, size=[batch_size, 128])  # random noise
-            domains_fake = self.generator.predict(noise)  # fake domains
+            print("domains_train shape:")
+            print(domains_train.shape)
+            # print("noise shape: %s " % noise.shape)
+            domains_fake = self.generator.predict(noise)# fake domains
+            print("domains_fake shape:")
+            print(domains_fake.shape)
+
+            #sampling
+            d_sampl = []
+            for j in range(domains_fake.shape[0]):
+                word = []
+                for i in range(domains_fake.shape[1]):
+                    k = self.sample(domains_fake[j][i])
+                    word.append(k)
+                d_sampl.append(word)
+
+
+            domains_fake = np.array(d_sampl)
             x = np.concatenate((domains_train, domains_fake))  # legit and fake domains
             y = np.ones([2 * batch_size, 1])  # dimensione 2x batch size di 1
             y[batch_size:, :] = 0  # prima meta, images_train, a zero
+            print("Discr input shape: %s,%s,%s" % self.discriminator.input_shape)
+            print("domains_fake new shape:")
+            print(domains_fake.shape)
+            print("X shape:")
+            print(x.shape)
+
             d_loss = self.discriminator.train_on_batch(x, y)
 
             y = np.ones([batch_size, 1])
@@ -221,6 +249,14 @@ class MNIST_DCGAN(object):
 
         return X, len(tk.word_index)
 
+    def sample(self, preds, temperature=1.0):
+        # helper function to sample an index from a probability array
+        preds = np.asarray(preds).astype('float32')
+        preds = np.log(preds) / temperature
+        exp_preds = np.exp(preds)
+        preds = exp_preds / np.sum(exp_preds)
+        probas = np.random.multinomial(1, preds, 1)
+        return np.argmax(probas)
 
 if __name__ == '__main__':
     mnist_dcgan = MNIST_DCGAN()
