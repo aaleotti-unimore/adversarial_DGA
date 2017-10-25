@@ -1,13 +1,10 @@
 from __future__ import print_function
+
 import json
 import logging
 import os
 import random as rn
-import socket
 import sys
-import time
-from datetime import datetime
-from tempfile import mkdtemp
 
 from matplotlib import pyplot as plt
 
@@ -15,17 +12,12 @@ sys.path.append("../detect_DGA")
 
 import numpy as np
 import tensorflow as tf
-from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, Callback, ModelCheckpoint
+from keras.callbacks import EarlyStopping, TensorBoard, ModelCheckpoint
 from keras.layers import Dense, Dropout
 from keras.models import Sequential, model_from_json
 from keras.utils import plot_model
-from keras.wrappers.scikit_learn import KerasClassifier
-from numpy.random import RandomState
-from sklearn.externals import joblib
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
-from sklearn.model_selection import StratifiedKFold, cross_validate
-from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from keras.layers.normalization import BatchNormalization
 from keras.layers import Activation
@@ -373,3 +365,5 @@ def lstm_baseline(maxlen, chars):
     optimizer = RMSprop(lr=0.01)
     model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=optimizer)
     return model
+
+
