@@ -8,8 +8,9 @@ from keras.utils import plot_model
 
 
 class GAN_Model(object):
-    def __init__(self, timesteps, word_index):
+    def __init__(self, batch_size, timesteps, word_index):
         K.set_learning_phase(0)
+        self.batch_size = batch_size
         self.timesteps = timesteps
         self.word_index = word_index
         self.lstm_vec_dim = 128
@@ -33,10 +34,10 @@ class GAN_Model(object):
         # In: (batch_size, timesteps),
         # Out: (batch_size, 128)
 
-        # noise = K.random_uniform(shape=(256, self.timesteps,), maxval=1, minval=0, dtype='float32', seed=42)
+        noise = K.random_uniform(shape=(256, self.timesteps,), maxval=1, minval=0, dtype='float32', seed=42)
         # print("noise : %s" % K.print_tensor(noise))
         discr_inputs = Input(shape=(self.timesteps,),
-                             # tensor=noise,
+                             tensor=noise,
                              name="Discriminator_Input")
         # print('enc_inputs: %s' % K.print_tensor(discr_inputs))
         # embedding layer. expected output ( batch_size, timesteps, embedding_vec)
@@ -78,7 +79,7 @@ class GAN_Model(object):
         # Out: (batch_size, timesteps, word_index)
         noise = K.random_uniform(shape=(256, self.lstm_vec_dim))
         dec_inputs = Input(shape=(self.lstm_vec_dim,),
-                           # tensor=noise,
+                           tensor=noise,
                            name="Generator_Input")
         # Repeating input by "timesteps" times. expected output (batch_size, 128, 15)
         decoded = RepeatVector(self.timesteps, name="gen_repeate_vec")(dec_inputs)
@@ -117,7 +118,7 @@ class GAN_Model(object):
         optimizer = RMSprop(lr=0.0001, decay=3e-8)
         self.AM = Sequential()
         self.AM.add(self.generator())
-        self.AM.add(Lambda(lambda x: self.sampling(x), output_shape=(self.timesteps,),name="Sampling"))
+        self.AM.add(Lambda(lambda x: self.sampling(x), output_shape=(self.timesteps,), name="Sampling"))
         self.AM.add(self.discriminator())
         self.AM.compile(loss='binary_crossentropy', optimizer=optimizer,
                         metrics=['accuracy'])
@@ -128,21 +129,36 @@ class GAN_Model(object):
     def sampling(self, x):
         def __sample(preds, temperature=1.0):
             # helper function to sample an index from a probability array
-            preds = np.asarray(preds).astype('float32')
-            preds = np.log(preds) / temperature
-            exp_preds = np.exp(preds)
-            preds = exp_preds / np.sum(exp_preds)
-            probas = np.random.multinomial(1, preds, 1)
-            return np.argmax(probas)
+            # preds = K.expand_dims(preds,axis=0)
+            # print(preds)
+            preds = K.log(preds) / temperature
+            exp_preds = K.exp(preds)
+            preds = exp_preds / K.sum(exp_preds)
+            probas = np.random.multinomial(1, K.eval(preds), 1)
+            return K.expand_dims(K.variable(np.argmax(probas)))
 
-        K.set_learning_phase(0)
-        preds = K.eval(x)
-        # print(preds)
-        domains = []
-        for j in range(preds.shape[0]):
-            word = []
-            for i in range(preds.shape[1]):
-                word.append(__sample(preds[j][i]))
-            domains.append(word)
+        result = None
+        for i in range(1):
+            result = __sample(x[i, 0, :])
+            for j in range(K.int_shape(x)[1]):
+                if j == 0:
+                    continue
+                c = __sample(x[i, j, :])
+                result = K.concatenate([result, c], axis=0)
 
-        return K.variable(domains, dtype='int32')
+        for i in range(self.batch_size):
+            if i == 0:
+                continue
+            cane = __sample(x[i, 0, :])
+            for j in range(K.int_shape(x)[1]):
+                if j == 0:
+                    continue
+                c = __sample(x[i, j, :])
+                cane = K.concatenate([cane, c], axis=0)
+            result=K.concatenate([result,cane],axis=0)
+
+        return result
+
+
+if __name__ == '__main__':
+    gan = GAN_Model(batch_size=256, timesteps=15, word_index=38)

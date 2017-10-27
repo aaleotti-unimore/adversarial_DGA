@@ -2,6 +2,7 @@ from keras import backend as K
 from keras.engine.topology import Layer
 import numpy as np
 
+np.set_printoptions(linewidth=9999)
 
 # class Sample(Layer):
 #     def __init__(self, output_dim, **kwargs):
@@ -43,7 +44,7 @@ import numpy as np
 #         return (input_shape[0], self.output_dim)
 
 
-def sampling(x):
+def sampling(preds):
     def __sample(preds, temperature=1.0):
         # helper function to sample an index from a probability array
         preds = np.asarray(preds).astype('float32')
@@ -53,9 +54,6 @@ def sampling(x):
         probas = np.random.multinomial(1, preds, 1)
         return np.argmax(probas)
 
-    # K.print_tensor(x, message="TENSOR")
-    preds = K.eval(x)
-    print(preds)
     domains = []
     for j in range(preds.shape[0]):
         word = []
@@ -63,7 +61,32 @@ def sampling(x):
             word.append(__sample(preds[j][i]))
         domains.append(word)
 
-    return K.variable(domains, dtype='float32')
+    return domains
+
+
+def sampling2(x):
+    def __sample(preds, temperature=1.0):
+        # helper function to sample an index from a probability array
+        # preds = K.expand_dims(preds,axis=0)
+        # print(preds)
+        preds = K.log(preds) / temperature
+        exp_preds = K.exp(preds)
+        preds = exp_preds / K.sum(exp_preds)
+        probas = np.random.multinomial(1, K.eval(preds), 1)
+        return K.expand_dims(K.variable(np.argmax(probas)))
+
+    batch_size = 2
+    b = K.int_shape(x)[1]
+    for i in range(1):
+        result = __sample(x[i, 0, :])
+        for j in range(b):
+            if j == 0:
+                continue
+            c = __sample(x[i, j, :])
+            result = K.concatenate([result, c], axis=0)
+
+
+    return result
 
 
 if __name__ == '__main__':
@@ -89,9 +112,8 @@ if __name__ == '__main__':
 
     # in_plc = tf.placeholder(tf.float32, [None, 15,38], name="placeholder")
     inp = Input(tensor=noise, shape=(15, 38))
-    exa = Lambda(lambda x: sampling(x), output_shape=(15,))(inp)
+    exa = Lambda(lambda x: sampling2(x), output_shape=(15,))(inp)
     print(K.eval(exa))
-    exa = Dense(1)(exa)
     model = Model(inputs=inp, outputs=exa)
     #
     # model = Sequential()
@@ -99,4 +121,3 @@ if __name__ == '__main__':
     # optimizer = RMSprop(lr=0.01)
     # model.compile(loss='categorical_crossentropy', optimizer=optimizer)
     model.summary()
-

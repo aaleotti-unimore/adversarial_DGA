@@ -11,6 +11,9 @@ from sklearn.preprocessing import LabelBinarizer
 
 from gan_model import GAN_Model
 
+print("set learning phase to 0")
+K.set_learning_phase(0)
+
 
 class ElapsedTimer(object):
     def __init__(self):
@@ -29,12 +32,11 @@ class ElapsedTimer(object):
 
 
 class DGA_GAN(object):
-    def __init__(self):
-        K.set_learning_phase(0)
+    def __init__(self, batch_size):
         self.logger = logging.getLogger(__name__)
         self.x_train, word_index = self.build_dataset(n_samples=None)
 
-        self.DCGAN = GAN_Model(timesteps=self.x_train.shape[1], word_index=word_index)
+        self.DCGAN = GAN_Model(batch_size=batch_size, timesteps=self.x_train.shape[1], word_index=word_index)
         self.discriminator = self.DCGAN.discriminator_model()
         self.adversarial = self.DCGAN.adversarial_model()
         self.generator = self.DCGAN.generator()
@@ -55,6 +57,7 @@ class DGA_GAN(object):
             print("noise shape: %s " % noise.shape)
             print(noise.shape)
             # predict fake domains
+            print("generating domains_fake...")
             domains_fake = self.generator.predict(
                 noise,
                 batch_size=batch_size,
@@ -65,17 +68,12 @@ class DGA_GAN(object):
             # print(domains_fake.shape)
 
             # sampling of fake domains
-            d_sampl = []
-            for j in range(domains_fake.shape[0]):
-                word = []
-                for i in range(domains_fake.shape[1]):
-                    k = self.sample(domains_fake[j][i])
-                    word.append(k)
-                d_sampl.append(word)
+            # TODO sampling of fake domains for training
+            print("sampling fake domains....")
+            d_sampl = self.noise_sampling(domains_fake)
 
             # concatenating fake and train domains, labeled with 0 (real) and 1 (fake)
             domains_fake = np.array(d_sampl)
-
             x = np.concatenate((domains_train, domains_fake))
             y = np.ones([2 * batch_size, 1])  # size 2x batch size of x
             y[batch_size:, :] = 0
@@ -128,9 +126,28 @@ class DGA_GAN(object):
 
         return X, len(tk.word_index)
 
+    def noise_sampling(self, preds):
+        def __sample(preds, temperature=1.0):
+            # helper function to sample an index from a probability array
+            preds = np.asarray(preds).astype('float32')
+            preds = np.log(preds) / temperature
+            exp_preds = np.exp(preds)
+            preds = exp_preds / np.sum(exp_preds)
+            probas = np.random.multinomial(1, preds, 1)
+            return np.argmax(probas)
+
+        domains = []
+        for j in range(preds.shape[0]):
+            word = []
+            for i in range(preds.shape[1]):
+                word.append(__sample(preds[j][i]))
+            domains.append(word)
+
+        return domains
 
 if __name__ == '__main__':
-    mnist_dcgan = DGA_GAN()
+    batch_size=256
+    mnist_dcgan = DGA_GAN(batch_size=batch_size)
     timer = ElapsedTimer()
-    mnist_dcgan.train(train_steps=10000, batch_size=256, save_interval=500)
+    mnist_dcgan.train(train_steps=10000, batch_size=batch_size, save_interval=500)
     timer.elapsed_time()
