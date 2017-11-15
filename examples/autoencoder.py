@@ -1,4 +1,3 @@
-# LSTM and CNN for sequence classification in the IMDB dataset
 import string
 
 import numpy as np
@@ -28,7 +27,7 @@ n_samples = 256
 
 # loading db
 # lb = LabelBinarizer()
-def generate_datataset(maxlen=15):
+def generate_dataset(maxlen=15):
     df = pd.DataFrame(pd.read_csv("../dataset/legitdomains.txt", sep=" ", header=None, names=['domain']))
     if n_samples:
         df = df.sample(n=n_samples, random_state=42)
@@ -125,14 +124,14 @@ class Autoencoder(object):
         self.A.summary()
         return self.A
 
-    def predict(self, X, inv_map):
+    def predict_(self, X, inv_map):
         aut = self.autoencoder()
         preds = aut.predict(x=X, verbose=2)
         domains = []
         for j in range(preds.shape[0]):
             word = ""
             for i in range(preds.shape[1]):
-                k = self.__sample(preds[j][i])
+                k = self.sample(preds[j][i])
                 if k > 0:
                     word = word + inv_map[k]
             domains.append(word)
@@ -140,8 +139,7 @@ class Autoencoder(object):
         domains = np.char.array(domains)
         return domains
 
-
-    def __sample(self, preds, temperature=1.0):
+    def sample(self, preds, temperature=1.0):
         # helper function to sample an index from a probability array
         preds = np.asarray(preds).astype('float32')
         preds = np.log(preds) / temperature
@@ -154,10 +152,29 @@ class Autoencoder(object):
 if __name__ == '__main__':
     from detect_DGA import MyClassifier
 
-    X, word_index, inv_map = generate_datataset(12)
+    X, word_index, inv_map = generate_dataset(12)
     aenc = Autoencoder(X, word_index)
+    print("ENCODER DEMO")
+    encoded = aenc.encoder().predict_on_batch(X)
+    print(encoded)
+    # domains = aenc.predict_(X, inv_map)
+    print("DECODER DEMO")
+    decoded = aenc.decoder().predict_on_batch(encoded)
+    print(decoded)
+    print("SAMPLING DECODED DOMAINS")
+    domains=[]
+    for j in range(decoded.shape[0]):
+        word = ""
+        for i in range(decoded.shape[1]):
+            k = aenc.sample(decoded[j][i])
+            if k > 0:
+                word = word + inv_map[k]
+        domains.append(word)
 
-    domains = aenc.predict(X, inv_map)
-    rndf = MyClassifier(directory="/home/archeffect/PycharmProjects/detect_DGA/models/RandomForest tra:sup tst:sup")
-    true = np.ravel(np.zeros(len(domains), dtype=int))
-    res = rndf.predict(domains, true, verbose=False)
+    domains = np.char.array(domains)
+    print(domains)
+
+    # print("TESTING DOMAINS")
+    # rndf = MyClassifier(directory="/home/archeffect/PycharmProjects/detect_DGA/models/RandomForest tra:sup tst:sup")
+    # true = np.ravel(np.zeros(len(domains), dtype=int))
+    # res = rndf.predict(domains, true, verbose=False)

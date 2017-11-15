@@ -148,7 +148,7 @@ if __name__ == '__main__':
             x[0, t, char_indices[char]] = 1.
 
         print(x)
-        preds = model.model.predict(x, verbose=0)[0]
+        preds = model.model.predict_(x, verbose=0)[0]
         print(preds)
         next_index = sample(preds, diversity)
         next_char = indices_char[next_index]

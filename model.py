@@ -143,7 +143,7 @@ class Model:
         std.fit(X=X)
         X = std.transform(X=X)
         self.model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
-        pred = self.model.predict(X)
+        pred = self.model.predict_(X)
         y_pred = [round(x) for x in pred]
 
         report = classification_report(y_pred=y_pred, y_true=y, target_names=['DGA', 'Legit'])

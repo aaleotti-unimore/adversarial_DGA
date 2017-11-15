@@ -12,7 +12,7 @@ from sklearn.preprocessing import LabelBinarizer
 from gan_model import GAN_Model
 
 print("set learning phase to 0")
-K.set_learning_phase(0)
+K.set_learning_phase(1)
 
 
 class ElapsedTimer(object):
@@ -41,58 +41,59 @@ class DGA_GAN(object):
         self.adversarial = self.DCGAN.adversarial_model()
         self.generator = self.DCGAN.generator()
 
-    def train(self, train_steps=2000, batch_size=256, save_interval=0):
+    def train(self, train_steps=2000, batch_size=2, save_interval=0):
 
         noise_input = None
         if save_interval > 0:
-            noise_input = np.random.uniform(-1.0, 1.0, size=[16, 100])
+            # noise_input = np.random.uniform(-1.0, 1.0, size=[16, 100])
+            pass
         for i in range(train_steps):
-
+            print("train step: %s" % i)
             # load training set
-            domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size), :]
+            domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size / 2), :]
             # generating random noise
-            noise = K.random_uniform(minval=0, maxval=1, shape=(batch_size, 128))  # random noise
+            # noise = K.random_uniform(minval=0, maxval=1, shape=(batch_size, 128))  # random noise
+            noise = np.random.uniform(-1.0, 1.0, size=[batch_size/2, 128])
             print("domains_train shape:")
             print(domains_train.shape)
-            print("noise shape: %s " % noise.shape)
+            print(domains_train)
+            print("noise shape:")
             print(noise.shape)
+            print(noise)
             # predict fake domains
             print("generating domains_fake...")
-            domains_fake = self.generator.predict(
-                noise,
-                batch_size=batch_size,
-                steps=None,
-                verbose=1
-            )  # fake domains
-            # print("domains_fake shape:")
-            # print(domains_fake.shape)
+            domains_fake = self.generator.predict(noise)  # fake domains
 
-            # sampling of fake domains
-            # TODO sampling of fake domains for training
             print("sampling fake domains....")
-            d_sampl = self.noise_sampling(domains_fake)
-
+            domains_fake = self.noise_sampling(domains_fake)
+            print(domains_fake)
+            print("fake domains sampled")
             # concatenating fake and train domains, labeled with 0 (real) and 1 (fake)
-            domains_fake = np.array(d_sampl)
             x = np.concatenate((domains_train, domains_fake))
-            y = np.ones([2 * batch_size, 1])  # size 2x batch size of x
-            y[batch_size:, :] = 0
+            y = np.ones([batch_size, 1])  # size 2x batch size of x
+            y[batch_size/2:, :] = 0
 
-            print("Discr input shape: %s" % self.discriminator.input_shape)
+            print("Discr input shape:")
+            print(self.discriminator.input_shape)
             print("domains_fake new shape:")
             print(domains_fake.shape)
             print("X shape:")
             print(x.shape)
-
+            print(x)
+            print("y shape:")
+            print(y.shape)
+            # print(y)
             # training discriminator
-            d_loss = self.discriminator.train_on_batch(x, y)
+            print"####"
+            print("training discriminator")
+            d_loss = self.discriminator.train_on_batch(x=x,y=y)
 
             # dataset for adversial model
-            noise = np.random.normal(-0.02, 0.02, size=[batch_size, 128])  # random noise
+            noise = np.random.normal(-1.0, 1.0, size=[batch_size, 128])  # random noise
             y = np.ones([batch_size, 1])
-
+            ""
             # training adversial model
-            a_loss = self.adversarial.train_on_batch(noise, y)
+            a_loss = self.adversarial.train_on_batch(x=noise, y=y)
             log_mesg = "%d: [D loss: %f, acc: %f]" % (i, d_loss[0], d_loss[1])
             log_mesg = "%s  [A loss: %f, acc: %f]" % (log_mesg, a_loss[0], a_loss[1])
             print(log_mesg)
@@ -143,10 +144,11 @@ class DGA_GAN(object):
                 word.append(__sample(preds[j][i]))
             domains.append(word)
 
-        return domains
+        return np.array(domains)
+
 
 if __name__ == '__main__':
-    batch_size=256
+    batch_size = 256
     mnist_dcgan = DGA_GAN(batch_size=batch_size)
     timer = ElapsedTimer()
     mnist_dcgan.train(train_steps=10000, batch_size=batch_size, save_interval=500)
