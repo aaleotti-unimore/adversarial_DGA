@@ -39,7 +39,6 @@ def generate_dataset(n_samples=None, maxlen=15):
 
 class GAN_Model(object):
     def __init__(self, batch_size, timesteps, word_index):
-        K.set_learning_phase(0)
         self.batch_size = batch_size
         self.timesteps = timesteps
         self.word_index = word_index
@@ -52,8 +51,6 @@ class GAN_Model(object):
 
     # (W-F+2P)/S+1
     def discriminator(self, summary=None):
-        K.set_learning_phase(1)
-
         if self.D:
             return self.D
 
@@ -66,10 +63,8 @@ class GAN_Model(object):
         # In: (batch_size, timesteps),
         # Out: (batch_size, 128)
 
-        # noise = K.random_uniform(shape=(256, self.timesteps,), maxval=1, minval=0, dtype='float32', seed=42)
-        # print("noise : %s" % K.print_tensor(noise))
+
         discr_inputs = Input(shape=(self.timesteps,),
-                             # tensor=noise,
                              name="Discriminator_Input")
 
         # embedding layer. expected output ( batch_size, timesteps, embedding_vec)
@@ -99,7 +94,6 @@ class GAN_Model(object):
         return self.D
 
     def generator(self, summary=None):
-        K.set_learning_phase(1)
 
         if self.G:
             return self.G
@@ -111,13 +105,11 @@ class GAN_Model(object):
 
         # In: (batch_size, 128),
         # Out: (batch_size, timesteps, word_index)
-        # noise = K.random_uniform(shape=(256, self.lstm_vec_dim))
         dec_inputs = Input(shape=(self.lstm_vec_dim,),
-                           # tensor=noise,
                            name="Generator_Input")
         # Repeating input by "timesteps" times. expected output (batch_size, 128, 15)
         decoded = RepeatVector(self.timesteps, name="gen_repeate_vec")(dec_inputs)
-        decoded = LSTM(128, return_sequences=True, name="gen_LSTM")(decoded)
+        decoded = LSTM(self.lstm_vec_dim, return_sequences=True, name="gen_LSTM")(decoded)
 
         for i in range(2):
             conv = Conv1D(cnn_filters[i],
@@ -153,10 +145,13 @@ class GAN_Model(object):
         optimizer = RMSprop(lr=0.0001, decay=3e-8)
         self.AM = Sequential()
         self.AM.add(self.generator())
-        self.AM.add(Lambda(lambda x: self.sampling(x), output_shape=(self.timesteps,), name="Sampling"))
+        self.AM.add(Lambda(lambda x: K.mean(x,axis=1), output_shape=(self.timesteps,), name="Sampling"))
+        self.AM.get_layer(name='Sampling').trainable = False
         self.AM.add(self.discriminator())
-        self.AM.compile(loss='binary_crossentropy', optimizer=optimizer,
-                        metrics=['accuracy'])
+        self.AM.compile(loss='binary_crossentropy',
+                        optimizer=optimizer,
+                        metrics=['accuracy']
+                        )
         self.AM.summary()
         plot_model(self.AM, to_file="adversial.png", show_shapes=True)
         return self.AM
@@ -169,3 +164,39 @@ class GAN_Model(object):
         return K.argmax(preds, axis=2)
 
 
+def noise_sampling(preds):
+    def __sample(preds, temperature=1.0):
+        # helper function to sample an index from a probability array
+        preds = np.asarray(preds).astype('float32')
+        preds = np.log(preds) / temperature
+        exp_preds = np.exp(preds)
+        preds = exp_preds / np.sum(exp_preds)
+        probas = np.random.multinomial(1, preds, 1)
+        return np.argmax(probas)
+
+    domains = []
+    for j in range(preds.shape[0]):
+        word = []
+        for i in range(preds.shape[1]):
+            word.append(__sample(preds[j][i]))
+        domains.append(word)
+
+    return np.array(domains)
+
+
+if __name__ == '__main__':
+    maxlen = 15
+    nsamples = 10
+    X, word_index, inv_map = generate_dataset(n_samples=nsamples, maxlen=maxlen)
+    adv = GAN_Model(nsamples, maxlen, word_index=word_index)
+    # print(X)
+    # noise = np.random.uniform(0,1,size=[nsamples,128])
+    noise = np.ones(shape=[nsamples, 128])
+    y = np.ones(shape=[nsamples, 1])
+
+    adv.generator().compile(loss='binary_crossentropy',
+                        optimizer='adam',
+                        metrics=['accuracy']
+                        )
+    pred = adv.adversarial_model().train_on_batch(x=noise,y=y)
+    print(pred)

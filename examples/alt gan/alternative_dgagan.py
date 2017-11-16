@@ -23,7 +23,7 @@ K.set_learning_phase(0)
 print("set learning phase to 0")
 
 
-def generator_model():
+def generator_model(summary=None):
     dropout_value = 0.1
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
@@ -35,10 +35,7 @@ def generator_model():
 
     # In: (batch_size, 128),
     # Out: (batch_size, timesteps, word_index)
-    # noise = K.random_uniform(shape=(256, lstm_vec_dim))
-    noise = tf.placeholder(tf.float32, shape=(256, lstm_vec_dim))
     dec_inputs = Input(shape=(lstm_vec_dim,),
-                       tensor=noise,
                        name="Generator_Input")
     # Repeating input by "timesteps" times. expected output (batch_size, 128, 15)
     decoded = RepeatVector(timesteps, name="gen_repeate_vec")(dec_inputs)
@@ -56,15 +53,15 @@ def generator_model():
 
     decoded = concatenate(dec_convs)
     decoded = Dense(word_index, activation='sigmoid', name="gen_dense")(decoded)
-    decoded = Lambda(lambda x: K.sum(x, axis=1), output_shape=(timesteps,), name="Pseudo_sampling")(decoded)
-    # decoded = Lambda(lambda x: sampling(x, batch_size=batch_size), output_shape=(timesteps,), name="Sampling")(decoded)
+
     G = Model(inputs=dec_inputs, outputs=decoded, name='Generator')
-    G.summary()
+    if summary:
+        G.summary()
     plot_model(G, to_file="generator.png", show_shapes=True)
     return G
 
 
-def discriminator_model():
+def discriminator_model(summary=None):
     dropout_value = 0.1
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
@@ -102,54 +99,28 @@ def discriminator_model():
     discr = concatenate(enc_convs)
     # LSTM. expected out (batch_size, 128)
     discr = LSTM(lstm_vec_dim)(discr)
-
+    discr = Dense(1, activation='sigmoid')(discr)
     D = Model(inputs=discr_inputs, outputs=discr, name='Discriminator')
-    D.summary()
+    if summary:
+        D.summary()
     plot_model(D, to_file="discriminator.png", show_shapes=True)
     return D
 
 
-def sampling(x, batch_size):
-    def __sample(preds, temperature=1.0):
-        # helper function to sample an index from a probability array
-        # preds = K.expand_dims(preds,axis=0)
-        # print(preds)
-        preds = K.log(preds) / temperature
-        exp_preds = K.exp(preds)
-        preds = exp_preds / K.sum(exp_preds)
-        probas = np.random.multinomial(1, K.eval(preds), 1)
-        return K.expand_dims(K.variable(np.argmax(probas)))
-
-    # output tensor generation
-
-    # 1st round
-    result = None
-    for i in range(1):
-        result = __sample(x[i, 0, :])
-        for j in range(K.int_shape(x)[1]):
-            if j == 0:
-                continue
-            letter = __sample(x[i, j, :])
-            result = K.concatenate([result, letter], axis=0)
-
-    for i in range(batch_size):
-        if i == 0:
-            continue
-        word = __sample(x[i, 0, :])
-        for j in range(K.int_shape(x)[1]):
-            if j == 0:
-                continue
-            letter = __sample(x[i, j, :])
-            word = K.concatenate([word, letter], axis=0)
-        result = K.concatenate([result, word], axis=0)
-
-    return result
+def sampling(preds, temperature=1.0):
+    # helper function to sample an index from a probability array
+    # preds = K.expand_dims(preds,axis=0)
+    # print(preds)
+    preds = K.log(preds) / temperature
+    exp_preds = K.exp(preds)
+    preds = exp_preds / K.sum(exp_preds)
+    return K.argmax(preds)
 
 
-def generator_containing_discriminator(g, d, batch_size, timesteps=15):
+def generator_containing_discriminator(g, d, timesteps=15):
     model = Sequential()
     model.add(g)
-    # model.add(Lambda(lambda x: sampling(x, batch_size=batch_size), output_shape=(timesteps,), name="Sampling"))
+    model.add(Lambda(lambda x: sampling(x), output_shape=(timesteps,), name="Sampling"))
     d.trainable = False
     model.add(d)
     return model
@@ -177,12 +148,13 @@ def train(BATCH_SIZE):
     # X_train = X_train[:, :, :, None]
     # X_test = X_test[:, :, :, None]
     # X_train = X_train.reshape((X_train.shape, 1) + X_train.shape[1:])
-    X_train, word_index = build_dataset(n_samples=None)
+    maxlen = 15
+    X_train, word_index = build_dataset(n_samples=BATCH_SIZE, maxlen=maxlen)
 
     # compulazione modelli
     d = discriminator_model()
     g = generator_model()
-    d_on_g = generator_containing_discriminator(g, d, batch_size=BATCH_SIZE)
+    d_on_g = generator_containing_discriminator(g, d, timesteps=maxlen)
     d_optim = SGD(lr=0.0005, momentum=0.9, nesterov=True)
     g_optim = SGD(lr=0.0005, momentum=0.9, nesterov=True)
     g.compile(loss='binary_crossentropy', optimizer="SGD")  # compiling generator
@@ -204,11 +176,11 @@ def train(BATCH_SIZE):
             print(image_batch)
 
             generated_images = g.predict(noise, verbose=1)
-            print("generated images size: %s" % generated_images.shape)
-            print(generated_images)
+            print("generated images shape:")
+            print(generated_images.shape)
             generated_images = noise_sampling(generated_images)
-            # print("generated images size: %s" % generated_images.shape)
-            print(generated_images)
+            print("sampled generated images shape")
+            print(generated_images.shape)
 
             # if index % 20 == 0:
             #     image = combine_images(generated_images)
@@ -221,7 +193,7 @@ def train(BATCH_SIZE):
 
             d_loss = d.train_on_batch(X, y)
             print("batch %d d_loss : %f" % (index, d_loss))
-            noise = np.random.uniform(-1, 1, (BATCH_SIZE, 100))
+            noise = np.random.uniform(-1.0, 1.0, (BATCH_SIZE, 128))
 
             d.trainable = False
             g_loss = d_on_g.train_on_batch(noise, [1] * BATCH_SIZE)
@@ -249,7 +221,7 @@ def noise_sampling(preds):
             word.append(__sample(preds[j][i]))
         domains.append(word)
 
-    return domains
+    return np.array(domains)
 
 
 def generate(BATCH_SIZE, nice=False):
@@ -282,7 +254,7 @@ def generate(BATCH_SIZE, nice=False):
         "generated_image.png")
 
 
-def build_dataset(n_samples=None):
+def build_dataset(n_samples=None, maxlen=15):
     # fix random seed for reproducibility
     np.random.seed(7)
     path = "/home/archeffect/PycharmProjects/adversarial_DGA/dataset/legitdomains.txt"
@@ -302,7 +274,6 @@ def build_dataset(n_samples=None):
     # y = np.ravel(lb.fit_transform(df['class'].values))
 
     # preprocessing text
-    maxlen = 15
     tk = Tokenizer(char_level=True)
     tk.fit_on_texts(string.lowercase + string.digits + '-' + '.')
     print("word index: %s" % len(tk.word_index))
@@ -318,7 +289,7 @@ def build_dataset(n_samples=None):
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", type=str)
-    parser.add_argument("--batch_size", type=int, default=128)
+    parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--nice", dest="nice", action="store_true")
     parser.set_defaults(nice=False)
     args = parser.parse_args()
