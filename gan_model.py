@@ -13,7 +13,9 @@ from keras.utils import plot_model
 
 
 def generate_dataset(n_samples=None, maxlen=15):
-    df = pd.DataFrame(pd.read_csv("/home/archeffect/PycharmProjects/adversarial_DGA/dataset/legitdomains.txt", sep=" ", header=None, names=['domain']))
+    df = pd.DataFrame(
+        pd.read_csv("/home/archeffect/PycharmProjects/adversarial_DGA/dataset/legitdomains.txt", sep=" ", header=None,
+                    names=['domain']))
     if n_samples:
         df = df.sample(n=n_samples, random_state=42)
     X_ = df['domain'].values
@@ -69,11 +71,9 @@ class GAN_Model(object):
         discr_inputs = Input(shape=(self.timesteps,),
                              # tensor=noise,
                              name="Discriminator_Input")
-        # print('enc_inputs: %s' % K.print_tensor(discr_inputs))
+
         # embedding layer. expected output ( batch_size, timesteps, embedding_vec)
         discr = Embedding(self.word_index, embedding_vec, input_length=self.timesteps)(discr_inputs)
-        # print("Embedding: %s" % K.print_tensor(discr_inputs))
-        # print("embedding shape %s " % discr.shape)
         for i in range(2):
             conv = Conv1D(cnn_filters[i],
                           cnn_kernels[i],
@@ -90,7 +90,7 @@ class GAN_Model(object):
         discr = concatenate(enc_convs)
         # LSTM. expected out (batch_size, 128)
         discr = LSTM(self.lstm_vec_dim)(discr)
-        discr = Dense(1,activation='sigmoid')(discr)
+        discr = Dense(1, activation='sigmoid')(discr)
 
         self.D = Model(inputs=discr_inputs, outputs=discr, name='Discriminator')
         if summary:
@@ -153,8 +153,7 @@ class GAN_Model(object):
         optimizer = RMSprop(lr=0.0001, decay=3e-8)
         self.AM = Sequential()
         self.AM.add(self.generator())
-        # self.AM.add(Lambda(lambda x: self.sampling(x), output_shape=(self.timesteps,), name="Sampling"))
-        self.AM.add(Lambda(lambda x: K.sum(x, axis=1), output_shape=(self.timesteps,), name="pseudosampling"))
+        self.AM.add(Lambda(lambda x: self.sampling(x), output_shape=(self.timesteps,), name="Sampling"))
         self.AM.add(self.discriminator())
         self.AM.compile(loss='binary_crossentropy', optimizer=optimizer,
                         metrics=['accuracy'])
@@ -162,48 +161,11 @@ class GAN_Model(object):
         plot_model(self.AM, to_file="adversial.png", show_shapes=True)
         return self.AM
 
-    def sampling(self, x):
-        def __sample(preds, temperature=1.0):
-            # helper function to sample an index from a probability array
-            # preds = K.expand_dims(preds,axis=0)
-            # print(preds)
-            preds = K.log(preds) / temperature
-            exp_preds = K.exp(preds)
-            preds = exp_preds / K.sum(exp_preds)
-            probas = np.random.multinomial(1, K.eval(preds), 1)
-            return K.expand_dims(K.variable(np.argmax(probas)))
-
-        result = None
-        for i in range(1):
-            result = __sample(x[i, 0, :])
-            for j in range(K.int_shape(x)[1]):
-                if j == 0:
-                    continue
-                c = __sample(x[i, j, :])
-                result = K.concatenate([result, c], axis=0)
-
-        for i in range(self.batch_size):
-            if i == 0:
-                continue
-            cane = __sample(x[i, 0, :])
-            for j in range(K.int_shape(x)[1]):
-                if j == 0:
-                    continue
-                c = __sample(x[i, j, :])
-                cane = K.concatenate([cane, c], axis=0)
-            result = K.concatenate([result, cane], axis=0)
-
-        return result
+    def sampling(self, preds, temperature=1.0):
+        # helper function to sample an index from a probability array
+        preds = K.log(preds) / temperature
+        exp_preds = K.exp(preds)
+        preds = exp_preds / K.sum(exp_preds)
+        return K.argmax(preds, axis=2)
 
 
-if __name__ == '__main__':
-    gan = GAN_Model(batch_size=256, timesteps=15, word_index=38)
-    X, word_index, inv_map = generate_dataset(12)
-    # disc = gan.discriminator().predict_on_batch(X)
-    # print("DISCRIMINATED")
-    # print(disc)
-    # generated = gan.generator().predict_on_batch(disc)
-    # print("GENERATED")
-    # print(generated.shape)
-    noise = np.random.uniform(size=(12,128))
-    print(gan.adversarial_model().predict_on_batch(noise))
