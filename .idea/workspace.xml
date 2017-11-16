@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_main.py" line="174" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt gan/discriminator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt gan/discriminator.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt gan/generator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt gan/generator.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/autoencoder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/decoder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/encoder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/GrepConsole.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dga_gan.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/__init_.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt gan/alternative_dgagan.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt gan/alternative_gan.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/autoencoder.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/err_domains" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/err_domains.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/simple_cnn.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gan_model.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sampling_layer.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_model.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gan.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large BatchNormalized/model.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large BatchNormalized/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large BatchNormalized/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large BatchNormalized/results.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large/class_rep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large/model.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/large/roc_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz/class_rep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz/results.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz/roc_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_BatchNormalized/class_rep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_BatchNormalized/model.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_BatchNormalized/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_BatchNormalized/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_BatchNormalized/results.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_BatchNormalized/roc_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:nosup/class_rep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:nosup/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:nosup/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:nosup/results.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:nosup/roc_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:sup/class_rep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:sup/model.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:sup/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:sup/results.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/pieraz_train:nosup_test:sup/roc_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced BatchNormalized/model.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced BatchNormalized/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced BatchNormalized/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced BatchNormalized/results.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced/class_rep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced/model.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced/model_weights.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced/roc_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/generated.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/model_weitghts.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506509610.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506509979.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506510346.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506510882.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506520963.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506521316.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506521670.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506522009.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506522336.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506522665.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506522993.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506523323.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506523650.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506523979.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm/tensorboard/events.out.tfevents.1506524308.classificatoredga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm2/generated.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm2/model_architecture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/lstm2/model_weitghts.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/pieraz_BatchNormalized/tensorboard/events.out.tfevents.1505833553.archlaptop" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saved_models/pieraz_batchNorm_noearly/tensorboard/events.out.tfevents.1506004241.classificatoredga" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/examples/lstm_example.py" afterPath="$PROJECT_DIR$/examples/lstm_text_generation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/cnn_imdb.py" afterPath="$PROJECT_DIR$/examples/cnn_imdb.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/adversarial_DGA$cnn_imdb.coverage" NAME="cnn_imdb Coverage Results" MODIFIED="1507120011133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$gan_model.coverage" NAME="gan_model Coverage Results" MODIFIED="1510861267511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$gan.coverage" NAME="gan Coverage Results" MODIFIED="1510857039582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1507680158029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA/features" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$try.coverage" NAME="try Coverage Results" MODIFIED="1508532771401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$main.coverage" NAME="main Coverage Results" MODIFIED="1507104640285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan.coverage" NAME="alternative_dgagan Coverage Results" MODIFIED="1510856428493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt gan" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example.coverage" NAME="lstm_example Coverage Results" MODIFIED="1506956633377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_gan.coverage" NAME="alternative_gan Coverage Results" MODIFIED="1509727196254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_text_generation.coverage" NAME="lstm_text_generation Coverage Results" MODIFIED="1508512788277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$detect_DGA.coverage" NAME="detect_DGA Coverage Results" MODIFIED="1506958159775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$examples.coverage" NAME="examples Coverage Results" MODIFIED="1506533111783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$autoencoder.coverage" NAME="autoencoder Coverage Results" MODIFIED="1510679005364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$simple_cnn.coverage" NAME="simple_cnn Coverage Results" MODIFIED="1506972507829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$tinba.coverage" NAME="tinba Coverage Results" MODIFIED="1504173991028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DGA_algs" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$sample_layer.coverage" NAME="sample_layer Coverage Results" MODIFIED="1510853520618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example__1_.coverage" NAME="lstm_example (1) Coverage Results" MODIFIED="1507104522192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="sampling_layer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sampling_layer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#1096#2120#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>axes</find>
+      <find>self.axes</find>
+      <find>X</find>
+      <find>__call__</find>
+      <find>X_train</find>
+      <find>verbose</find>
+      <find>verbose=0</find>
+      <find>logger</find>
+      <find>logger.info</find>
+      <find>%</find>
+      <find>self.now</find>
+      <find>as rn</find>
+      <find>keras</find>
+      <find>\n</find>
+      <find>xaa</find>
+      <find>feature_union</find>
+      <find>self.n_jobs</find>
+      <find>model</find>
+      <find>0.2</find>
+      <find>fit</find>
+      <find>return_sequences</find>
+      <find>timesteps</find>
+      <find>self.d</find>
+      <find>samle</find>
+      <find>sample</find>
+      <find>def Ksample</find>
+      <find>self.</find>
+      <find>preds</find>
+      <find>set_</find>
+      <find>print</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>self.directory</replace>
+      <replace>self.model</replace>
+      <replace>self.logger</replace>
+      <replace>logger.info</replace>
+      <replace>X_test</replace>
+      <replace>X</replace>
+      <replace>verbose=2</replace>
+      <replace>print</replace>
+      <replace>&quot;,&quot;</replace>
+      <replace>self.D</replace>
+      <replace>dropout</replace>
+      <replace>decoded</replace>
+      <replace>self.logger.debug</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/results.log" />
+        <option value="$PROJECT_DIR$/saved models/model_architecture.json" />
+        <option value="$PROJECT_DIR$/../detect_DGA/features/features_extractors.py" />
+        <option value="$PROJECT_DIR$/saved models/2017-09-13 19:32/model_architecture.json" />
+        <option value="$PROJECT_DIR$/data.json" />
+        <option value="$PROJECT_DIR$/saved models/2017-09-14 17:10/model_architecture.json" />
+        <option value="$PROJECT_DIR$/../detect_DGA/features/features_testing.py" />
+        <option value="$PROJECT_DIR$/err.log" />
+        <option value="$PROJECT_DIR$/saved models/2017-09-14 17:27/results.log" />
+        <option value="$PROJECT_DIR$/run.log" />
+        <option value="$PROJECT_DIR$/saved models/2017-09-14 19:36/results.log" />
+        <option value="$PROJECT_DIR$/saved models/2017-09-16 16:33/model_architecture.json" />
+        <option value="$PROJECT_DIR$/saved models/pierazzi_baseline/model_architecture.json" />
+        <option value="$PROJECT_DIR$/../detect_DGA/plot_module.py" />
+        <option value="$PROJECT_DIR$/saved models/pieraz train:nosup test:sup/results.log" />
+        <option value="$PROJECT_DIR$/saved models/cane2/results.log" />
+        <option value="$PROJECT_DIR$/saved_models/pieraz_batchNorm_noearly_150_20/model_architecture.json" />
+        <option value="$PROJECT_DIR$/../detect_DGA/__init__.py" />
+        <option value="$PROJECT_DIR$/../detect_DGA/features/__init__.py" />
+        <option value="$PROJECT_DIR$/saved_models/pieraz_noearly_30_150/model_architecture.json" />
+        <option value="$PROJECT_DIR$/saved_models/pieraz_BatchNormalized/model_architecture.json" />
+        <option value="$PROJECT_DIR$/saved_models/gan.py" />
+        <option value="$PROJECT_DIR$/dataset/legitdomains.txt" />
+        <option value="$PROJECT_DIR$/lstm_example.py" />
+        <option value="$PROJECT_DIR$/examples.py" />
+        <option value="$PROJECT_DIR$/saved_models/lstm/generated.txt" />
+        <option value="$PROJECT_DIR$/../detect_DGA/detect_DGA.py" />
+        <option value="$PROJECT_DIR$/examples/dcgan_mnist.py" />
+        <option value="$PROJECT_DIR$/examples/simple_cnn.py" />
+        <option value="$PROJECT_DIR$/examples/cnn_imdb.py" />
+        <option value="$PROJECT_DIR$/examples/lstm_example.py" />
+        <option value="$PROJECT_DIR$/../detect_DGA/myclassifier.py" />
+        <option value="$PROJECT_DIR$/examples/try.py" />
+        <option value="$PROJECT_DIR$/../detect_DGA/datasets/total/prova" />
+        <option value="$PROJECT_DIR$/../detect_DGA/features/data_generator.py" />
+        <option value="$PROJECT_DIR$/examples/lstm_text_generation.py" />
+        <option value="$PROJECT_DIR$/gan.py" />
+        <option value="$PROJECT_DIR$/model.py" />
+        <option value="$PROJECT_DIR$/examples/alternative_gan.py" />
+        <option value="$PROJECT_DIR$/examples/alt gan/alternative_gan.py" />
+        <option value="$PROJECT_DIR$/examples/autoencoder.py" />
+        <option value="$PROJECT_DIR$/examples/__init_.py" />
+        <option value="$PROJECT_DIR$/dga_gan.py" />
+        <option value="$PROJECT_DIR$/examples/alt gan/alternative_dgagan.py" />
+        <option value="$PROJECT_DIR$/gan_model.py" />
+        <option value="$PROJECT_DIR$/sample_layer.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/classifier_main.py" />
+        <option value="$PROJECT_DIR$/sampling_layer.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="421" />
+    <option name="y" value="24" />
+    <option name="width" value="1352" />
+    <option name="height" value="740" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyCompatibilityInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="adversarial_DGA" type="cbb8eebc:String" user="adversarial_DGA" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="adversarial_DGA" type="cbb8eebc:String" user="adversarial_DGA" />
+              <item name="saved models" type="cbb8eebc:String" user="saved models" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/neuralnetwork_classifier" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/neuralnetwork_classifier" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/examples/alt gan" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/examples" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../" />
+      <recent name="$PROJECT_DIR$/examples/alt gan" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.gan_model">
+    <configuration name="alternative_dgagan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples/alt gan" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="adversarial_DGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/alt gan/alternative_dgagan.py" />
+      <option name="PARAMETERS" value="--mode train --batch-size 10" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="autoencoder" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="adversarial_DGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/autoencoder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="gan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="adversarial_DGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dga_gan.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="gan_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="adversarial_DGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gan_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="sample_layer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="adversarial_DGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sampling_layer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.gan" />
+      <item index="1" class="java.lang.String" itemvalue="Python.gan_model" />
+      <item index="2" class="java.lang.String" itemvalue="Python.alternative_dgagan" />
+      <item index="3" class="java.lang.String" itemvalue="Python.autoencoder" />
+      <item index="4" class="java.lang.String" itemvalue="Python.sample_layer" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.gan_model" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gan" />
+        <item index="2" class="java.lang.String" itemvalue="Python.alternative_dgagan" />
+        <item index="3" class="java.lang.String" itemvalue="Python.sample_layer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.autoencoder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="" />
+      <created>1504165637002</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504165637002</updated>
+    </task>
+    <task id="LOCAL-00011" summary="get ready to rumble">
+      <created>1505309020769</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1505309020770</updated>
+    </task>
+    <task id="LOCAL-00012" summary="get ready to rumble">
+      <created>1505315260185</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1505315260185</updated>
+    </task>
+    <task id="LOCAL-00013" summary="get ready to rumble">
+      <created>1505319260561</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1505319260561</updated>
+    </task>
+    <task id="LOCAL-00014" summary="get ready to rumble">
+      <created>1505319787902</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1505319787902</updated>
+    </task>
+    <task id="LOCAL-00015" summary="get ready to rumble">
+      <created>1505385305798</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1505385305798</updated>
+    </task>
+    <task id="LOCAL-00016" summary="creata classe Model">
+      <created>1505399532344</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1505399532344</updated>
+    </task>
+    <task id="LOCAL-00017" summary="creata classe Model">
+      <created>1505402227287</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1505402227287</updated>
+    </task>
+    <task id="LOCAL-00018" summary="testing cross val su tutto il dataset">
+      <created>1505409097652</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1505409097652</updated>
+    </task>
+    <task id="LOCAL-00019" summary="testing cross val su tutto il dataset">
+      <created>1505409736739</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1505409736739</updated>
+    </task>
+    <task id="LOCAL-00020" summary="testing cross val su tutto il dataset">
+      <created>1505411768915</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1505411768915</updated>
+    </task>
+    <task id="LOCAL-00021" summary="testing cross val con nuovo modello">
+      <created>1505484903782</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1505484903782</updated>
+    </task>
+    <task id="LOCAL-00022" summary="testing cross val con nuovo modello">
+      <created>1505565817590</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1505565817590</updated>
+    </task>
+    <task id="LOCAL-00023" summary="testing cross val con nuovo modello">
+      <created>1505565889380</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1505565889380</updated>
+    </task>
+    <task id="LOCAL-00024" summary="testing con 3 baseline diverse">
+      <created>1505574479004</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1505574479004</updated>
+    </task>
+    <task id="LOCAL-00025" summary="testing con 3 baseline diverse">
+      <created>1505574594081</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1505574594081</updated>
+    </task>
+    <task id="LOCAL-00026" summary="esperimenti con 3 diverse baseline">
+      <created>1505753417214</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1505753417214</updated>
+    </task>
+    <task id="LOCAL-00027" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505845540075</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1505845540075</updated>
+    </task>
+    <task id="LOCAL-00028" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505846634254</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1505846634254</updated>
+    </task>
+    <task id="LOCAL-00029" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505846745207</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1505846745207</updated>
+    </task>
+    <task id="LOCAL-00030" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505849420775</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1505849420775</updated>
+    </task>
+    <task id="LOCAL-00031" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505982873375</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1505982873375</updated>
+    </task>
+    <task id="LOCAL-00032" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505982998634</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1505982998634</updated>
+    </task>
+    <task id="LOCAL-00033" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
+      <created>1505988749541</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1505988749541</updated>
+    </task>
+    <task id="LOCAL-00034" summary="testing senza early stopping. aggiunto modelcheckpoint tra le callbacks">
+      <created>1506001905990</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1506001905990</updated>
+    </task>
+    <task id="LOCAL-00035" summary="testing batch and epochs">
+      <created>1506069322553</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1506069322553</updated>
+    </task>
+    <task id="LOCAL-00036" summary="testing batch and epochs">
+      <created>1506069559668</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1506069559668</updated>
+    </task>
+    <task id="LOCAL-00037" summary="aggiunto modulo gan e numerosi test">
+      <created>1506344170667</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1506344170667</updated>
+    </task>
+    <task id="LOCAL-00038" summary="aggiunto modulo gan e numerosi test">
+      <created>1506497819059</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1506497819059</updated>
+    </task>
+    <task id="LOCAL-00039" summary="lstm prove">
+      <created>1506501375673</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1506501375673</updated>
+    </task>
+    <task id="LOCAL-00040" summary="lstm prove">
+      <created>1506505252643</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1506505252643</updated>
+    </task>
+    <task id="LOCAL-00041" summary="lstm prove">
+      <created>1506508866083</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1506508866083</updated>
+    </task>
+    <task id="LOCAL-00042" summary="lstm prove">
+      <created>1506509210600</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1506509210600</updated>
+    </task>
+    <task id="LOCAL-00043" summary="SETUP CNN">
+      <created>1506550733246</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1506550733246</updated>
+    </task>
+    <task id="LOCAL-00044" summary="test lstm 2">
+      <created>1506956798084</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1506956798084</updated>
+    </task>
+    <task id="LOCAL-00045" summary="test lstm">
+      <created>1506957465089</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1506957465089</updated>
+    </task>
+    <task id="LOCAL-00046" summary="cnn_imdb example">
+      <created>1507106865291</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1507106865292</updated>
+    </task>
+    <task id="LOCAL-00047" summary="stato al 5 ottobre">
+      <created>1507211407063</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1507211407063</updated>
+    </task>
+    <task id="LOCAL-00048" summary="creato un autoencoder simile a deepDGA. al momento genera dei DGA molto simili alle famiglie esistenti. testandolo Random Forest viene rilevato come DGA quasi il 100% delle volte.">
+      <created>1507623957984</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1507623957984</updated>
+    </task>
+    <task id="LOCAL-00049" summary="creato un autoencoder simile a deepDGA. al momento genera dei DGA molto simili alle famiglie esistenti. testandolo Random Forest viene rilevato come DGA quasi il 100 delle volte.">
+      <created>1507624119769</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1507624119769</updated>
+    </task>
+    <task id="LOCAL-00050" summary="creato un autoencoder simile a deepDGA. al momento genera dei DGA molto simili alle famiglie esistenti. testandolo Random Forest viene rilevato come DGA quasi il 100 delle volte.">
+      <created>1507626882038</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1507626882039</updated>
+    </task>
+    <task id="LOCAL-00051" summary="creata classe autoencoder per testing estensivo. &#10;finalizzata la classe gan su gan.py ma necessita modifiche per funzionare">
+      <created>1507664250883</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1507664250883</updated>
+    </task>
+    <task id="LOCAL-00052" summary="gan con discriminator a input (-,timesteps,20)">
+      <created>1508147644909</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1508147644909</updated>
+    </task>
+    <task id="LOCAL-00053" summary="progressi al 25 ottobre. lambda layer implementato ma problemi nell'istanziamento del training">
+      <created>1508890853504</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1508890853505</updated>
+    </task>
+    <task id="LOCAL-00054" summary="boh, va o non va">
+      <created>1509099663064</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1509099663073</updated>
+    </task>
+    <task id="LOCAL-00055" summary="aggiornamenti">
+      <created>1510765147159</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1510765147159</updated>
+    </task>
+    <task id="LOCAL-00056" summary="funzione sampling corretta">
+      <created>1510848489826</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1510848489842</updated>
+    </task>
+    <task id="LOCAL-00057" summary="funzione sampling risolta. aggiunti files mancanti all'appello. necessario implementare un layer customizzato per il sampling">
+      <created>1510861513230</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1510861513233</updated>
+    </task>
+    <task id="LOCAL-00058" summary="funzione sampling risolta. aggiunti files mancanti all'appello. necessario implementare un layer customizzato per il sampling">
+      <created>1510862141887</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1510862141887</updated>
+    </task>
+    <task id="LOCAL-00059" summary="funzione sampling risolta. aggiunti files mancanti.">
+      <created>1510862541378</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1510862541378</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="1" width="1360" height="737" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32698414" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8460317" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24506828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32063493" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43650794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.408472" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19271624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32245532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.525268" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="creata classe Model" />
+    <MESSAGE value="testing cross val su tutto il dataset" />
+    <MESSAGE value="testing cross val con nuovo modello" />
+    <MESSAGE value="testing con 3 baseline diverse" />
+    <MESSAGE value="esperimenti con 3 diverse baseline" />
+    <MESSAGE value="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto" />
+    <MESSAGE value="testing senza early stopping. aggiunto modelcheckpoint tra le callbacks" />
+    <MESSAGE value="testing batch and epochs" />
+    <MESSAGE value="aggiunto modulo gan e numerosi test" />
+    <MESSAGE value="lstm prove" />
+    <MESSAGE value="SETUP CNN" />
+    <MESSAGE value="test lstm 2" />
+    <MESSAGE value="test lstm" />
+    <MESSAGE value="cnn_imdb example" />
+    <MESSAGE value="stato al 5 ottobre" />
+    <MESSAGE value="creato un autoencoder simile a deepDGA. al momento genera dei DGA molto simili alle famiglie esistenti. testandolo Random Forest viene rilevato come DGA quasi il 100% delle volte." />
+    <MESSAGE value="creato un autoencoder simile a deepDGA. al momento genera dei DGA molto simili alle famiglie esistenti. testandolo Random Forest viene rilevato come DGA quasi il 100 delle volte." />
+    <MESSAGE value="creata classe autoencoder per testing estensivo. &#10;finalizzata la classe gan su gan.py ma necessita modifiche per funzionare" />
+    <MESSAGE value="gan con discriminator a input (-,timesteps,20)" />
+    <MESSAGE value="progressi al 25 ottobre. lambda layer implementato ma problemi nell'istanziamento del training" />
+    <MESSAGE value="boh, va o non va" />
+    <MESSAGE value="aggiornamenti" />
+    <MESSAGE value="funzione sampling corretta" />
+    <MESSAGE value="funzione sampling risolta. aggiunti files mancanti all'appello. necessario implementare un layer customizzato per il sampling" />
+    <MESSAGE value="funzione sampling risolta. aggiunti files mancanti." />
+    <option name="LAST_COMMIT_MESSAGE" value="funzione sampling risolta. aggiunti files mancanti." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python2.7/site-packages/keras/optimizers.py</url>
+          <line>224</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python2.7/site-packages/keras/optimizers.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py</url>
+          <line>454</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py</url>
+          <line>469</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py</url>
+          <line>616</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py</url>
+          <line>690</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="95" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/keras/_impl/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="1753" column="49" lean-forward="true" selection-start-line="1750" selection-start-column="13" selection-end-line="1753" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/layers/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="650" column="0" lean-forward="false" selection-start-line="650" selection-start-column="0" selection-end-line="650" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/array_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="463" column="0" lean-forward="false" selection-start-line="463" selection-start-column="0" selection-end-line="463" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/numpy/random/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="101" column="7" lean-forward="false" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/autoencoder.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/__init_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/autoencoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1530">
+          <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/results.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/pieraz_train:nosup_test:nosup/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/pieraz_train:nosup_test:sup/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/pieraz_train:nosup_test:sup/roc_plot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/pieraz_BatchNormalized/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/pieraz/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/large/model_architecture.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/large/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/roc_plot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_35_BEST/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_35_BEST/roc_plot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/backend/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#772#1468#0" expanded="false" />
+            <element signature="e#1542#1718#0" expanded="false" />
+            <element signature="e#1607#1718#0" expanded="false" />
+            <element signature="e#1607#1663#0" expanded="false" />
+            <element signature="e#1761#2088#0" expanded="false" />
+            <element signature="e#1771#1914#0" expanded="false" />
+            <element signature="e#1932#2017#0" expanded="false" />
+            <element signature="e#2046#2086#0" expanded="false" />
+            <element signature="e#2184#2302#0" expanded="false" />
+            <element signature="e#2359#2431#0" expanded="false" />
+            <element signature="e#2463#2540#0" expanded="false" />
+            <element signature="e#2576#2661#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="785" column="29" lean-forward="false" selection-start-line="785" selection-start-column="29" selection-end-line="785" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="1484" column="0" lean-forward="false" selection-start-line="1484" selection-start-column="0" selection-end-line="1484" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/framework/dtypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="128" column="6" lean-forward="false" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/numpy/random/mtrand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-501">
+          <caret line="2760" column="4" lean-forward="false" selection-start-line="2760" selection-start-column="4" selection-end-line="2760" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="527" column="0" lean-forward="false" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/alt gan/alternative_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/alt gan/discriminator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3679">
+          <caret line="1515" column="28" lean-forward="false" selection-start-line="1515" selection-start-column="22" selection-end-line="1515" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="448" column="0" lean-forward="false" selection-start-line="448" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/legacy/interfaces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/alt gan/alternative_dgagan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="101" column="40" lean-forward="false" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+          <folding>
+            <element signature="e#4294#4790#0" expanded="false" />
+            <element signature="e#9358#10411#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/gen_math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="4566" column="18" lean-forward="false" selection-start-line="4566" selection-start-column="18" selection-end-line="4566" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="1795" column="0" lean-forward="false" selection-start-line="1795" selection-start-column="0" selection-end-line="1795" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/optimizers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="688" column="13" lean-forward="false" selection-start-line="688" selection-start-column="13" selection-end-line="688" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dga_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="89" column="31" lean-forward="true" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#339#722#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="981" column="4" lean-forward="false" selection-start-line="981" selection-start-column="4" selection-end-line="981" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gan_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="195" column="0" lean-forward="false" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="510" column="8" lean-forward="false" selection-start-line="510" selection-start-column="8" selection-end-line="510" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/engine/topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="369" column="8" lean-forward="false" selection-start-line="369" selection-start-column="8" selection-end-line="369" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/adversial.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/deepDGA_autoencoder.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/deepDGA_GAN.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/discriminator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/generator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="365" column="93" lean-forward="false" selection-start-line="364" selection-start-column="4" selection-end-line="365" selection-end-column="93" />
+          <folding>
+            <element signature="e#7630#8958#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#3940#6037#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sampling_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dga_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sampling_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1096#2120#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

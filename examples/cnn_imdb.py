@@ -15,17 +15,6 @@ from keras.layers import Embedding
 from keras.layers import Conv1D, GlobalMaxPooling1D
 from keras.datasets import imdb
 
-
-def print_results(results):
-    for key, value in sorted(results.iteritems()):
-        if not "time" in key:
-            foo = "%s: %.2f%% (%.2f%%)" % (key, value.mean() * 100, value.std() * 100)
-            print(foo)
-        else:
-            foo = "%s: %.2fs (%.2f)s" % (key, value.mean(), value.std())
-            print(foo)
-
-
 # set parameters:
 max_features = 5000
 maxlen = 400
@@ -41,11 +30,17 @@ print('Loading data...')
 print(len(x_train), 'train sequences')
 print(len(x_test), 'test sequences')
 
+print('x_train shape before padding:', x_train.shape)
+
+# print(x_train[0])
+
 print('Pad sequences (samples x time)')
 x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
 x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
-print('x_train shape:', x_train.shape)
+print('x_train shape after padding:', x_train.shape)
 print('x_test shape:', x_test.shape)
+
+# print(x_train[0])
 
 print('Build model...')
 model = Sequential()
@@ -79,8 +74,17 @@ model.add(Activation('sigmoid'))
 model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
-results = model.fit(x_train, y_train,
-                    batch_size=batch_size,
-                    epochs=epochs,
-                    validation_data=(x_test, y_test))
-print_results(results)
+
+model.summary()
+# model.fit(x_train, y_train,
+#                     batch_size=batch_size,
+#                     epochs=epochs,
+#                     validation_data=(x_test, y_test))
+#
+# json_model = model.to_json()
+# with open('cnn_imdb_model.json','w') as file:
+#     file.write(json_model)
+# model.save_weights('cnn_imdb_weights.h5', overwrite=True)
+#
+# preds = model.predict(x_test)
+# print(preds[0])

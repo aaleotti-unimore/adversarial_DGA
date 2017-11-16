@@ -1,0 +1,1 @@
+c2vbq4w-1gi <type 'numpy.string_'>VowelConsonantRatio: c2vbq4w-1gi

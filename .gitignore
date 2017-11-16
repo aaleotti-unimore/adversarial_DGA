@@ -94,4 +94,5 @@ ENV/
 # Rope project settings
 .ropeproject
 
-
+*tensorboard*
+*.tar.gz
