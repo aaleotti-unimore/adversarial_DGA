@@ -11,7 +11,7 @@ mock==2.0.0
 numpy==1.13.3
 pandas==0.21.0
 pbr==3.1.1
-protobuf==3.4.0
+protobuf>=3.4.0
 pydot==1.2.3
 pyparsing==2.2.0
 python-dateutil==2.6.1
@@ -22,5 +22,4 @@ scipy==1.0.0
 six==1.11.0
 sklearn==0.0
 tensorflow==1.4.0
-tensorflow-tensorboard==0.4.0rc2
 Werkzeug==0.12.2

@@ -1,15 +1,17 @@
 import logging
 import string
 import time
-
+import tensorflow as tf
 import numpy as np
 import pandas as pd
 from keras import backend as K
+from keras.callbacks import TensorBoard
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
+from keras.utils import to_categorical
 from sklearn.preprocessing import LabelBinarizer
 
-from gan_model import GAN_Model
+from gan_model import GAN_Model, generate_dataset
 
 logging.basicConfig()
 
@@ -32,45 +34,54 @@ class ElapsedTimer(object):
 
 class DGA_GAN(object):
     def __init__(self, batch_size):
+        summary = True
         self.logger = logging.getLogger(__name__)
-        self.x_train, word_index = self.build_dataset(n_samples=None)
+        self.x_train, word_index, self.inv_map = generate_dataset(n_samples=batch_size)
 
-        self.DCGAN = GAN_Model(batch_size=batch_size, timesteps=self.x_train.shape[1], word_index=word_index)
+        self.DCGAN = GAN_Model(batch_size=batch_size, timesteps=self.x_train.shape[1], word_index=word_index,
+                               summary=True)
         self.discriminator = self.DCGAN.discriminator_model()
         self.adversarial = self.DCGAN.adversarial_model()
         self.generator = self.DCGAN.generator()
 
-    def train(self, train_steps=2000, batch_size=2, save_interval=0):
+    def train(self, train_steps=2000, batch_size=2, preload_weights=None):
         self.logger.setLevel(logging.DEBUG)
         noise_input = None
-        if save_interval > 0:
-            # noise_input = np.random.uniform(-1.0, 1.0, size=[16, 100])
+        tb_gan = TensorBoard(log_dir='.logs/gan', write_graph=False)
+        tb_gan.set_model(self.DCGAN.adversarial_model())
+        tb_disc = TensorBoard(log_dir='.logs/disc', write_graph=False)
+        tb_disc.set_model(self.DCGAN.discriminator())
+        if preload_weights:
+            self.adversarial.load_weights(filepath="weights/dga_gan.h5", by_name=True)
+            self.discriminator.load_weights(filepath="weights/dga_discriminator.h5", by_name=True)
             pass
         for i in range(train_steps):
-            if i>0:
+            if i > 0:
                 self.logger.setLevel(logging.INFO)
             self.logger.debug("train step: %s" % i)
             # loading training set
-            domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size / 2), :]
+            domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size / 2), :, :]
             # generating random noise
-            noise = np.random.uniform(-1.0, 1.0, size=[batch_size / 2, 128])
+            noise = np.random.uniform(-1.0, 1.0, size=[batch_size / 2, 1])
             self.logger.debug("noise shape:")
             self.logger.debug(noise.shape)
             # predict fake domains
             self.logger.debug("generating domains_fake...")
             domains_fake = self.generator.predict(noise)  # fake domains
             self.logger.debug("sampling fake domains....")
-            domains_fake = self.noise_sampling(domains_fake)
+            domains_fake = K.eval(K.softmax(domains_fake))
             self.logger.debug("real domains shape")
             self.logger.debug(domains_train.shape)
             self.logger.debug("fake domains shape")
             self.logger.debug(domains_fake.shape)
             # concatenating fake and train domains, labeled with 0 (real) and 1 (fake)
             x = np.concatenate((domains_train, domains_fake))
+            # x = np.expand_dims(x, axis=2)
             y = np.ones([batch_size, 1])  # size 2x batch size of x
             y[batch_size / 2:, :] = 0
             import tensorflow as tf
             # x = tf.convert_to_tensor(x)
+
             self.logger.debug("X:")
             self.logger.debug(x.shape)
             self.logger.debug(x)
@@ -81,8 +92,9 @@ class DGA_GAN(object):
             ####
             self.logger.debug("training discriminator")
             d_loss = self.discriminator.train_on_batch(x=x, y=y)
+            # self.discriminator.trainable = False
             # dataset for adversial model
-            noise = np.random.uniform(-1.0, 1.0, size=[batch_size, 128])  # random noise
+            noise = np.random.uniform(-1.0, 1.0, size=[batch_size, 1])  # random noise
             y = np.ones([batch_size, 1])
             self.logger.debug(noise.shape)
             self.logger.debug(y.shape)
@@ -92,59 +104,45 @@ class DGA_GAN(object):
             log_mesg = "%d: [D loss: %f, acc: %f]" % (i, d_loss[0], d_loss[1])
             log_mesg = "%s  [A loss: %f, acc: %f]" % (log_mesg, a_loss[0], a_loss[1])
             self.logger.info(log_mesg)
+            if (i % 10) == 0:
+                self.write_log(tb_gan, names=['loss', 'acc'], logs=a_loss, batch_no=i // 10)
+                self.write_log(tb_disc, names=['loss', 'acc'], logs=d_loss, batch_no=i // 10)
+                self.logger.info("saving weights...")
+                self.discriminator.save_weights(filepath="weights/dga_discriminator.h5")
+                self.adversarial.save_weights(filepath="weights/dga_gan.h5")
+                noise = np.random.uniform(-1.0, 1.0, size=[5, 1])  # random noise
+                self.generator.load_weights(filepath='weights/dga_gan.h5', by_name=True)
+                generated = self.generator.predict(noise)
+                domains = K.eval(K.argmax(K.softmax(generated)))
+                readable = self.to_readable_domain(domains)
+                for i in range(5):
+                    print("%s\t->\t%s\t->\t%s" % (noise[i], domains[i], readable[i]))
 
-    def build_dataset(self, n_samples=None):
-        # fix random seed for reproducibility
-        np.random.seed(7)
-        path = "/home/archeffect/PycharmProjects/adversarial_DGA/dataset/legitdomains.txt"
-        n_samples = 256
+    def write_log(self, callback, names, logs, batch_no):
+        for name, value in zip(names, logs):
+            summary = tf.Summary()
+            summary_value = summary.value.add()
+            summary_value.simple_value = value
+            summary_value.tag = name
+            callback.writer.add_summary(summary, batch_no)
+            callback.writer.flush()
 
-        # loading db
-        lb = LabelBinarizer()
-        df = pd.DataFrame(pd.read_csv("dataset/legitdomains.txt", sep=" ", header=None, names=['domain']))
-        if n_samples:
-            df = df.sample(n=n_samples, random_state=42)
-        X_ = df['domain'].values
-        # y = np.ravel(lb.fit_transform(df['class'].values))
-
-        # preprocessing text
-        maxlen = 15
-        tk = Tokenizer(char_level=True)
-        tk.fit_on_texts(string.lowercase + string.digits + '-' + '.')
-        self.logger.debug("word index: %s" % len(tk.word_index))
-        seq = tk.texts_to_sequences(X_)
-        # for x, s in zip(X_, seq):
-        #     print(x, s)
-        # print("")
-        X = sequence.pad_sequences(seq, maxlen=maxlen)
-        self.logger.debug("X shape after padding: " + str(X.shape))
-        # print(X)
-
-        return X, len(tk.word_index)
-
-    def noise_sampling(self, preds):
-        def __sample(preds, temperature=1.0):
-            # helper function to sample an index from a probability array
-            preds = np.asarray(preds).astype('float32')
-            preds = np.log(preds) / temperature
-            exp_preds = np.exp(preds)
-            preds = exp_preds / np.sum(exp_preds)
-            probas = np.random.multinomial(1, preds, 1)
-            return np.argmax(probas)
-
+    def to_readable_domain(self, decoded):
         domains = []
-        for j in range(preds.shape[0]):
-            word = []
-            for i in range(preds.shape[1]):
-                word.append(__sample(preds[j][i]))
+        for j in range(decoded.shape[0]):
+            word = ""
+            for i in range(decoded.shape[1]):
+                if decoded[j][i] != 0:
+                    word = word + self.inv_map[decoded[j][i]]
             domains.append(word)
-
-        return np.array(domains)
+        return domains
 
 
 if __name__ == '__main__':
+    import itertools
+
     batch_size = 1000
     mnist_dcgan = DGA_GAN(batch_size=batch_size)
     timer = ElapsedTimer()
-    mnist_dcgan.train(train_steps=10000, batch_size=batch_size, save_interval=500)
+    mnist_dcgan.train(train_steps=10000, batch_size=batch_size, preload_weights=True)
     timer.elapsed_time()

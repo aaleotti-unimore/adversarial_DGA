@@ -1,9 +1,23 @@
 import numpy as np
 from keras import backend as K
 from keras.engine.topology import Layer
-from keras.layers import Input
-from keras.layers import Lambda
+from keras.layers import Input, Lambda, Dense
 from keras.models import Model
+
+
+def lambda_sampling(x):
+    temperature = 1.0
+    x = K.log(x) / temperature
+    exp_preds = K.exp(x)
+    x = exp_preds / K.sum(exp_preds)
+    x = K.argmax(x, axis=2)
+    return K.cast(x, dtype='float32')
+
+
+def sampling_output_shape(input_shape):
+    shape = list(input_shape)
+    assert len(shape) == 3  # only valid for 3D tensors
+    return tuple(shape[:2])
 
 
 class Sampling(Layer):
@@ -12,11 +26,13 @@ class Sampling(Layer):
         super(Sampling, self).__init__(**kwargs)
 
     def build(self, input_shape):
+        # print(input_shape)
+
         # Create a trainable weight variable for this layer.
         self.kernel = self.add_weight(name='kernel',
-                                      shape=(input_shape[1], self.output_dim),
+                                      shape=(input_shape, self.output_dim),
                                       initializer='uniform',
-                                      trainable=True)
+                                      trainable=False)
         super(Sampling, self).build(input_shape)  # Be sure to call this somewhere!
 
     def call(self, x):
@@ -24,34 +40,48 @@ class Sampling(Layer):
         x = K.log(x) / temperature
         exp_preds = K.exp(x)
         x = exp_preds / K.sum(exp_preds)
-
-        return K.argmax(x, axis=2)
-
+        x = K.argmax(x, axis=2)
+        x = K.cast(x, 'float')
+        return x
 
     def compute_output_shape(self, input_shape):
-        return (input_shape[0], self.output_dim)
-
-
-
-
+        shape = list(input_shape)
+        assert len(shape) == 3  # only valid for 3D tensors
+        return tuple(shape[:2])
 
 
 if __name__ == '__main__':
-    K.set_learning_phase(1)
-    batch_size = 10
+    from gan_model import GAN_Model
+    from dga_gan import DGA_GAN
 
+    batch_size = 10
+    timesteps = 15
+
+    # dga = DGA_GAN(batch_size=batch_size)
+    X, word_index = DGA_GAN(batch_size=batch_size).build_dataset(n_samples=batch_size)
+    # gan = GAN_Model(batch_size=batch_size, timesteps=timesteps, word_index=word_index)
     ########### MODEL
-    inp = Input(shape=(15, 38))
-    exa = Lambda(lambda x: sampling(x), output_shape=(15,))(inp)
+    X = X.astype(float)
+    # print(X.dtype)
+    inp = Input(shape=(timesteps, word_index))
+    exa = Lambda(lambda_sampling, output_shape=sampling_output_shape, name='my_sampling', trainable=False)(inp)
+
     model = Model(inputs=inp, outputs=exa)
     model.summary()
+    model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
 
-    noise = np.random.uniform(0, 1, size=(batch_size, 15, 38))
+    noise = np.random.uniform(0, 1, size=(batch_size, timesteps, 38))
+
     print("NOISE INPUT")
-    print(noise)
-    decoded = model.predict_on_batch(noise)
-    print("\n\nSAMPLED OUTPUT")
-    print(decoded)
+    print(noise.shape)
+    print(noise.dtype)
+    y = np.ones([batch_size, 1])  # size 2x batch size of x
+
+    sampling = model.predict_on_batch(noise)
+    loss = model.fit(x=noise, y=noise, verbose=1)
+    print("SAMPLED OUTPUT")
+    print(sampling.shape)
+    print(sampling)
     #################
 
 

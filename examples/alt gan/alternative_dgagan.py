@@ -9,7 +9,7 @@ import tensorflow as tf
 from PIL import Image
 from keras import Input
 from keras import backend as K
-from keras.layers import Conv1D, Dropout, MaxPooling1D, concatenate, LSTM, RepeatVector, Dense, Embedding, Lambda
+from keras.layers import Conv1D, Dropout, MaxPooling1D, concatenate, LSTM, RepeatVector, Dense, Embedding, Lambda, TimeDistributed
 from keras.models import Sequential, Model
 from keras.optimizers import SGD
 from keras.utils import plot_model
@@ -20,7 +20,7 @@ from sklearn.preprocessing import LabelBinarizer
 
 CUDA_VISIBLE_DEVICES = 0
 K.set_learning_phase(0)
-print("set learning phase to 0")
+print("set learning phase to %s" % K.learning_phase())
 
 
 def generator_model(summary=None):
@@ -52,12 +52,14 @@ def generator_model(summary=None):
         dec_convs.append(conv)
 
     decoded = concatenate(dec_convs)
-    decoded = Dense(word_index, activation='sigmoid', name="gen_dense")(decoded)
+    # decoded = Dense(self.word_index, activation='sigmoid', name="gen_dense")(decoded)
+    decoded = TimeDistributed(Dense(word_index, activation='softmax'), name='decoder_end')(
+        decoded)  # output_shape = (samples, maxlen, max_features )
 
     G = Model(inputs=dec_inputs, outputs=decoded, name='Generator')
     if summary:
         G.summary()
-    plot_model(G, to_file="generator.png", show_shapes=True)
+    plot_model(G, to_file="images/generator.png", show_shapes=True)
     return G
 
 
@@ -103,7 +105,7 @@ def discriminator_model(summary=None):
     D = Model(inputs=discr_inputs, outputs=discr, name='Discriminator')
     if summary:
         D.summary()
-    plot_model(D, to_file="discriminator.png", show_shapes=True)
+    plot_model(D, to_file="images/discriminator.png", show_shapes=True)
     return D
 
 
@@ -126,19 +128,19 @@ def generator_containing_discriminator(g, d, timesteps=15):
     return model
 
 
-def combine_images(generated_images):
-    num = generated_images.shape[0]
-    width = int(math.sqrt(num))
-    height = int(math.ceil(float(num) / width))
-    shape = generated_images.shape[1:3]
-    image = np.zeros((height * shape[0], width * shape[1]),
-                     dtype=generated_images.dtype)
-    for index, img in enumerate(generated_images):
-        i = int(index / width)
-        j = index % width
-        image[i * shape[0]:(i + 1) * shape[0], j * shape[1]:(j + 1) * shape[1]] = \
-            img[:, :, 0]
-    return image
+# def combine_images(generated_images):
+#     num = generated_images.shape[0]
+#     width = int(math.sqrt(num))
+#     height = int(math.ceil(float(num) / width))
+#     shape = generated_images.shape[1:3]
+#     image = np.zeros((height * shape[0], width * shape[1]),
+#                      dtype=generated_images.dtype)
+#     for index, img in enumerate(generated_images):
+#         i = int(index / width)
+#         j = index % width
+#         image[i * shape[0]:(i + 1) * shape[0], j * shape[1]:(j + 1) * shape[1]] = \
+#             img[:, :, 0]
+#     return image
 
 
 def train(BATCH_SIZE):
@@ -202,26 +204,6 @@ def train(BATCH_SIZE):
             if index % 10 == 9:
                 g.save_weights('generator', True)
                 d.save_weights('discriminator', True)
-
-
-def noise_sampling(preds):
-    def __sample(preds, temperature=1.0):
-        # helper function to sample an index from a probability array
-        preds = np.asarray(preds).astype('float32')
-        preds = np.log(preds) / temperature
-        exp_preds = np.exp(preds)
-        preds = exp_preds / np.sum(exp_preds)
-        probas = np.random.multinomial(1, preds, 1)
-        return np.argmax(probas)
-
-    domains = []
-    for j in range(preds.shape[0]):
-        word = []
-        for i in range(preds.shape[1]):
-            word.append(__sample(preds[j][i]))
-        domains.append(word)
-
-    return np.array(domains)
 
 
 def generate(BATCH_SIZE, nice=False):

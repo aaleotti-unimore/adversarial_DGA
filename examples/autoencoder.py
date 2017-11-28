@@ -3,7 +3,8 @@ import string
 import numpy as np
 import pandas as pd
 from pandas import read_csv
-from keras.layers import Conv1D, MaxPooling1D, Embedding
+from keras import backend as K
+from keras.layers import Conv1D, MaxPooling1D, Embedding, TimeDistributed, Lambda
 from keras.layers import Dense, Input
 from keras.layers import Dropout
 from keras.layers import LSTM, RepeatVector
@@ -15,6 +16,7 @@ from keras.utils.vis_utils import plot_model
 from sklearn.preprocessing import LabelBinarizer
 from keras.optimizers import RMSprop
 from keras.models import Sequential
+from sampling_layer import Sampling
 
 # fix random seed for reproducibility
 np.random.seed(7)
@@ -53,12 +55,12 @@ def generate_dataset(maxlen=15):
 class Autoencoder(object):
     def __init__(self, X, word_index_len):
         # autoencoder params
-        self.X = X
+        # self.X = X
         # self.y = y
-        self.timesteps = X.shape[1]  # lunghezza vettore
+        self.timesteps = 15  # lunghezza vettore
         self.filters = [20, 10]
         self.kernels = [2, 3]
-        self.d = 20  # lunghezza vettore embedded
+        self.embedding_length = 20  # lunghezza vettore embedded
         self.word_index = word_index_len
 
         self.A = None
@@ -70,8 +72,8 @@ class Autoencoder(object):
             return self.E
 
         enc_convs = []
-        enc_inputs = Input(shape=(self.X.shape[1],))
-        encoded = Embedding(self.word_index, self.d, input_length=self.X.shape[1])(enc_inputs)
+        enc_inputs = Input(shape=(self.timesteps,), name="encoderInput")
+        encoded = Embedding(self.word_index, self.embedding_length, input_length=self.timesteps)(enc_inputs)
         for i in range(2):
             conv = Conv1D(self.filters[i],
                           self.kernels[i],
@@ -83,7 +85,7 @@ class Autoencoder(object):
             enc_convs.append(conv)
 
         encoded = concatenate(enc_convs)
-        encoded = LSTM(128)(encoded)
+        encoded = LSTM(128, name="encoderLSTM")(encoded)
         self.E = Model(inputs=enc_inputs, outputs=encoded, name='encoder')
         plot_model(self.E, to_file="encoder.png", show_shapes=True)
         return self.E
@@ -107,7 +109,8 @@ class Autoencoder(object):
             dec_convs.append(conv)
 
         decoded = concatenate(dec_convs)
-        decoded = Dense(self.word_index, activation='sigmoid')(decoded)
+        emb = Dense(self.word_index, activation='sigmoid')
+        decoded = TimeDistributed(emb, name="timedistr")(decoded)
         self.D = Model(inputs=dec_inputs, outputs=decoded, name='decoder')
         plot_model(self.D, to_file="decoder.png", show_shapes=True)
         return self.D
@@ -119,8 +122,14 @@ class Autoencoder(object):
         self.A = Sequential(name='autoencoder')
         self.A.add(self.encoder())
         self.A.add(self.decoder())
+        # self.A.add(Sampling(output_dim=self.timesteps, trainable=False))
+        self.A.add(Lambda(K.softmax, output_shape=(self.timesteps, self.word_index)))
+        self.A.add(Lambda(K.argmax, output_shape=(self.timesteps,)))
+        self.A.add(Lambda(K.cast, output_shape=(self.timesteps,), arguments={'dtype': 'float'}))
+        # self.A.add(Lambda(lambda_sampling,output_shape=(self.timesteps,)))
+        # self.A.add(Sampling(output_dim=(self.timesteps)))
         optimizer = RMSprop(lr=0.01)
-        self.A.compile(loss='categorical_crossentropy', optimizer=optimizer)
+        self.A.compile(loss='mse', optimizer='rmsprop')
         self.A.summary()
         return self.A
 
@@ -139,42 +148,76 @@ class Autoencoder(object):
         domains = np.char.array(domains)
         return domains
 
-    def sample(self, preds, temperature=1.0):
-        # helper function to sample an index from a probability array
-        preds = np.asarray(preds).astype('float32')
-        preds = np.log(preds) / temperature
-        exp_preds = np.exp(preds)
-        preds = exp_preds / np.sum(exp_preds)
-        probas = np.random.multinomial(1, preds, 1)
-        return np.argmax(probas)
+        # def sample(self, preds, temperature=1.0):
+        #     # helper function to sample an index from a probability array
+        #     preds = np.asarray(preds).astype('float32')
+        #     preds = np.log(preds) / temperature
+        #     exp_preds = np.exp(preds)
+        #     preds = exp_preds / np.sum(exp_preds)
+        #     probas = np.random.multinomial(1, preds, 1)
+        #     return np.argmax(probas)
+
+
+def lambda_sampling(x):
+    temperature = 1.0
+    x = K.log(x) / temperature
+    exp_preds = K.exp(x)
+    x = exp_preds / K.sum(exp_preds)
+    x = K.argmax(x, axis=2)
+    return K.cast(x, 'float')
 
 
 if __name__ == '__main__':
-    from detect_DGA import MyClassifier
+    #   from detect_DGA import MyClassifier
+    from keras.callbacks import TensorBoard
 
-    X, word_index, inv_map = generate_dataset(12)
-    aenc = Autoencoder(X, word_index)
-    print("ENCODER DEMO")
-    encoded = aenc.encoder().predict_on_batch(X)
-    print(encoded)
-    # domains = aenc.predict_(X, inv_map)
-    print("DECODER DEMO")
-    decoded = aenc.decoder().predict_on_batch(encoded)
-    print(decoded)
-    print("SAMPLING DECODED DOMAINS")
-    domains=[]
-    for j in range(decoded.shape[0]):
-        word = ""
-        for i in range(decoded.shape[1]):
-            k = aenc.sample(decoded[j][i])
-            if k > 0:
-                word = word + inv_map[k]
-        domains.append(word)
+    timesteps = 15
+    batch_size = 10
+    x_train, word_index, inv_map = generate_dataset(timesteps)
+    print(x_train.shape)
+    x_train = x_train.astype(float)
+    print(x_train.dtype)
+    aenc = Autoencoder(x_train, word_index)
+    # out = aenc.autoencoder().train_on_batch(x_train, x_train)
+    from collections import Iterable
 
-    domains = np.char.array(domains)
-    print(domains)
+    # for out in aenc.encoder().layers:
+    #     print(out)
+    pred = aenc.autoencoder().predict(x_train)
+    print(pred.shape)
+    print(pred)
+    # aenc.autoencoder().fit(x_train, x_train,
+    #                        epochs=100,
+    #                        batch_size=128,
+    #                        shuffle=True,
+    #                        validation_split=0.33,
+    #                        # validation_data=(x_test_noisy, x_test),
+    #                        callbacks=[TensorBoard(log_dir='/tmp/tb', histogram_freq=0, write_graph=False)]
+    #                        )
 
-    # print("TESTING DOMAINS")
-    # rndf = MyClassifier(directory="/home/archeffect/PycharmProjects/detect_DGA/models/RandomForest tra:sup tst:sup")
-    # true = np.ravel(np.zeros(len(domains), dtype=int))
-    # res = rndf.predict(domains, true, verbose=False)
+
+    #####################################
+    # print("ENCODER DEMO")
+    # encoded = aenc.encoder().predict_on_batch(X)
+    # print(encoded)
+    # # domains = aenc.predict_(X, inv_map)
+    # print("DECODER DEMO")
+    # decoded = aenc.decoder().predict_on_batch(encoded)
+    # print(decoded)
+    # print("SAMPLING DECODED DOMAINS")
+    # domains=[]
+    # for j in range(decoded.shape[0]):
+    #     word = ""
+    #     for i in range(decoded.shape[1]):
+    #         k = aenc.sample(decoded[j][i])
+    #         if k > 0:
+    #             word = word + inv_map[k]
+    #     domains.append(word)
+    #
+    # domains = np.char.array(domains)
+    # print(domains)
+    #
+    # # print("TESTING DOMAINS")
+    # # rndf = MyClassifier(directory="/home/archeffect/PycharmProjects/detect_DGA/models/RandomForest tra:sup tst:sup")
+    # # true = np.ravel(np.zeros(len(domains), dtype=int))
+    # # res = rndf.predict(domains, true, verbose=False)
