@@ -114,10 +114,10 @@ class GAN_Model(object):
 
         # In: (batch_size, 128),
         # Out: (batch_size, timesteps, word_index)
-        dec_inputs = Input(shape=(1,), name="Generator_Input")
-        decoded = Dense(self.lstm_vec_dim, activation='sigmoid')(dec_inputs)
+        dec_inputs = Input(shape=(128,), name="Generator_Input")
+        # decoded = Dense(self.lstm_vec_dim, activation='sigmoid')(dec_inputs)
         # Repeating input by "timesteps" times. expected output (batch_size, 128, 15)
-        decoded = RepeatVector(self.timesteps, name="gen_repeate_vec")(decoded)
+        decoded = RepeatVector(self.timesteps, name="gen_repeate_vec")(dec_inputs)
         decoded = LSTM(self.lstm_vec_dim, return_sequences=True, name="gen_LSTM")(decoded)
 
         for i in range(2):
@@ -131,7 +131,6 @@ class GAN_Model(object):
             dec_convs.append(conv)
 
         decoded = concatenate(dec_convs)
-        # decoded = Dense(self.word_index, activation='sigmoid', name="gen_dense")(decoded)
         decoded = TimeDistributed(Dense(self.word_index, activation='softmax'), name='decoder_end')(
             decoded)  # output_shape = (samples, maxlen, max_features )
 

@@ -62,7 +62,7 @@ class DGA_GAN(object):
             # loading training set
             domains_train = self.x_train[np.random.randint(0, self.x_train.shape[0], size=batch_size / 2), :, :]
             # generating random noise
-            noise = np.random.uniform(-1.0, 1.0, size=[batch_size / 2, 1])
+            noise = np.random.uniform(-1.0, 1.0, size=[batch_size / 2, 128])
             self.logger.debug("noise shape:")
             self.logger.debug(noise.shape)
             # predict fake domains
@@ -84,7 +84,6 @@ class DGA_GAN(object):
 
             self.logger.debug("X:")
             self.logger.debug(x.shape)
-            self.logger.debug(x)
             self.logger.debug("y:")
             self.logger.debug(y.shape)
             # self.logger.debug(y)
@@ -94,10 +93,8 @@ class DGA_GAN(object):
             d_loss = self.discriminator.train_on_batch(x=x, y=y)
             # self.discriminator.trainable = False
             # dataset for adversial model
-            noise = np.random.uniform(-1.0, 1.0, size=[batch_size, 1])  # random noise
+            noise = np.random.uniform(-1.0, 1.0, size=[batch_size, 128])  # random noise
             y = np.ones([batch_size, 1])
-            self.logger.debug(noise.shape)
-            self.logger.debug(y.shape)
             # training adversial model
             a_loss = self.adversarial.train_on_batch(x=noise, y=y)
 
@@ -110,13 +107,13 @@ class DGA_GAN(object):
                 self.logger.info("saving weights...")
                 self.discriminator.save_weights(filepath="weights/dga_discriminator.h5")
                 self.adversarial.save_weights(filepath="weights/dga_gan.h5")
-                noise = np.random.uniform(-1.0, 1.0, size=[5, 1])  # random noise
+                noise = np.random.uniform(-1.0, 1.0, size=[5, 128])  # random noise
                 self.generator.load_weights(filepath='weights/dga_gan.h5', by_name=True)
                 generated = self.generator.predict(noise)
                 domains = K.eval(K.argmax(K.softmax(generated)))
                 readable = self.to_readable_domain(domains)
                 for i in range(5):
-                    print("%s\t->\t%s\t->\t%s" % (noise[i], domains[i], readable[i]))
+                    print("%s\t->\t%s" % (domains[i], readable[i]))
 
     def write_log(self, callback, names, logs, batch_no):
         for name, value in zip(names, logs):
