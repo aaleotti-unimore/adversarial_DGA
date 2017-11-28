@@ -1,25 +1,19 @@
 import argparse
-import math
 import logging
 import string
-import time
 
 import numpy as np
+import pandas as pd
 import tensorflow as tf
-from PIL import Image
 from keras import Input
 from keras import backend as K
-from keras.layers import Conv1D, Dropout, MaxPooling1D, concatenate, LSTM, RepeatVector, Dense, Embedding, Lambda, \
-    TimeDistributed
+from keras.callbacks import TensorBoard
+from keras.layers import Conv1D, Dropout, MaxPooling1D, concatenate, LSTM, RepeatVector, Dense, TimeDistributed
 from keras.models import Sequential, Model
 from keras.optimizers import SGD
-from keras.callbacks import TensorBoard
-from keras.utils import plot_model, to_categorical
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
-
-import pandas as pd
-from sklearn.preprocessing import LabelBinarizer
+from keras.utils import plot_model, to_categorical
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -147,7 +141,7 @@ def generator_containing_discriminator(g, d, timesteps=15):
 def train(BATCH_SIZE, load_weights=True):
     # caricamento
     maxlen = 15
-    n_samples = 50000
+    n_samples = None
     X_train, word_index, inv_map = build_dataset(maxlen=maxlen, n_samples=n_samples)
     logger.debug(X_train.shape)
     # compilazione modelli
