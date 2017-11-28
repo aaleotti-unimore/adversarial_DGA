@@ -144,10 +144,10 @@ def generator_containing_discriminator(g, d, timesteps=15):
 #     return image
 
 
-def train(BATCH_SIZE, load_weights=False):
+def train(BATCH_SIZE, load_weights=True):
     # caricamento
     maxlen = 15
-    n_samples = 500000
+    n_samples = 50000
     X_train, word_index, inv_map = build_dataset(maxlen=maxlen, n_samples=n_samples)
     logger.debug(X_train.shape)
     # compilazione modelli
@@ -180,13 +180,11 @@ def train(BATCH_SIZE, load_weights=False):
             noise = np.random.uniform(-1.0, 1.0, size=(BATCH_SIZE, 128))
 
             domains_batch = X_train[index * BATCH_SIZE:(index + 1) * BATCH_SIZE]
-            logger.debug("image_batch size")
+            logger.debug("domains_batch size")
             logger.debug(domains_batch.shape)
 
             generated_domains = g.predict(noise, verbose=0)
             logger.debug("generated domains shape:")
-            logger.debug(generated_domains.shape)
-            logger.debug("sampled generated images shape")
             logger.debug(generated_domains.shape)
 
             X = np.concatenate((domains_batch, generated_domains))
@@ -200,6 +198,7 @@ def train(BATCH_SIZE, load_weights=False):
             g_loss = d_on_g.train_on_batch(noise, [1] * BATCH_SIZE)
             d.trainable = True
             if index % 10 == 9:
+                logger.info("%s\t[ GENR\tloss : %f ]" % (d_log, g_loss))
                 write_log(callback=tb_gen, names=['loss'], logs=g_loss, batch_no=index // 10)
                 write_log(callback=tb_disc, names=['loss'], logs=d_loss, batch_no=index // 10)
                 g.save_weights('weights/generator.h5', True)
@@ -251,33 +250,29 @@ def generate(BATCH_SIZE, inv_map):
 
 def build_dataset(n_samples=10000, maxlen=15):
     df = pd.DataFrame(
-        pd.read_csv("/home/archeffect/PycharmProjects/adversarial_DGA/dataset/legitdomains.txt", sep=" ", header=None,
-                    names=['domain']), dtype=str)
+        pd.read_csv("../../dataset/legitdomains.txt",
+                    sep=" ",
+                    header=None,
+                    names=['domain']),
+        dtype=str)
+
     if n_samples:
         df = df.sample(n=n_samples, random_state=42)
+
     X_ = df['domain'].values
 
     # preprocessing text
     tk = Tokenizer(char_level=True)
     tk.fit_on_texts(string.lowercase + string.digits + '-' + '.')
-    # print("word index: %s" % len(tk.word_index))
     seq = tk.texts_to_sequences(X_)
-    # for x, s in zip(X_, seq):
-    #     print(x, s)
-    # print("")
     X = sequence.pad_sequences(seq, maxlen=maxlen)
-    # print("X shape after padding: " + str(X.shape))
-    # print(X)
     inv_map = {v: k for k, v in tk.word_index.iteritems()}
-    ###
-    X1 = []
+    X_tmp = []
     for x in X:
-        X1.append(to_categorical(x, tk.document_count))
+        X_tmp.append(to_categorical(x, tk.document_count))
 
-    X = np.array(X1)
-    # print(X.shape)
-    ###
-    return X, len(tk.word_index), inv_map
+    X = np.array(X_tmp)
+    return X, tk.document_count, inv_map
 
 
 def get_args():
