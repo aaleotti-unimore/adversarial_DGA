@@ -149,7 +149,7 @@ def generate(BATCH_SIZE, nice=False):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", type=str)
+    parser.add_argument("--mode", type=str, default="train")
     parser.add_argument("--batch_size", type=int, default=128)
     parser.add_argument("--nice", dest="nice", action="store_true")
     parser.set_defaults(nice=False)
