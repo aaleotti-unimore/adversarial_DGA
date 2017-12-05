@@ -5,31 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/20171204-192122/events.out.tfevents.1512411690.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/20171205-120827/events.out.tfevents.1512472112.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/20171205-122042/events.out.tfevents.1512472847.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/20171204-192122/events.out.tfevents.1512411690.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/20171205-120827/events.out.tfevents.1512472112.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/20171205-122042/events.out.tfevents.1512472847.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184510/.logs/events.out.tfevents.1512495918.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184930/.logs/events.out.tfevents.1512496180.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/.logs/events.out.tfevents.1512496414.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/.logs/adv/events.out.tfevents.1512473987.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/.logs/disc/events.out.tfevents.1512473987.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/.log/adv/events.out.tfevents.1512487550.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/.log/disc/events.out.tfevents.1512487550.archlaptop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184510/weights/autoencoder.h5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184930/weights/autoencoder.h5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/notes.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/weights/autoencoder.h5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/weights/discriminator.h5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/weights/generator.h5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/weights/discriminator.h5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/weights/generator.h5" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/alt_gan/weights/discriminator.h5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/alt_gan/weights/generator.h5" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/gen/__init__.py" afterPath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/alt_gan/images/generator.png" afterPath="$PROJECT_DIR$/examples/alt_gan/images/generator.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" afterPath="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" />
     </list>
@@ -85,8 +60,8 @@
       <file leaf-file-name="alternative_dgagan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="168" column="24" lean-forward="false" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
+            <state relative-caret-position="514">
+              <caret line="168" column="29" lean-forward="false" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -326,6 +301,35 @@
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
+              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171205-184510" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
+              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171205-184510" type="462c0819:PsiDirectoryNode" />
+              <item name=".logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
+              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171205-184510" type="462c0819:PsiDirectoryNode" />
+              <item name="weights" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
               <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -357,6 +361,127 @@
       <recent name="$PROJECT_DIR$/../" />
       <recent name="$PROJECT_DIR$/examples/alt gan" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/disc/events.out.tfevents.1512038194.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/disc/events.out.tfevents.1512056025.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/gen/events.out.tfevents.1512038194.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/gen/events.out.tfevents.1512056025.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoenc.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/.logs/events.out.tfevents.1512562917.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/weights/autoencoder.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/out.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/output.log</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -545,13 +670,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00017" summary="creata classe Model">
-      <created>1505402227287</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1505402227287</updated>
     </task>
     <task id="LOCAL-00018" summary="testing cross val su tutto il dataset">
       <created>1505409097652</created>
@@ -889,7 +1007,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511926176256</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="autoencoder funzionante. training su kula">
+      <created>1512499092603</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1512499092603</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView">
@@ -985,7 +1110,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="testing cross val con nuovo modello" />
     <MESSAGE value="testing con 3 baseline diverse" />
     <MESSAGE value="esperimenti con 3 diverse baseline" />
     <MESSAGE value="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto" />
@@ -1010,7 +1134,8 @@
     <MESSAGE value="funzione sampling risolta. aggiunti files mancanti." />
     <MESSAGE value="dga_gan.py funzionante." />
     <MESSAGE value="pronto per il training su kula con alternative gan" />
-    <option name="LAST_COMMIT_MESSAGE" value="pronto per il training su kula con alternative gan" />
+    <MESSAGE value="autoencoder funzionante. training su kula" />
+    <option name="LAST_COMMIT_MESSAGE" value="autoencoder funzionante. training su kula" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1373,8 +1498,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="168" column="24" lean-forward="false" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
+        <state relative-caret-position="514">
+          <caret line="168" column="29" lean-forward="false" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

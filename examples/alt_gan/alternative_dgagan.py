@@ -166,7 +166,8 @@ def train_autoencoder():
                                          save_best_only=True, mode='auto')
                          ],
               validation_split=0.33,
-              epochs=300)
+              batch_size=128,
+              epochs=500)
 
     split = 50
     print("X_test")
