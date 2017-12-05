@@ -283,7 +283,7 @@ def train(BATCH_SIZE=32):
 
             # training discriminator on both alexa and generated domains
             disc_history = disc.train_on_batch(combined_domains, labels)
-            d_log = ("batch %d\t[ DISC\tloss : %f\tacc : %f ]" % (index, disc_history[0], disc_history[1]))
+            d_log = ("batch %d\t[ DISC\tloss : %f ]" % (index, disc_history))
 
             # training generator model inside the adversarial model
             disc.trainable = False
@@ -293,7 +293,7 @@ def train(BATCH_SIZE=32):
             disc.trainable = True
 
             if index % 10 == 9:
-                logger.info("%s\t[ ADV\tloss : %f\tacc: %f ]" % (d_log, gan_history[0], gan_history[1]))
+                logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
                 __write_log(callback=tb_gan,
                             names=gan.metrics_names,
                             logs=gan_history,
