@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_main.py" line="174" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
+    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="autoencoder funzionante. training su kula">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/notes.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/notes.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" afterPath="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" />
     </list>
@@ -60,8 +62,8 @@
       <file leaf-file-name="alternative_dgagan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="168" column="29" lean-forward="false" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
+            <state relative-caret-position="280">
+              <caret line="158" column="20" lean-forward="true" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -136,8 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/saved models/2017-09-14 19:36/results.log" />
-        <option value="$PROJECT_DIR$/saved models/2017-09-16 16:33/model_architecture.json" />
         <option value="$PROJECT_DIR$/saved models/pierazzi_baseline/model_architecture.json" />
         <option value="$PROJECT_DIR$/../detect_DGA/plot_module.py" />
         <option value="$PROJECT_DIR$/saved models/pieraz train:nosup test:sup/results.log" />
@@ -186,6 +186,8 @@
         <option value="$PROJECT_DIR$/examples/alt_gan/alternative_gan.py" />
         <option value="$PROJECT_DIR$/examples/alt_gan/__init__.py" />
         <option value="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/notes.txt" />
+        <option value="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/notes.txt" />
+        <option value="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/notes.txt" />
         <option value="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" />
       </list>
     </option>
@@ -295,25 +297,6 @@
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
               <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
-              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
-              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="20171205-184510" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
-              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="20171205-184510" type="462c0819:PsiDirectoryNode" />
               <item name=".logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -323,8 +306,33 @@
               <item name="examples" type="462c0819:PsiDirectoryNode" />
               <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
               <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="20171205-184510" type="462c0819:PsiDirectoryNode" />
-              <item name="weights" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
+              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171205-185323" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
+              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171206-122149" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="alt_gan" type="462c0819:PsiDirectoryNode" />
+              <item name="autoencoder_experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171206-124914" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
@@ -383,18 +391,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/disc/events.out.tfevents.1512038194.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/disc/events.out.tfevents.1512056025.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/gen/events.out.tfevents.1512038194.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/.logs/gen/events.out.tfevents.1512056025.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoenc.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/.logs/events.out.tfevents.1512562917.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/weights/autoencoder.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/out.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoenc2.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/.logs/events.out.tfevents.1512564560.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/weights/autoencoder.h5</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -670,13 +669,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00018" summary="testing cross val su tutto il dataset">
-      <created>1505409097652</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1505409097652</updated>
     </task>
     <task id="LOCAL-00019" summary="testing cross val su tutto il dataset">
       <created>1505409736739</created>
@@ -1014,7 +1006,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512499092603</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="autoencoder funzionante. training su kula">
+      <created>1512501313820</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1512501313821</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1035,7 +1034,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.91131496" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21016692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21016692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3180428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1162,20 +1161,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../detect_DGA/models/RandomForest tra:sup tst:sup/results.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saved_models/test_60/pieraz_35_BEST/results.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saved_models/test_60/pieraz_30/results.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1496,10 +1481,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="73" lean-forward="false" selection-start-line="0" selection-start-column="73" selection-end-line="0" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="168" column="29" lean-forward="false" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
+        <state relative-caret-position="280">
+          <caret line="158" column="20" lean-forward="true" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
