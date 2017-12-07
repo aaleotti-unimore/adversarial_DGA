@@ -217,6 +217,7 @@ def train(BATCH_SIZE=32):
     :param BATCH_SIZE
     """
     directory = os.path.join("experiments", datetime.now().strftime("%Y%m%d-%H%M%S"))
+    logger.debug(directory)
     if not os.path.exists(directory):
         # crea la cartella
         os.makedirs(directory)
@@ -257,9 +258,9 @@ def train(BATCH_SIZE=32):
 
     batch_no = 0
     for epoch in range(300):
-        print("Epoch is", epoch)
-        print("Number of batches", int(X_train.shape[0] / BATCH_SIZE))
-
+        logger.info("Epoch is", epoch)
+        logger.info("Number of batches", int(X_train.shape[0] / BATCH_SIZE))
+        logger.debug("Batch size: %s" % BATCH_SIZE)
         for index in range(int(X_train.shape[0] / BATCH_SIZE)):
             if index > 0:
                 logger.setLevel(logging.INFO)
@@ -421,7 +422,7 @@ if __name__ == "__main__":
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
     elif args.mode == "generate":
-        generate(BATCH_SIZE=args.batch_size)
+        # generate(BATCH_SIZE=args.batch_size)
         pass
     elif args.mode == "autoencoder":
         train_autoencoder()
