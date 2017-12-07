@@ -4,304 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_main.py" line="174" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="autoencoder funzionante. training su kula">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/alternative_gan_architecture/output.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002046/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002046/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/.log/disc/events.out.tfevents.1512516081.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/.log/gan/events.out.tfevents.1512516081.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002115/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/.log/disc/events.out.tfevents.1512516265.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/.log/gan/events.out.tfevents.1512516265.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171206-002419/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/.log/disc/events.out.tfevents.1512642205.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/.log/gan/events.out.tfevents.1512642205.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-112319/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/.log/disc/events.out.tfevents.1512645166.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/.log/gan/events.out.tfevents.1512645166.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171207-121240/model/generator.h5" />
+    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511873733.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511874874.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511875078.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511875352.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511876315.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511876419.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511876558.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511876654.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511876776.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511876855.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511877086.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/disc/events.out.tfevents.1511877933.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511873733.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511874874.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511875078.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511875352.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511876315.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511876419.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511876558.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511876654.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511876776.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511876855.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511877086.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.logs/gan/events.out.tfevents.1511877933.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/DGA_algs/suppobox.py" afterPath="$PROJECT_DIR$/resources/DGA_algs/suppobox.py" />
-      <change beforePath="$PROJECT_DIR$/DGA_algs/tinba.py" afterPath="$PROJECT_DIR$/resources/DGA_algs/tinba.py" />
-      <change beforePath="$PROJECT_DIR$/dataset/all_legit.txt" afterPath="$PROJECT_DIR$/resources/datasets/all_legit.txt" />
-      <change beforePath="$PROJECT_DIR$/dataset/featured_dataset.csv" afterPath="$PROJECT_DIR$/resources/datasets/featured_dataset.csv" />
-      <change beforePath="$PROJECT_DIR$/dataset/legitdomains.txt" afterPath="$PROJECT_DIR$/resources/datasets/legitdomains.txt" />
-      <change beforePath="$PROJECT_DIR$/dataset/suppodict.txt" afterPath="$PROJECT_DIR$/resources/datasets/suppodict.txt" />
-      <change beforePath="$PROJECT_DIR$/dataset/xaa" afterPath="$PROJECT_DIR$/resources/datasets/xaa" />
-      <change beforePath="$PROJECT_DIR$/dga_gan.py" afterPath="$PROJECT_DIR$/alternative_gan_architecture/dga_gan.py" />
-      <change beforePath="$PROJECT_DIR$/discriminator.png" afterPath="$PROJECT_DIR$/alternative_gan_architecture/discriminator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/__init__.py" afterPath="$PROJECT_DIR$/alternative_gan_architecture/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/20171204-192122/events.out.tfevents.1512411690.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/20171205-120827/events.out.tfevents.1512472112.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/20171205-122042/events.out.tfevents.1512472847.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/adv/__init__.py" afterPath="$PROJECT_DIR$/resources/DGA_algs/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/20171204-192122/events.out.tfevents.1512411690.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/20171205-120827/events.out.tfevents.1512472112.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/20171205-122042/events.out.tfevents.1512472847.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/__init__.py" afterPath="$PROJECT_DIR$/resources/examples/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/events.out.tfevents.1512038194.classificatoredga" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/disc/events.out.tfevents.1512056025.classificatoredga" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/gen/events.out.tfevents.1512038194.classificatoredga" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/.logs/gen/events.out.tfevents.1512056025.classificatoredga" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" afterPath="$PROJECT_DIR$/alternative_dgagan.py" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184510/.logs/events.out.tfevents.1512495918.archlaptop" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-184510/.logs/events.out.tfevents.1512495918.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184510/weights/autoencoder.h5" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-184510/weights/autoencoder.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184930/.logs/events.out.tfevents.1512496180.archlaptop" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-184930/.logs/events.out.tfevents.1512496180.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-184930/weights/autoencoder.h5" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-184930/weights/autoencoder.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/.logs/events.out.tfevents.1512496414.archlaptop" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-185323/.logs/events.out.tfevents.1512496414.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/notes.txt" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-185323/notes.txt" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-185323/weights/autoencoder.h5" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171205-185323/weights/autoencoder.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/.logs/events.out.tfevents.1512562917.classificatoredga" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-122149/.logs/events.out.tfevents.1512562917.classificatoredga" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/autoenc.log" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-122149/autoenc.log" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/notes.txt" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-122149/notes.txt" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149/weights/autoencoder.h5" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-122149/weights/autoencoder.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/.logs/events.out.tfevents.1512564560.classificatoredga" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-124914/.logs/events.out.tfevents.1512564560.classificatoredga" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/autoenc2.log" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-124914/autoenc2.log" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/notes.txt" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-124914/notes.txt" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-124914/weights/autoencoder.h5" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-124914/weights/autoencoder.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-143334/.logs/events.out.tfevents.1512570822.classificatoredga" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-143334/.logs/events.out.tfevents.1512570822.classificatoredga" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-143334/autoenc3.log" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-143334/autoenc3.log" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-143334/weights/autoencoder.h5" afterPath="$PROJECT_DIR$/autoencoder_experiments/20171206-143334/weights/autoencoder.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/discriminator.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/.logs/adv/events.out.tfevents.1512473987.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-123943/.logs/adv/events.out.tfevents.1512473987.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/.logs/disc/events.out.tfevents.1512473987.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-123943/.logs/disc/events.out.tfevents.1512473987.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/weights/discriminator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-123943/weights/discriminator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-123943/weights/generator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-123943/weights/generator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/.log/adv/events.out.tfevents.1512487550.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-162543/.log/adv/events.out.tfevents.1512487550.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/.log/disc/events.out.tfevents.1512487550.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-162543/.log/disc/events.out.tfevents.1512487550.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/weights/discriminator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-162543/weights/discriminator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-162543/weights/generator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-162543/weights/generator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/.log/disc/events.out.tfevents.1512511831.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-231023/.log/disc/events.out.tfevents.1512511831.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/.log/gan/events.out.tfevents.1512511831.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-231023/.log/gan/events.out.tfevents.1512511831.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/discriminator.png" afterPath="$PROJECT_DIR$/experiments/20171205-231023/discriminator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/generator.png" afterPath="$PROJECT_DIR$/experiments/20171205-231023/generator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/weights/discriminator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-231023/weights/discriminator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/weights/gan.h5" afterPath="$PROJECT_DIR$/experiments/20171205-231023/weights/gan.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/weights/generator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-231023/weights/generator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/.log/disc/events.out.tfevents.1512512610.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-232322/.log/disc/events.out.tfevents.1512512610.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/.log/gan/events.out.tfevents.1512512610.archlaptop" afterPath="$PROJECT_DIR$/experiments/20171205-232322/.log/gan/events.out.tfevents.1512512610.archlaptop" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/discriminator.png" afterPath="$PROJECT_DIR$/experiments/20171205-232322/discriminator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/generator.png" afterPath="$PROJECT_DIR$/experiments/20171205-232322/generator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/model/discriminator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-232322/model/discriminator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/model/gan.h5" afterPath="$PROJECT_DIR$/experiments/20171205-232322/model/gan.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/model/generator.h5" afterPath="$PROJECT_DIR$/experiments/20171205-232322/model/generator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322/notes.txt" afterPath="$PROJECT_DIR$/experiments/20171205-232322/notes.txt" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162107/discriminator.png" afterPath="$PROJECT_DIR$/experiments/20171206-162107/discriminator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162107/generator.png" afterPath="$PROJECT_DIR$/experiments/20171206-162107/generator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/.log/disc/events.out.tfevents.1512577508.classificatoredga" afterPath="$PROJECT_DIR$/experiments/20171206-162500/.log/disc/events.out.tfevents.1512577508.classificatoredga" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/.log/gan/events.out.tfevents.1512577508.classificatoredga" afterPath="$PROJECT_DIR$/experiments/20171206-162500/.log/gan/events.out.tfevents.1512577508.classificatoredga" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/discriminator.png" afterPath="$PROJECT_DIR$/experiments/20171206-162500/discriminator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/generator.png" afterPath="$PROJECT_DIR$/experiments/20171206-162500/generator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/model/discriminator.h5" afterPath="$PROJECT_DIR$/experiments/20171206-162500/model/discriminator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/model/gan.h5" afterPath="$PROJECT_DIR$/experiments/20171206-162500/model/gan.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/model/generator.h5" afterPath="$PROJECT_DIR$/experiments/20171206-162500/model/generator.h5" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/experiments/20171206-162500/notes.txt" afterPath="$PROJECT_DIR$/experiments/20171206-162500/notes.txt" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/generator.png" afterPath="$PROJECT_DIR$/alternative_gan_architecture/images/generator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/images/discriminator.png" afterPath="$PROJECT_DIR$/alternative_gan_architecture/images/discriminator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/images/generator.png" afterPath="$PROJECT_DIR$/images/generator.png" />
-      <change beforePath="$PROJECT_DIR$/examples/alt_gan/output.log" afterPath="$PROJECT_DIR$/output.log" />
-      <change beforePath="$PROJECT_DIR$/examples/alternative_gan.py" afterPath="$PROJECT_DIR$/resources/examples/alternative_gan.py" />
-      <change beforePath="$PROJECT_DIR$/examples/autoencoder.png" afterPath="$PROJECT_DIR$/resources/examples/autoencoder.png" />
-      <change beforePath="$PROJECT_DIR$/examples/autoencoder.py" afterPath="$PROJECT_DIR$/resources/examples/autoencoder.py" />
-      <change beforePath="$PROJECT_DIR$/examples/check_hyrum.py" afterPath="$PROJECT_DIR$/resources/examples/check_hyrum.py" />
-      <change beforePath="$PROJECT_DIR$/examples/cnn_imdb.py" afterPath="$PROJECT_DIR$/resources/examples/cnn_imdb.py" />
-      <change beforePath="$PROJECT_DIR$/examples/dcgan_mnist.py" afterPath="$PROJECT_DIR$/resources/examples/dcgan_mnist.py" />
-      <change beforePath="$PROJECT_DIR$/examples/decoder.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/encoder.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/err_domains" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/err_domains.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/example_autoencoder.py" afterPath="$PROJECT_DIR$/resources/examples/example_autoencoder.py" />
-      <change beforePath="$PROJECT_DIR$/examples/example_sequence_autoencoder.py" afterPath="$PROJECT_DIR$/resources/examples/example_sequence_autoencoder.py" />
-      <change beforePath="$PROJECT_DIR$/examples/fra-eng/fra.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/images/decoder.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/images/encoder.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/images/sequence_autoencoder.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/lstm_example2.py" afterPath="$PROJECT_DIR$/resources/examples/lstm_example2.py" />
-      <change beforePath="$PROJECT_DIR$/examples/lstm_imdb.py" afterPath="$PROJECT_DIR$/resources/examples/lstm_imdb.py" />
-      <change beforePath="$PROJECT_DIR$/examples/lstm_text_generation.py" afterPath="$PROJECT_DIR$/resources/examples/lstm_text_generation.py" />
-      <change beforePath="$PROJECT_DIR$/examples/lstmseq2seq.py" afterPath="$PROJECT_DIR$/resources/examples/lstmseq2seq.py" />
-      <change beforePath="$PROJECT_DIR$/examples/mnist/t10k-images-idx3-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/mnist/t10k-labels-idx1-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/mnist/train-images-idx3-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/mnist/train-labels-idx1-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/out.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/examples/simple_cnn.py" afterPath="$PROJECT_DIR$/resources/examples/simple_cnn.py" />
-      <change beforePath="$PROJECT_DIR$/examples/tonkenized.py" afterPath="$PROJECT_DIR$/resources/examples/tonkenized.py" />
-      <change beforePath="$PROJECT_DIR$/gan_model.py" afterPath="$PROJECT_DIR$/alternative_gan_architecture/gan_model.py" />
-      <change beforePath="$PROJECT_DIR$/generator.png" afterPath="$PROJECT_DIR$/alternative_gan_architecture/generator.png" />
-      <change beforePath="$PROJECT_DIR$/images/adversial.png" afterPath="$PROJECT_DIR$/alternative_gan_architecture/images/adversial.png" />
-      <change beforePath="$PROJECT_DIR$/images/deepDGA_GAN.jpg" afterPath="$PROJECT_DIR$/alternative_gan_architecture/images/deepDGA_GAN.jpg" />
-      <change beforePath="$PROJECT_DIR$/images/deepDGA_autoencoder.jpg" afterPath="$PROJECT_DIR$/alternative_gan_architecture/images/deepDGA_autoencoder.jpg" />
-      <change beforePath="$PROJECT_DIR$/sampling_layer.py" afterPath="$PROJECT_DIR$/alternative_gan_architecture/sampling_layer.py" />
-      <change beforePath="$PROJECT_DIR$/saved_models/early_stopped/large BatchNormalized/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/early_stopped/large BatchNormalized/tensorboard/events.out.tfevents.1505983151.classificatoredga" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced BatchNormalized/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/early_stopped/reduced BatchNormalized/tensorboard/events.out.tfevents.1505983742.classificatoredga" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/lstm_model/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/lstm_model/tensorboard/events.out.tfevents.1507105150.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_30_100/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_30_100/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_30_100/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_30_100/roc_plot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_30_100/tensorboard/events.out.tfevents.1506098247.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_neural_classifier_train_sup_test_sup.tar.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_norm_30_100/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_norm_30_100/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_norm_30_100/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_norm_30_100/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_norm_30_100/roc_plot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/pieraz_norm_30_100/tensorboard/events.out.tfevents.1506095393.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/reduce_batchNorm_noearly/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/reduce_batchNorm_noearly/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/reduce_batchNorm_noearly/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/reduce_batchNorm_noearly/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/reduce_batchNorm_noearly/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/reduce_batchNorm_noearly/roc_plot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_10/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_10/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_10/tensorboard/events.out.tfevents.1506172189.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_20/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_20/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_20/tensorboard/events.out.tfevents.1506273902.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_30/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_30/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_30/tensorboard/events.out.tfevents.1506300238.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_40/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_40/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_40/tensorboard/events.out.tfevents.1506301438.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_50/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_50/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_50/tensorboard/events.out.tfevents.1506324748.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_60/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_100/pieraz_60/tensorboard/events.out.tfevents.1506325733.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_10/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_10/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_10/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_10/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_10/tensorboard/events.out.tfevents.1506103891.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_15/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_15/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_15/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_15/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_15/tensorboard/events.out.tfevents.1506104908.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_20/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_20/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_20/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_20/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_20/tensorboard/events.out.tfevents.1506105608.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_25/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_25/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_25/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_25/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_25/tensorboard/events.out.tfevents.1506106147.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_30/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_30/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_30/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_30/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_30/tensorboard/events.out.tfevents.1506106592.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_35/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_35/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_35/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_35/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_35/tensorboard/events.out.tfevents.1506106956.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_40/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_40/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_40/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_40/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_40/tensorboard/events.out.tfevents.1506107278.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_45/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_45/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_45/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_45/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_45/tensorboard/events.out.tfevents.1506107562.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_5/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_5/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_30/pieraz_5/tensorboard/events.out.tfevents.1506101954.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_10/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_10/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_10/tensorboard/events.out.tfevents.1506163090.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_15/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_15/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_15/tensorboard/events.out.tfevents.1506165092.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_20/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_20/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_20/tensorboard/events.out.tfevents.1506166471.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_25/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_25/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_25/tensorboard/events.out.tfevents.1506167527.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_30/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_30/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_30/tensorboard/events.out.tfevents.1506168393.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_35_BEST/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_35_BEST/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_35_BEST/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_35_BEST/roc_plot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_35_BEST/tensorboard/events.out.tfevents.1506169200.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_40/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_40/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_40/tensorboard/events.out.tfevents.1506169888.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_45/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_45/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_45/tensorboard/events.out.tfevents.1506170470.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_5/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_5/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_5/tensorboard/events.out.tfevents.1506159155.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_50/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_50/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_50/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_50/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/pieraz_50/tensorboard/events.out.tfevents.1506170983.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/class_rep.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/model.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/model_architecture.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/model_weights.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/results.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/roc_plot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/saved_models/test_60/verysmall_35/tensorboard/events.out.tfevents.1506337569.archlaptop" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/weights/dga_discriminator.h5" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/weights/dga_gan.h5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/alternative_dgagan.py" afterPath="$PROJECT_DIR$/dga_gan.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -353,16 +58,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="alternative_dgagan.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/alternative_dgagan.py">
+      <file leaf-file-name="dga_gan.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dga_gan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="276" column="51" lean-forward="false" selection-start-line="276" selection-start-column="51" selection-end-line="276" selection-end-column="51" />
+            <state relative-caret-position="263">
+              <caret line="242" column="60" lean-forward="false" selection-start-line="242" selection-start-column="60" selection-end-line="242" selection-end-column="60" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#4369#4585#0" expanded="false" />
-                <element signature="e#4617#6225#0" expanded="false" />
-                <element signature="e#6256#6947#0" expanded="false" />
+                <element signature="e#4385#4601#0" expanded="false" />
+                <element signature="e#4633#6241#0" expanded="false" />
+                <element signature="e#6272#6963#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -474,7 +179,6 @@
         <option value="$PROJECT_DIR$/examples/example_sequence_autoencoder.py" />
         <option value="$PROJECT_DIR$/examples/tonkenized.py" />
         <option value="$PROJECT_DIR$/gan_model.py" />
-        <option value="$PROJECT_DIR$/dga_gan.py" />
         <option value="$PROJECT_DIR$/../detect_DGA/utils.py" />
         <option value="$PROJECT_DIR$/../detect_DGA/features/__init__.py" />
         <option value="$PROJECT_DIR$/examples/alt gan/alternative_dgagan.py" />
@@ -486,6 +190,7 @@
         <option value="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-231023/notes.txt" />
         <option value="$PROJECT_DIR$/examples/alt_gan/alternative_dgagan.py" />
         <option value="$PROJECT_DIR$/alternative_dgagan.py" />
+        <option value="$PROJECT_DIR$/dga_gan.py" />
       </list>
     </option>
   </component>
@@ -553,12 +258,6 @@
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -617,8 +316,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.alternative_dgagan train">
-    <configuration name="alternative_dgagan autoencoder" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.dga_gan train autoencoder">
+    <configuration name="dga_gan generate" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -631,32 +330,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="adversarial_DGA" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alternative_dgagan.py" />
-      <option name="PARAMETERS" value="--mode autoencoder" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="alternative_dgagan generate" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="adversarial_DGA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alternative_dgagan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dga_gan.py" />
       <option name="PARAMETERS" value="--mode generate" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="alternative_dgagan test autoencoder" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="dga_gan test autoencoder" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -669,13 +349,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="adversarial_DGA" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alternative_dgagan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dga_gan.py" />
       <option name="PARAMETERS" value="--mode test-autoencoder" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="alternative_dgagan train" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="dga_gan train autoencoder" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -688,107 +368,37 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="adversarial_DGA" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alternative_dgagan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dga_gan.py" />
+      <option name="PARAMETERS" value="--mode autoencoder" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="dga_gan train" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="adversarial_DGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dga_gan.py" />
       <option name="PARAMETERS" value="--mode train" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="alternative_gan" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples/alt_gan" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="adversarial_DGA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/alternative_gan.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="dga_gan" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="adversarial_DGA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alternative_gan_architecture/dga_gan.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="gan_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="adversarial_DGA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alternative_gan_architecture/gan_model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="tonkenized" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="adversarial_DGA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/tonkenized.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <list size="8">
-      <item index="0" class="java.lang.String" itemvalue="Python.alternative_dgagan autoencoder" />
-      <item index="1" class="java.lang.String" itemvalue="Python.alternative_dgagan test autoencoder" />
-      <item index="2" class="java.lang.String" itemvalue="Python.alternative_dgagan generate" />
-      <item index="3" class="java.lang.String" itemvalue="Python.alternative_dgagan train" />
-      <item index="4" class="java.lang.String" itemvalue="Python.dga_gan" />
-      <item index="5" class="java.lang.String" itemvalue="Python.gan_model" />
-      <item index="6" class="java.lang.String" itemvalue="Python.tonkenized" />
-      <item index="7" class="java.lang.String" itemvalue="Python.alternative_gan" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.dga_gan train autoencoder" />
+      <item index="1" class="java.lang.String" itemvalue="Python.dga_gan test autoencoder" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dga_gan generate" />
+      <item index="3" class="java.lang.String" itemvalue="Python.dga_gan train" />
     </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.alternative_dgagan train" />
-        <item index="1" class="java.lang.String" itemvalue="Python.alternative_gan" />
-        <item index="2" class="java.lang.String" itemvalue="Python.dga_gan" />
-        <item index="3" class="java.lang.String" itemvalue="Python.gan_model" />
-        <item index="4" class="java.lang.String" itemvalue="Python.tonkenized" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -803,13 +413,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00021" summary="testing cross val con nuovo modello">
-      <created>1505484903782</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1505484903782</updated>
     </task>
     <task id="LOCAL-00022" summary="testing cross val con nuovo modello">
       <created>1505565817590</created>
@@ -1147,7 +750,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512514282287</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="riorganizzazione cartelle">
+      <created>1512645807112</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1512645807113</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1245,7 +855,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="testing con 3 baseline diverse" />
     <MESSAGE value="esperimenti con 3 diverse baseline" />
     <MESSAGE value="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto" />
     <MESSAGE value="testing senza early stopping. aggiunto modelcheckpoint tra le callbacks" />
@@ -1270,7 +879,8 @@
     <MESSAGE value="dga_gan.py funzionante." />
     <MESSAGE value="pronto per il training su kula con alternative gan" />
     <MESSAGE value="autoencoder funzionante. training su kula" />
-    <option name="LAST_COMMIT_MESSAGE" value="autoencoder funzionante. training su kula" />
+    <MESSAGE value="riorganizzazione cartelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="riorganizzazione cartelle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1629,15 +1239,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alternative_dgagan.py">
+    <entry file="file://$PROJECT_DIR$/dga_gan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="276" column="51" lean-forward="false" selection-start-line="276" selection-start-column="51" selection-end-line="276" selection-end-column="51" />
+        <state relative-caret-position="263">
+          <caret line="242" column="60" lean-forward="false" selection-start-line="242" selection-start-column="60" selection-end-line="242" selection-end-column="60" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#4369#4585#0" expanded="false" />
-            <element signature="e#4617#6225#0" expanded="false" />
-            <element signature="e#6256#6947#0" expanded="false" />
+            <element signature="e#4385#4601#0" expanded="false" />
+            <element signature="e#4633#6241#0" expanded="false" />
+            <element signature="e#6272#6963#0" expanded="false" />
           </folding>
         </state>
       </provider>

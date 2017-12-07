@@ -37,10 +37,10 @@ def generator_model(summary=True):
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
     :return: generator model
     """
-    dropout_value = 0.3
+    dropout_value = 0.2
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
-    cnn_strides = 1
+    cnn_strides = [2, 3]
     dec_convs = []
     latent_vector = 128
     timesteps = 15
@@ -58,7 +58,7 @@ def generator_model(summary=True):
         conv = Conv1D(cnn_filters[i],
                       cnn_kernels[i],
                       padding='same',
-                      strides=cnn_strides,
+                      strides=cnn_strides[i],
                       name='gen_conv%s' % i)(decoded)
         conv = LeakyReLU()(conv)
         conv = Dropout(dropout_value, name="gen_dropout%s" % i)(conv)
@@ -83,7 +83,7 @@ def discriminator_model(summary=True):
     dropout_value = 0.45
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
-    cnn_strides = 1
+    cnn_strides = [2, 3]
     enc_convs = []
     embedding_vec = 20  # lunghezza embedding layer
     timesteps = 15
@@ -101,7 +101,7 @@ def discriminator_model(summary=True):
         conv = Conv1D(cnn_filters[i],
                       cnn_kernels[i],
                       padding='same',
-                      strides=cnn_strides,
+                      strides=cnn_strides[i],
                       name='discr_conv%s' % i)(discr)
         conv = LeakyReLU()(conv)
         conv = Dropout(dropout_value, name='discr_dropout%s' % i)(conv)
@@ -240,7 +240,7 @@ def train(BATCH_SIZE=32):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0008, clipvalue=1.0, decay=1e-8)
+    discr_opt = RMSprop(lr=0.0005, clipvalue=1.0, decay=1e-8)
     gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8)
 
     #   compilation
@@ -321,7 +321,7 @@ def generate(predictions, inv_map=None):
         sampled.append(word)
 
     readable = __to_readable_domain(np.array(sampled), inv_map=inv_map)
-    print("Generated sample: %s " % readable)
+    logger.info("Generated sample: %s " % readable)
 
 
 def __build_dataset(n_samples=10000, maxlen=15, validation_split=0.33):
