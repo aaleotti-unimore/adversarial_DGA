@@ -1,4 +1,5 @@
 import argparse
+import sys
 import logging
 import os
 import string
@@ -37,7 +38,7 @@ def generator_model(summary=True):
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
     :return: generator model
     """
-    dropout_value = 0.2
+    dropout_value = 0.5
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
     cnn_strides = [1, 1]
@@ -80,7 +81,7 @@ def discriminator_model(summary=True):
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
     :return: Discriminator model
     """
-    dropout_value = 0.45
+    dropout_value = 0.3
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
     cnn_strides = [1, 1]
@@ -241,11 +242,11 @@ def train(BATCH_SIZE=32):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0005, clipvalue=1.0, decay=1e-8)
-    gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8)
+    discr_opt = RMSprop(lr=0.0008, clipvalue=1.0, decay=1e-8)
+    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8)
 
     #   compilation
-    gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
+    gan.compile(loss='binary_crossentropy', optimizer='adam')
     disc.trainable = True
     disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
     gan.summary()
@@ -257,10 +258,10 @@ def train(BATCH_SIZE=32):
     tb_disc.set_model(disc)
 
     batch_no = 0
+    logger.info("Batch size: %s" % BATCH_SIZE)
     for epoch in range(300):
-        logger.info("Epoch is", epoch)
-        logger.info("Number of batches", int(X_train.shape[0] / BATCH_SIZE))
-        logger.debug("Batch size: %s" % BATCH_SIZE)
+        logger.info("Epoch is %s" % epoch)
+        logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
 
         for index in range(int(X_train.shape[0] / BATCH_SIZE)):
             if index > 0:
@@ -273,15 +274,25 @@ def train(BATCH_SIZE=32):
             # Generating domains from generator
             generated_domains = genr.predict(noise, verbose=0)
             logger.debug("generated domains shape:\t%s" % (generated_domains.shape,))
-
-            combined_domains = np.concatenate((domains_batch, generated_domains))
-            labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))])  # 1 = real, 0 = fake
+            
+            # combined_domains = np.concatenate((domains_batch, generated_domains))
+            # labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))])  # 1 = real, 0 = fake
+            
+            # minibatches with only real or fake domains
+            if index % 2:
+                combined_domains = domains_batch
+                labels = np.ones((BATCH_SIZE,1))
+            else:
+                combined_domains = generated_domains
+                labels = np.zeros((BATCH_SIZE,1))
+            
+            # soft and noisy labels
             labels += 0.05 * np.random.random(labels.shape)
 
             logger.debug("training set shape\t%s" % (combined_domains.shape,))
             logger.debug("target shape %s" % (labels.shape,))
 
-            # training discriminator on both alexa and generated domains
+            # training discriminator 
             disc_history = disc.train_on_batch(combined_domains, labels)
             d_log = ("batch %d\t[ DISC\tloss : %f ]" % (index, disc_history))
 
@@ -291,6 +302,7 @@ def train(BATCH_SIZE=32):
             misleading_targets = np.ones((BATCH_SIZE, 1))
             gan_history = gan.train_on_batch(noise, misleading_targets)
             disc.trainable = True
+            
 
             if index % 10 == 9:
                 logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
@@ -308,6 +320,10 @@ def train(BATCH_SIZE=32):
                 disc.save(os.path.join(directory, 'model/discriminator.h5'))
                 genr.save(os.path.join(directory, 'model/generator.h5'))
                 generate(generated_domains, inv_map=data_dict['inv_map'])
+            
+            if disc_history >0:
+                logger.error("Discriminator loss <0, stopping")
+                sys.exit("exiting...")
 
 
 def generate(predictions, inv_map=None):
