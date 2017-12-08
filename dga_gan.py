@@ -40,7 +40,7 @@ def generator_model(summary=True):
     dropout_value = 0.2
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
-    cnn_strides = [2, 3]
+    cnn_strides = [1, 1]
     dec_convs = []
     latent_vector = 128
     timesteps = 15
@@ -83,7 +83,7 @@ def discriminator_model(summary=True):
     dropout_value = 0.45
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
-    cnn_strides = [2, 3]
+    cnn_strides = [1, 1]
     enc_convs = []
     embedding_vec = 20  # lunghezza embedding layer
     timesteps = 15
@@ -261,6 +261,7 @@ def train(BATCH_SIZE=32):
         logger.info("Epoch is", epoch)
         logger.info("Number of batches", int(X_train.shape[0] / BATCH_SIZE))
         logger.debug("Batch size: %s" % BATCH_SIZE)
+
         for index in range(int(X_train.shape[0] / BATCH_SIZE)):
             if index > 0:
                 logger.setLevel(logging.INFO)
