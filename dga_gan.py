@@ -11,7 +11,7 @@ from keras import Input
 from keras import backend as K
 from keras.callbacks import TensorBoard, ModelCheckpoint
 from keras.layers import Conv1D, Dropout, concatenate, LSTM, RepeatVector, Dense, TimeDistributed, \
-    LeakyReLU, BatchNormalization
+    LeakyReLU, BatchNormalization, Flatten, AveragePooling1D
 from keras.models import Sequential, Model
 from keras.models import load_model
 from keras.optimizers import RMSprop, adam
@@ -44,21 +44,18 @@ def generator_model(summary=True):
     cnn_strides = [1, 1]
     dec_convs = []
     leaky_relu_alpha = 0.2
-    latent_vector = 128
+    latent_vector = 38
     timesteps = 15
     word_index = 38
 
     dec_inputs = Input(shape=(latent_vector,),
                        name="Generator_Input")
-    decoded = Dense(word_index)(dec_inputs)
-    decoded = BatchNormalization(momentum=0.9)(decoded)
-    decoded = LeakyReLU(leaky_relu_alpha)(decoded)
-    decoded = Dropout(dropout_value)
-    decoded = RepeatVector(timesteps, name="gen_repeate_vec")(
-        dec_inputs)  # Repeating input by "timesteps" times. expected output (batch_size, 128, 15)
-    # decoded = LSTM(latent_vector, return_sequences=True, name="gen_LSTM")(decoded)
-    # decoded = Highway()(decoded)
+    # decoded = Dense(word_index)(dec_inputs)
+    # decoded = BatchNormalization(momentum=0.9)(decoded)
     # decoded = LeakyReLU(leaky_relu_alpha)(decoded)
+    # decoded = Dropout(dropout_value)(decoded)
+    decoded = RepeatVector(timesteps, name="gen_repeate_vec")(dec_inputs)
+    decoded = LSTM(word_index, return_sequences=True, name="gen_LSTM")(decoded)
     decoded = Dropout(dropout_value)(decoded)
     for i in range(2):
         conv = Conv1D(cnn_filters[i],
@@ -101,10 +98,8 @@ def discriminator_model(summary=True):
     discr_inputs = Input(shape=(timesteps, word_index),
                          name="Discriminator_Input")
     # embedding layer. expected output ( batch_size, timesteps, embedding_vec)
-    manual_embedding = Dense(embedding_vec, activation='linear')
-    # manual_embedding = LeakyReLU(leaky_relu_alpha)(manual_embedding)
-    # manual_embedding = Dropout(dropout_value)(manual_embedding)
-    discr = TimeDistributed(manual_embedding, name='manual_embedding', trainable=False)(discr_inputs)
+    # manual_embedding = Dense(embedding_vec, activation='linear')
+    # discr = TimeDistributed(manual_embedding, name='manual_embedding', trainable=False)(discr_inputs)
     # discr = Embedding(word_index, embedding_vec, input_length=timesteps, name="discr_embedd")(
     #     discr_inputs)  # other embedding layer
     for i in range(2):
@@ -112,15 +107,16 @@ def discriminator_model(summary=True):
                       cnn_kernels[i],
                       padding='same',
                       strides=cnn_strides[i],
-                      name='discr_conv%s' % i)(discr)
+                      name='discr_conv%s' % i)(discr_inputs)
         conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name='discr_dropout%s' % i)(conv)
-        # conv = MaxPooling1D()(conv)
+        conv = AveragePooling1D()(conv)
         enc_convs.append(conv)
 
     # concatenating CNNs. expected output (batch_size, 7, 30)
     discr = concatenate(enc_convs)
-    discr = LSTM(latent_vector)(discr)
+    discr = Flatten()(discr)
+    # discr = LSTM(latent_vector)(discr)
     discr = Dense(1, activation='sigmoid',
                   kernel_initializer='normal'
                   )(discr)
@@ -221,6 +217,10 @@ def test_autoencoder():
         print(r)
 
 
+def __custom_gan_loss(y_true, y_pred):
+    return K.max(K.log(y_pred))
+
+
 def train(BATCH_SIZE=32):
     """
     Training function.
@@ -234,7 +234,7 @@ def train(BATCH_SIZE=32):
         os.makedirs(directory + "/model")
 
     # load dataset
-    latent_dim = 128
+    latent_dim = 38
     maxlen = 15
     n_samples = int(10000 + 1000 * 0.33)
     data_dict = __build_dataset(maxlen=maxlen, n_samples=n_samples)
@@ -262,7 +262,7 @@ def train(BATCH_SIZE=32):
                    decay=1e-8,
                    clipvalue=1.0)  # alternative
     #   compilation
-    gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
+    gan.compile(loss=__custom_gan_loss, optimizer=gan_opt)
     disc.trainable = True
     disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
     gan.summary()
@@ -459,9 +459,10 @@ if __name__ == "__main__":
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
     elif args.mode == "generate":
-        generator = load_model("experiments/20171211-101920/model/generator.h5")
-        preds = generator.predict_on_batch(np.random.normal(size=(args.batch_size, 128)))
-        generate(predictions=preds, n_samples=args.batch_size, temperature=0.5, print_preds=True)
+        model = load_model("experiments/20171211-191329/model/discriminator.h5")
+        model.summary()
+        # preds = generator.predict_on_batch(np.random.normal(size=(args.batch_size, 128)))
+        # generate(predictions=preds, n_samples=args.batch_size, temperature=0.5, print_preds=True)
         pass
     elif args.mode == "autoencoder":
         train_autoencoder()
