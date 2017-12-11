@@ -1,5 +1,4 @@
 import argparse
-import sys
 import logging
 import os
 import string
@@ -12,9 +11,10 @@ from keras import Input
 from keras import backend as K
 from keras.callbacks import TensorBoard, ModelCheckpoint
 from keras.layers import Conv1D, Dropout, concatenate, LSTM, RepeatVector, Dense, TimeDistributed, \
-    LeakyReLU
+    LeakyReLU, BatchNormalization
 from keras.models import Sequential, Model
-from keras.optimizers import RMSprop
+from keras.models import load_model
+from keras.optimizers import RMSprop, adam
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical, plot_model
@@ -38,30 +38,36 @@ def generator_model(summary=True):
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
     :return: generator model
     """
-    dropout_value = 0.5
+    dropout_value = 0.4
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
     cnn_strides = [1, 1]
     dec_convs = []
+    leaky_relu_alpha = 0.2
     latent_vector = 128
     timesteps = 15
     word_index = 38
 
     dec_inputs = Input(shape=(latent_vector,),
                        name="Generator_Input")
-    # decoded = Dense(lstm_vec_dim)(dec_inputs)
-    # decoded = LeakyReLU()(decoded)
+    decoded = Dense(word_index)(dec_inputs)
+    decoded = BatchNormalization(momentum=0.9)(decoded)
+    decoded = LeakyReLU(leaky_relu_alpha)(decoded)
+    decoded = Dropout(dropout_value)
     decoded = RepeatVector(timesteps, name="gen_repeate_vec")(
         dec_inputs)  # Repeating input by "timesteps" times. expected output (batch_size, 128, 15)
     # decoded = LSTM(latent_vector, return_sequences=True, name="gen_LSTM")(decoded)
-
+    # decoded = Highway()(decoded)
+    # decoded = LeakyReLU(leaky_relu_alpha)(decoded)
+    decoded = Dropout(dropout_value)(decoded)
     for i in range(2):
         conv = Conv1D(cnn_filters[i],
                       cnn_kernels[i],
                       padding='same',
                       strides=cnn_strides[i],
                       name='gen_conv%s' % i)(decoded)
-        conv = LeakyReLU()(conv)
+        conv = BatchNormalization(momentum=0.9)(conv)
+        conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name="gen_dropout%s" % i)(conv)
         dec_convs.append(conv)
 
@@ -81,12 +87,13 @@ def discriminator_model(summary=True):
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
     :return: Discriminator model
     """
-    dropout_value = 0.3
+    dropout_value = 0.4
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
     cnn_strides = [1, 1]
     enc_convs = []
     embedding_vec = 20  # lunghezza embedding layer
+    leaky_relu_alpha = 0.2
     timesteps = 15
     word_index = 38
     latent_vector = 128
@@ -95,6 +102,8 @@ def discriminator_model(summary=True):
                          name="Discriminator_Input")
     # embedding layer. expected output ( batch_size, timesteps, embedding_vec)
     manual_embedding = Dense(embedding_vec, activation='linear')
+    # manual_embedding = LeakyReLU(leaky_relu_alpha)(manual_embedding)
+    # manual_embedding = Dropout(dropout_value)(manual_embedding)
     discr = TimeDistributed(manual_embedding, name='manual_embedding', trainable=False)(discr_inputs)
     # discr = Embedding(word_index, embedding_vec, input_length=timesteps, name="discr_embedd")(
     #     discr_inputs)  # other embedding layer
@@ -104,7 +113,7 @@ def discriminator_model(summary=True):
                       padding='same',
                       strides=cnn_strides[i],
                       name='discr_conv%s' % i)(discr)
-        conv = LeakyReLU()(conv)
+        conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name='discr_dropout%s' % i)(conv)
         # conv = MaxPooling1D()(conv)
         enc_convs.append(conv)
@@ -242,26 +251,35 @@ def train(BATCH_SIZE=32):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0008, clipvalue=1.0, decay=1e-8)
-    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8)
-
+    discr_opt = RMSprop(lr=0.0005,
+                        clipvalue=1.0,
+                        decay=1e-8)
+    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
+    gan_opt = adam(lr=0.0004,
+                   beta_1=0.9,
+                   beta_2=0.999,
+                   epsilon=1e-8,
+                   decay=1e-8,
+                   clipvalue=1.0)  # alternative
     #   compilation
-    gan.compile(loss='binary_crossentropy', optimizer='adam')
+    gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
     disc.trainable = True
     disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
     gan.summary()
 
     # callbacks
-    tb_gan = TensorBoard(log_dir=os.path.join(directory, ".log/gan"), write_graph=False)
+    tb_gan = TensorBoard(log_dir=os.path.join(directory, ".log/gan"), write_graph=True, histogram_freq=0,
+                         batch_size=BATCH_SIZE)
     tb_gan.set_model(gan)
-    tb_disc = TensorBoard(log_dir=os.path.join(directory, ".log/disc"), write_graph=False)
+    tb_disc = TensorBoard(log_dir=os.path.join(directory, ".log/disc"), write_graph=True, histogram_freq=0,
+                          batch_size=BATCH_SIZE)
     tb_disc.set_model(disc)
 
     batch_no = 0
-    logger.info("Batch size: %s" % BATCH_SIZE)
-    for epoch in range(300):
+    for epoch in range(150):
         logger.info("Epoch is %s" % epoch)
         logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
+        logger.debug("Batch size: %s" % BATCH_SIZE)
 
         for index in range(int(X_train.shape[0] / BATCH_SIZE)):
             if index > 0:
@@ -274,35 +292,37 @@ def train(BATCH_SIZE=32):
             # Generating domains from generator
             generated_domains = genr.predict(noise, verbose=0)
             logger.debug("generated domains shape:\t%s" % (generated_domains.shape,))
-            
+
+            # usual trainig mode
             # combined_domains = np.concatenate((domains_batch, generated_domains))
-            # labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))])  # 1 = real, 0 = fake
-            
-            # minibatches with only real or fake domains
-            if index % 2:
+            # labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))]) # 1 = real, 0 = fake
+            # labels += 0.05 * np.random.random(labels.shape)
+
+            # alternative training mode:
+            if index % 2 == 0:
                 combined_domains = domains_batch
-                labels = np.ones((BATCH_SIZE,1))
+                labels = np.random.uniform(0.7, 1.2, size=((BATCH_SIZE, 1)))
+                if index % 32:
+                    labels = np.random.uniform(0.0, 0.3, size=((BATCH_SIZE, 1)))
             else:
                 combined_domains = generated_domains
-                labels = np.zeros((BATCH_SIZE,1))
-            
-            # soft and noisy labels
-            labels += 0.05 * np.random.random(labels.shape)
+                labels = np.random.uniform(0.0, 0.3, size=((BATCH_SIZE, 1)))
+                if index % 32:
+                    labels = np.random.uniform(0.7, 1.2, size=((BATCH_SIZE, 1)))
 
             logger.debug("training set shape\t%s" % (combined_domains.shape,))
             logger.debug("target shape %s" % (labels.shape,))
 
-            # training discriminator 
+            # training discriminator on both alexa and generated domains
             disc_history = disc.train_on_batch(combined_domains, labels)
             d_log = ("batch %d\t[ DISC\tloss : %f ]" % (index, disc_history))
 
             # training generator model inside the adversarial model
             disc.trainable = False
-            noise = np.random.normal(size=(BATCH_SIZE, latent_dim))  # random latent vectors. same size of
-            misleading_targets = np.ones((BATCH_SIZE, 1))
+            noise = np.random.normal(size=(BATCH_SIZE, latent_dim))  # random latent vectors. same size of D output
+            misleading_targets = np.random.uniform(0.7, 1.2, size=((BATCH_SIZE, 1)))
             gan_history = gan.train_on_batch(noise, misleading_targets)
             disc.trainable = True
-            
 
             if index % 10 == 9:
                 logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
@@ -320,26 +340,27 @@ def train(BATCH_SIZE=32):
                 disc.save(os.path.join(directory, 'model/discriminator.h5'))
                 genr.save(os.path.join(directory, 'model/generator.h5'))
                 generate(generated_domains, inv_map=data_dict['inv_map'])
-            
-            if disc_history >0:
-                logger.error("Discriminator loss <0, stopping")
-                sys.exit("exiting...")
 
 
-def generate(predictions, inv_map=None):
+def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
     if inv_map is None:
         datas_dict = __build_dataset()
         inv_map = datas_dict['inv_map']
 
     sampled = []
-    for x in predictions[:5]:
+    for x in predictions[:n_samples]:
         word = []
         for y in x:
-            word.append(__np_sample(y, temperature=0.5))
+            word.append(__np_sample(y, temperature=temperature))
         sampled.append(word)
 
     readable = __to_readable_domain(np.array(sampled), inv_map=inv_map)
-    logger.info("Generated sample: %s " % readable)
+    if print_preds:
+        import itertools
+        for s, r in itertools.izip(sampled, readable):
+            logger.info("%s\t%s" % (s, r))
+    else:
+        logger.info("Generated sample: %s " % readable)
 
 
 def __build_dataset(n_samples=10000, maxlen=15, validation_split=0.33):
@@ -377,7 +398,7 @@ def __np_sample(preds, temperature=1.0):
     preds = np.log(preds) / temperature
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
-    # probas = np.random.multinomial(1, preds, 1)
+    # preds = np.random.multinomial(1, preds, 1)
     return np.argmax(preds)
 
 
@@ -428,7 +449,6 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", type=str, default='train')
     parser.add_argument("--batch-size", type=int, default=32)
-    parser.add_argument("--nice", dest="nice", action="store_true")
     parser.set_defaults(nice=False)
     args = parser.parse_args()
     return args
@@ -439,7 +459,9 @@ if __name__ == "__main__":
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
     elif args.mode == "generate":
-        # generate(BATCH_SIZE=args.batch_size)
+        generator = load_model("experiments/20171211-101920/model/generator.h5")
+        preds = generator.predict_on_batch(np.random.normal(size=(args.batch_size, 128)))
+        generate(predictions=preds, n_samples=args.batch_size, temperature=0.5, print_preds=True)
         pass
     elif args.mode == "autoencoder":
         train_autoencoder()
