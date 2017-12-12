@@ -276,7 +276,7 @@ def train(BATCH_SIZE=32):
     tb_disc.set_model(disc)
 
     batch_no = 0
-    for epoch in range(150):
+    for epoch in range(300):
         logger.info("Epoch is %s" % epoch)
         logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
         logger.debug("Batch size: %s" % BATCH_SIZE)
@@ -459,10 +459,10 @@ if __name__ == "__main__":
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
     elif args.mode == "generate":
-        model = load_model("experiments/20171211-191329/model/discriminator.h5")
+        model = load_model("experiments/20171211-191329/model/gan.h5")
         model.summary()
-        # preds = generator.predict_on_batch(np.random.normal(size=(args.batch_size, 128)))
-        # generate(predictions=preds, n_samples=args.batch_size, temperature=0.5, print_preds=True)
+        # preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 38)))
+        # generate(predictions=preds, n_samples=args.batch_size, temperature=1.0, print_preds=True)
         pass
     elif args.mode == "autoencoder":
         train_autoencoder()
