@@ -474,9 +474,10 @@ if __name__ == "__main__":
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
     if args.mode == "moretrain":
-        disc = load_model("experiments/20171214-115137/model/discriminator.h5")
-        genr = load_model("experiments/20171214-115137/model/generator.h5")
-        train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name="20171214-115137")
+        model_name = "20171214-115137"
+        disc = load_model("experiments/%s/model/discriminator.h5" % model_name)
+        genr = load_model("experiments/%s/model/generator.h5" % model_name)
+        train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name=model_name)
     elif args.mode == "generate":
         model = load_model("experiments/20171213-112910/model/discriminator.h5")
         model.summary()
