@@ -5,85 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/.log/disc/events.out.tfevents.1513126848.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/.log/gan/events.out.tfevents.1513126847.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/.log/disc/events.out.tfevents.1513159475.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/.log/gan/events.out.tfevents.1513159475.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/.log/disc/events.out.tfevents.1513160158.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/.log/gan/events.out.tfevents.1513160157.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/.log/disc/events.out.tfevents.1513160329.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/.log/gan/events.out.tfevents.1513160329.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/.log/disc/events.out.tfevents.1513160649.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/.log/gan/events.out.tfevents.1513160649.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/.log/disc/events.out.tfevents.1513160954.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/.log/gan/events.out.tfevents.1513160954.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/.log/disc/events.out.tfevents.1513162765.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/.log/gan/events.out.tfevents.1513162765.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/.log/disc/events.out.tfevents.1513163070.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/.log/gan/events.out.tfevents.1513163070.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/.log/disc/events.out.tfevents.1513163307.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/.log/gan/events.out.tfevents.1513163307.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/.log/disc/events.out.tfevents.1513163593.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/.log/gan/events.out.tfevents.1513163593.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/.log/disc/events.out.tfevents.1513164005.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/.log/gan/events.out.tfevents.1513164005.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/.log/disc/events.out.tfevents.1513168144.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/.log/gan/events.out.tfevents.1513168144.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/output.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/.log/disc/events.out.tfevents.1513168205.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/.log/gan/events.out.tfevents.1513168205.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/output.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/.log/disc/events.out.tfevents.1513168279.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/.log/gan/events.out.tfevents.1513168279.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/output.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/.log/disc/events.out.tfevents.1513168520.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/.log/gan/events.out.tfevents.1513168520.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/output.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/.log/disc/events.out.tfevents.1513168741.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/.log/gan/events.out.tfevents.1513168740.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/output.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/.log/disc/events.out.tfevents.1513168989.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/.log/gan/events.out.tfevents.1513168989.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/output.log" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/dga_gan.py" afterPath="$PROJECT_DIR$/dga_gan.py" />
+      <change beforePath="$PROJECT_DIR$/output.log" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,7 +72,7 @@
     <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_generate.coverage" NAME="dga_gan generate Coverage Results" MODIFIED="1513161279458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$sample_layer.coverage" NAME="sample_layer Coverage Results" MODIFIED="1511437794836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan_autoencoder.coverage" NAME="alternative_dgagan autoencoder Coverage Results" MODIFIED="1512496398213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_train.coverage" NAME="dga_gan train Coverage Results" MODIFIED="1513164000196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_train.coverage" NAME="dga_gan train Coverage Results" MODIFIED="1513168985528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1507680158029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA/features" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_text_generation.coverage" NAME="lstm_text_generation Coverage Results" MODIFIED="1508512788277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$tonkenized.coverage" NAME="tonkenized Coverage Results" MODIFIED="1511870294704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
@@ -141,47 +113,16 @@
       <file leaf-file-name="dga_gan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dga_gan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+            <state relative-caret-position="317">
+              <caret line="177" column="12" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
               <folding>
-                <element signature="e#803#828#0" expanded="false" />
-                <element signature="e#927#2697#0" expanded="false" />
-                <element signature="e#927#1179#1" expanded="false" />
-                <element signature="e#1488#1529#0" expanded="false" />
-                <element signature="e#1966#2381#0" expanded="false" />
-                <element signature="e#2743#4814#0" expanded="false" />
-                <element signature="e#2743#3061#1" expanded="false" />
-                <element signature="e#3437#3511#0" expanded="false" />
-                <element signature="e#3877#4287#0" expanded="false" />
-                <element signature="e#4712#4801#0" expanded="false" />
-                <element signature="e#4844#5060#0" expanded="false" />
-                <element signature="e#4844#4960#1" expanded="false" />
-                <element signature="e#5092#6700#0" expanded="false" />
-                <element signature="e#5282#5375#0" expanded="false" />
-                <element signature="e#5691#6160#0" expanded="false" />
-                <element signature="e#6455#6553#0" expanded="false" />
-                <element signature="e#6731#7422#0" expanded="false" />
-                <element signature="e#7177#7275#0" expanded="false" />
-                <element signature="e#12556#13124#0" expanded="false" />
-                <element signature="e#12584#12654#0" expanded="false" />
-                <element signature="e#12719#12842#0" expanded="false" />
-                <element signature="e#12944#13058#0" expanded="false" />
-                <element signature="e#13279#14226#0" expanded="false" />
-                <element signature="e#14024#14226#0" expanded="false" />
-                <element signature="e#14274#14572#0" expanded="false" />
-                <element signature="e#14619#14981#0" expanded="false" />
-                <element signature="e#14619#14837#1" expanded="false" />
-                <element signature="e#15032#15278#0" expanded="false" />
-                <element signature="e#15091#15259#0" expanded="false" />
-                <element signature="e#15155#15230#0" expanded="false" />
-                <element signature="e#15335#15919#0" expanded="false" />
-                <element signature="e#15370#15668#0" expanded="false" />
-                <element signature="e#15419#15668#0" expanded="false" />
-                <element signature="e#15687#15919#0" expanded="false" />
-                <element signature="e#15942#16182#0" expanded="false" />
-                <element signature="e#16216#16869#0" expanded="false" />
-                <element signature="e#16347#16735#0" expanded="false" />
-                <element signature="e#16544#16622#0" expanded="false" />
+                <element signature="e#11236#12844#0" expanded="false" />
+                <element signature="e#12875#13566#0" expanded="false" />
+                <element signature="e#13721#14668#0" expanded="false" />
+                <element signature="e#14716#15014#0" expanded="false" />
+                <element signature="e#15061#15423#0" expanded="false" />
+                <element signature="e#15474#15720#0" expanded="false" />
+                <element signature="e#15777#16361#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -198,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logger</find>
       <find>logger.info</find>
       <find>%</find>
       <find>self.now</find>
@@ -228,6 +168,7 @@
       <find>verbose</find>
       <find>128</find>
       <find>self.</find>
+      <find>summary</find>
     </findStrings>
     <replaceStrings>
       <replace>self.directory</replace>
@@ -392,12 +333,6 @@
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -418,6 +353,10 @@
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/aaleotti-unimore/ComicsScraper.git" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../" />
+      <recent name="$PROJECT_DIR$/examples/alt gan" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources" />
@@ -425,10 +364,123 @@
       <recent name="$PROJECT_DIR$/examples/alt_gan/experiments/20171205-232322" />
       <recent name="$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171206-122149" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../" />
-      <recent name="$PROJECT_DIR$/examples/alt gan" />
-    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/output.log</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/.log/disc/events.out.tfevents.1513246534.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/.log/gan/events.out.tfevents.1513246534.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/model/discriminator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/model/gan.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/model/generator.h5</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -539,13 +591,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00026" summary="esperimenti con 3 diverse baseline">
-      <created>1505753417214</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1505753417214</updated>
     </task>
     <task id="LOCAL-00027" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
       <created>1505845540075</created>
@@ -883,7 +928,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513004853264</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="testing su kula">
+      <created>1513165043911</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1513165043911</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView">
@@ -896,18 +948,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="1" width="1360" height="737" extended-state="6" />
+    <frame x="0" y="1" width="1360" height="761" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9082569" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32698414" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.762997" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32568806" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3180428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.411315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -919,7 +972,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3180428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1036,21 +1088,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/examples/alt_gan/discriminator.png" />
-    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="166" column="97" lean-forward="false" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="3383" column="8" lean-forward="false" selection-start-line="3383" selection-start-column="8" selection-end-line="3383" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1128,13 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="575" column="6" lean-forward="false" selection-start-line="575" selection-start-column="6" selection-end-line="575" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/engine/topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2855">
-          <caret line="2590" column="8" lean-forward="false" selection-start-line="2590" selection-start-column="8" selection-end-line="2590" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1289,49 +1319,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171213-133858/output.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="142" column="1" lean-forward="false" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/engine/topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="2700" column="21" lean-forward="false" selection-start-line="2700" selection-start-column="21" selection-end-line="2702" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171213-134306/output.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3404">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dga_gan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+        <state relative-caret-position="317">
+          <caret line="177" column="12" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
           <folding>
-            <element signature="e#803#828#0" expanded="false" />
-            <element signature="e#927#2697#0" expanded="false" />
-            <element signature="e#927#1179#1" expanded="false" />
-            <element signature="e#1488#1529#0" expanded="false" />
-            <element signature="e#1966#2381#0" expanded="false" />
-            <element signature="e#2743#4814#0" expanded="false" />
-            <element signature="e#2743#3061#1" expanded="false" />
-            <element signature="e#3437#3511#0" expanded="false" />
-            <element signature="e#3877#4287#0" expanded="false" />
-            <element signature="e#4712#4801#0" expanded="false" />
-            <element signature="e#4844#5060#0" expanded="false" />
-            <element signature="e#4844#4960#1" expanded="false" />
-            <element signature="e#5092#6700#0" expanded="false" />
-            <element signature="e#5282#5375#0" expanded="false" />
-            <element signature="e#5691#6160#0" expanded="false" />
-            <element signature="e#6455#6553#0" expanded="false" />
-            <element signature="e#6731#7422#0" expanded="false" />
-            <element signature="e#7177#7275#0" expanded="false" />
-            <element signature="e#12556#13124#0" expanded="false" />
-            <element signature="e#12584#12654#0" expanded="false" />
-            <element signature="e#12719#12842#0" expanded="false" />
-            <element signature="e#12944#13058#0" expanded="false" />
-            <element signature="e#13279#14226#0" expanded="false" />
-            <element signature="e#14024#14226#0" expanded="false" />
-            <element signature="e#14274#14572#0" expanded="false" />
-            <element signature="e#14619#14981#0" expanded="false" />
-            <element signature="e#14619#14837#1" expanded="false" />
-            <element signature="e#15032#15278#0" expanded="false" />
-            <element signature="e#15091#15259#0" expanded="false" />
-            <element signature="e#15155#15230#0" expanded="false" />
-            <element signature="e#15335#15919#0" expanded="false" />
-            <element signature="e#15370#15668#0" expanded="false" />
-            <element signature="e#15419#15668#0" expanded="false" />
-            <element signature="e#15687#15919#0" expanded="false" />
-            <element signature="e#15942#16182#0" expanded="false" />
-            <element signature="e#16216#16869#0" expanded="false" />
-            <element signature="e#16347#16735#0" expanded="false" />
-            <element signature="e#16544#16622#0" expanded="false" />
+            <element signature="e#11236#12844#0" expanded="false" />
+            <element signature="e#12875#13566#0" expanded="false" />
+            <element signature="e#13721#14668#0" expanded="false" />
+            <element signature="e#14716#15014#0" expanded="false" />
+            <element signature="e#15061#15423#0" expanded="false" />
+            <element signature="e#15474#15720#0" expanded="false" />
+            <element signature="e#15777#16361#0" expanded="false" />
           </folding>
         </state>
       </provider>

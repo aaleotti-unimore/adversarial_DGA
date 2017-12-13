@@ -30,7 +30,7 @@ CUDA_VISIBLE_DEVICES = 0
 # print("set learning phase to %s" % K.learning_phase())
 
 
-def generator_model(summary=True):
+def generator_model(summary=True, print_fn=None):
     """
     Generator model:
     # In: (batch_size, 1),
@@ -55,7 +55,6 @@ def generator_model(summary=True):
     # decoded = LeakyReLU(leaky_relu_alpha)(decoded)
     # decoded = Dropout(dropout_value)(decoded)
     decoded = RepeatVector(timesteps, name="gen_repeate_vec")(dec_inputs)
-    decoded = Dropout(dropout_value)(decoded)
     decoded = LSTM(word_index, return_sequences=True, name="gen_LSTM")(decoded)
     decoded = Dropout(dropout_value)(decoded)
     for i in range(2):
@@ -64,7 +63,7 @@ def generator_model(summary=True):
                       padding='same',
                       strides=cnn_strides[i],
                       name='gen_conv%s' % i)(decoded)
-        conv = BatchNormalization(momentum=0.6)(conv)
+        conv = BatchNormalization(momentum=0.9)(conv)
         conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name="gen_dropout%s" % i)(conv)
         dec_convs.append(conv)
@@ -75,11 +74,13 @@ def generator_model(summary=True):
 
     G = Model(inputs=dec_inputs, outputs=decoded, name='Generator')
     if summary:
+        if print_fn:
+            G.summary(print_fn=print_fn)
         G.summary()
     return G
 
 
-def discriminator_model(summary=True):
+def discriminator_model(summary=True, print_fn=None):
     """
     Discriminator model takes a 3D tensor of size (batch_size, timesteps, word_index), outputs a domain embedding tensor of size (batch_size, lstm_vec_dim).
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
@@ -109,6 +110,7 @@ def discriminator_model(summary=True):
                       padding='same',
                       strides=cnn_strides[i],
                       name='discr_conv%s' % i)(discr_inputs)
+        # conv = BatchNormalization(momentum=0.9)(conv)
         conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name='discr_dropout%s' % i)(conv)
         conv = AveragePooling1D()(conv)
@@ -118,7 +120,7 @@ def discriminator_model(summary=True):
     discr = concatenate(enc_convs)
     discr = Flatten()(discr)
     # discr = LSTM(latent_vector)(discr)
-    discr = Dropout(dropout_value)(discr)
+    # discr = Dropout(dropout_value)(discr)
     discr = Dense(1, activation='sigmoid',
                   kernel_initializer='normal'
                   )(discr)
@@ -126,7 +128,10 @@ def discriminator_model(summary=True):
     D = Model(inputs=discr_inputs, outputs=discr, name='Discriminator')
 
     if summary:
-        D.summary()
+        if print_fn:
+            D.summary(print_fn=print_fn)
+        else:
+            D.summary()
         # plot_model(D, to_file="images/discriminator.png", show_shapes=True)
     return D
 
@@ -138,11 +143,157 @@ def adversarial(g, d):
     :param d: Discriminator
     :return: Adversarial model
     """
-    model = Sequential()
-    model.add(g)
+    adv_model = Sequential()
+    adv_model.add(g)
     d.trainable = False
-    model.add(d)
-    return model
+    adv_model.add(d)
+    return adv_model
+
+
+def train(BATCH_SIZE=32):
+    """
+    Training function.
+    :param BATCH_SIZE
+    """
+    directory = os.path.join("experiments", datetime.now().strftime("%Y%m%d-%H%M%S"))
+    if not os.path.exists(directory):
+        # crea la cartella
+        os.makedirs(directory)
+        os.makedirs(directory + "/model")
+
+    hdlr = logging.FileHandler(os.path.join(directory, 'output.log'))
+    logger.addHandler(hdlr)
+
+    logger.debug(directory)
+
+    # load dataset
+    latent_dim = 38
+    maxlen = 15
+    n_samples = int(10000 + 1000 * 0.33)
+    data_dict = __build_dataset(maxlen=maxlen, n_samples=n_samples)
+    X_train = data_dict['X_train']
+
+    print("Training set shape %s" % (X_train.shape,))
+
+    # models
+    disc = discriminator_model(print_fn=logger.debug)
+    plot_model(disc, to_file=os.path.join(directory, "discriminator.png"), show_shapes=True)
+    genr = generator_model(print_fn=logger.debug)
+    plot_model(genr, to_file=os.path.join(directory, "generator.png"), show_shapes=True)
+
+    gan = adversarial(genr, disc)
+
+    #   optimizers
+    discr_opt = RMSprop(lr=0.0005,
+                        clipvalue=1.0,
+                        decay=1e-8)
+    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
+    gan_opt = adam(lr=0.0004,
+                   beta_1=0.9,
+                   beta_2=0.999,
+                   epsilon=1e-8,
+                   decay=1e-8,
+                   clipvalue=1.0)  # alternative
+    #   compilation
+    gan.compile(loss=__custom_gan_loss, optimizer=gan_opt)
+    disc.trainable = True
+    disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
+    gan.summary(print_fn=logger.debug)
+
+    # callbacks
+    tb_gan = TensorBoard(log_dir=os.path.join(directory, ".log/gan"), write_graph=True, histogram_freq=0,
+                         batch_size=BATCH_SIZE)
+    tb_gan.set_model(gan)
+    tb_disc = TensorBoard(log_dir=os.path.join(directory, ".log/disc"), write_graph=True, histogram_freq=0,
+                          batch_size=BATCH_SIZE)
+    tb_disc.set_model(disc)
+
+    batch_no = 0
+    for epoch in range(300):
+        logger.info("Epoch is %s" % epoch)
+        logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
+        logger.debug("Batch size: %s" % BATCH_SIZE)
+
+        for index in range(int(X_train.shape[0] / BATCH_SIZE)):
+            if index > 0:
+                # show debug data only the first time.
+                logger.setLevel(logging.INFO)
+
+            noise = np.random.normal(size=(BATCH_SIZE, latent_dim))  # random latent vectors. same size of
+            alexa_domains = X_train[(index * BATCH_SIZE):(index + 1) * BATCH_SIZE]
+            logger.debug("domains_batch size:\t%s" % (alexa_domains.shape,))
+
+            # Generating domains from generator
+            generated_domains = genr.predict(noise, verbose=0)
+            logger.debug("generated domains shape:\t%s" % (generated_domains.shape,))
+
+            # usual trainig mode
+            # combined_domains = np.concatenate((domains_batch, generated_domains))
+            # labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))]) # 1 = real, 0 = fake
+            # labels += 0.05 * np.random.random(labels.shape)
+
+            # alternative training mode:
+            labels_size = (BATCH_SIZE, 1)
+            labels_real = np.random.uniform(0.9, 1.1, size=labels_size)  # ~1 = real. Label Smoothing technique
+            labels_fake = np.zeros(shape=labels_size)  # 0 = fake
+            if index % 2 == 0:
+                training_domains = alexa_domains
+                labels = labels_real
+            else:
+                training_domains = generated_domains
+                labels = labels_fake
+
+            logger.debug("training set shape\t%s" % (training_domains.shape,))
+            logger.debug("target shape %s" % (labels.shape,))
+
+            # training discriminator on both alexa and generated domains
+            disc.trainable = True
+            disc_history = disc.train_on_batch(training_domains, labels)
+            disc.trainable = False
+
+            # training generator model inside the adversarial model
+            noise = np.random.normal(size=(BATCH_SIZE, latent_dim))  # random latent vectors.
+            misleading_targets = np.random.uniform(0.9, 1.1, size=labels_size)
+            gan_history = gan.train_on_batch(noise, misleading_targets)
+
+            if index % 10 == 9:
+                d_log = ("epoch %d\tmini-batch %d\t[ DISC\tloss : %f ]" % (epoch, index, disc_history))
+                logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
+                __write_log(callback=tb_gan,
+                            names=gan.metrics_names,
+                            logs=gan_history,
+                            batch_no=batch_no)
+                __write_log(callback=tb_disc,
+                            names=disc.metrics_names,
+                            logs=disc_history,
+                            batch_no=batch_no)
+                gan.save(os.path.join(directory, 'model/gan.h5'))
+                disc.save(os.path.join(directory, 'model/discriminator.h5'))
+                genr.save(os.path.join(directory, 'model/generator.h5'))
+                generate(generated_domains, inv_map=data_dict['inv_map'])
+
+            batch_no += 1
+
+
+def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
+    if inv_map is None:
+        datas_dict = __build_dataset()
+        inv_map = datas_dict['inv_map']
+
+    sampled = []
+    for x in predictions[:n_samples]:
+        word = []
+        for y in x:
+            word.append(__np_sample(y, temperature=temperature))
+        sampled.append(word)
+
+    readable = __to_readable_domain(np.array(sampled), inv_map=inv_map)
+    if print_preds:
+        import itertools
+        for s, r in itertools.izip(sampled, readable):
+            logger.info("%s\t%s" % (s, r))
+    else:
+        logger.info("Generated sample: %s " % readable)
 
 
 def train_autoencoder():
@@ -217,149 +368,6 @@ def test_autoencoder():
     readable = __to_readable_domain(np.array(sampled), inv_map=data_dict['inv_map'])
     for r in readable:
         print(r)
-
-
-def train(BATCH_SIZE=32):
-    """
-    Training function.
-    :param BATCH_SIZE
-    """
-    directory = os.path.join("experiments", datetime.now().strftime("%Y%m%d-%H%M%S"))
-    logger.debug(directory)
-    if not os.path.exists(directory):
-        # crea la cartella
-        os.makedirs(directory)
-        os.makedirs(directory + "/model")
-
-    # load dataset
-    latent_dim = 38
-    maxlen = 15
-    n_samples = int(10000 + 1000 * 0.33)
-    data_dict = __build_dataset(maxlen=maxlen, n_samples=n_samples)
-    X_train = data_dict['X_train']
-
-    print("Training set shape %s" % (X_train.shape,))
-
-    # models
-    disc = discriminator_model()
-    plot_model(disc, to_file=os.path.join(directory, "discriminator.png"), show_shapes=True)
-    genr = generator_model()
-    plot_model(genr, to_file=os.path.join(directory, "generator.png"), show_shapes=True)
-
-    gan = adversarial(genr, disc)
-
-    #   optimizers
-    discr_opt = RMSprop(lr=0.0005,
-                        clipvalue=1.0,
-                        decay=1e-8)
-    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
-    gan_opt = adam(lr=0.0004,
-                   beta_1=0.9,
-                   beta_2=0.999,
-                   epsilon=1e-8,
-                   decay=1e-8,
-                   clipvalue=1.0)  # alternative
-    #   compilation
-    gan.compile(loss=__custom_gan_loss, optimizer=gan_opt)
-    disc.trainable = True
-    disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
-    gan.summary()
-
-    # callbacks
-    tb_gan = TensorBoard(log_dir=os.path.join(directory, ".log/gan"), write_graph=True, histogram_freq=0,
-                         batch_size=BATCH_SIZE)
-    tb_gan.set_model(gan)
-    tb_disc = TensorBoard(log_dir=os.path.join(directory, ".log/disc"), write_graph=True, histogram_freq=0,
-                          batch_size=BATCH_SIZE)
-    tb_disc.set_model(disc)
-
-    batch_no = 0
-    for epoch in range(300):
-        logger.info("Epoch is %s" % epoch)
-        logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
-        logger.debug("Batch size: %s" % BATCH_SIZE)
-
-        for index in range(int(X_train.shape[0] / BATCH_SIZE)):
-            if index > 0:
-                # show debug data only the first time.
-                logger.setLevel(logging.INFO)
-
-            noise = np.random.normal(size=(BATCH_SIZE, latent_dim))  # random latent vectors. same size of
-
-            alexa_domains = X_train[(index * BATCH_SIZE):(index + 1) * BATCH_SIZE]
-            logger.debug("domains_batch size:\t%s" % (alexa_domains.shape,))
-
-            # Generating domains from generator
-            generated_domains = genr.predict(noise, verbose=0)
-            logger.debug("generated domains shape:\t%s" % (generated_domains.shape,))
-
-            # usual trainig mode
-            # combined_domains = np.concatenate((domains_batch, generated_domains))
-            # labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))]) # 1 = real, 0 = fake
-            # labels += 0.05 * np.random.random(labels.shape)
-
-            # alternative training mode:
-            labels_size = (BATCH_SIZE, 1)
-            labels_real = np.random.uniform(0.9, 1.1, size=labels_size)  # ~1 = real. Label Smoothing technique
-            labels_fake = np.zeros(shape=labels_size)  # 0 = fake
-            if index % 2 == 0:
-                training_domains = alexa_domains
-                labels = labels_real
-            else:
-                training_domains = generated_domains
-                labels = labels_fake
-
-            logger.debug("training set shape\t%s" % (training_domains.shape,))
-            logger.debug("target shape %s" % (labels.shape,))
-
-            # training discriminator on both alexa and generated domains
-            disc.trainable = True
-            disc_history = disc.train_on_batch(training_domains, labels)
-            disc.trainable = False
-
-            # training generator model inside the adversarial model
-            noise = np.random.normal(size=(BATCH_SIZE, latent_dim))  # random latent vectors. s
-            misleading_targets = labels_real
-            gan_history = gan.train_on_batch(noise, misleading_targets)
-
-            if index % 10 == 9:
-                d_log = ("epoch %d\tmini-batch %d\t[ DISC\tloss : %f ]" % (epoch, index, disc_history))
-                logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
-            __write_log(callback=tb_gan,
-                        names=gan.metrics_names,
-                        logs=gan_history,
-                        batch_no=batch_no)
-            __write_log(callback=tb_disc,
-                        names=disc.metrics_names,
-                        logs=disc_history,
-                        batch_no=batch_no)
-            batch_no += 1
-
-            gan.save(os.path.join(directory, 'model/gan.h5'))
-            disc.save(os.path.join(directory, 'model/discriminator.h5'))
-            genr.save(os.path.join(directory, 'model/generator.h5'))
-            generate(generated_domains, inv_map=data_dict['inv_map'])
-
-
-def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
-    if inv_map is None:
-        datas_dict = __build_dataset()
-        inv_map = datas_dict['inv_map']
-
-    sampled = []
-    for x in predictions[:n_samples]:
-        word = []
-        for y in x:
-            word.append(__np_sample(y, temperature=temperature))
-        sampled.append(word)
-
-    readable = __to_readable_domain(np.array(sampled), inv_map=inv_map)
-    if print_preds:
-        import itertools
-        for s, r in itertools.izip(sampled, readable):
-            logger.info("%s\t%s" % (s, r))
-    else:
-        logger.info("Generated sample: %s " % readable)
 
 
 def __custom_gan_loss(y_true, y_pred):
