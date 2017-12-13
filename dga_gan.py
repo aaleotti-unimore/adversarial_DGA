@@ -55,15 +55,15 @@ def generator_model(summary=True, print_fn=None):
     # decoded = LeakyReLU(leaky_relu_alpha)(decoded)
     # decoded = Dropout(dropout_value)(decoded)
     decoded = RepeatVector(timesteps, name="gen_repeate_vec")(dec_inputs)
-    decoded = LSTM(word_index, return_sequences=True, name="gen_LSTM")(decoded)
-    decoded = Dropout(dropout_value)(decoded)
+    # decoded = LSTM(word_index, return_sequences=True, name="gen_LSTM")(decoded)
+    # decoded = Dropout(dropout_value)(decoded)
     for i in range(2):
         conv = Conv1D(cnn_filters[i],
                       cnn_kernels[i],
                       padding='same',
                       strides=cnn_strides[i],
                       name='gen_conv%s' % i)(decoded)
-        conv = BatchNormalization(momentum=0.9)(conv)
+        # conv = BatchNormalization(momentum=0.9)(conv)
         conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name="gen_dropout%s" % i)(conv)
         dec_convs.append(conv)
@@ -113,7 +113,7 @@ def discriminator_model(summary=True, print_fn=None):
         # conv = BatchNormalization(momentum=0.9)(conv)
         conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name='discr_dropout%s' % i)(conv)
-        conv = AveragePooling1D()(conv)
+        # conv = AveragePooling1D()(conv)
         enc_convs.append(conv)
 
     # concatenating CNNs. expected output (batch_size, 7, 30)
