@@ -55,8 +55,8 @@ def generator_model(summary=True, print_fn=None):
     # decoded = LeakyReLU(leaky_relu_alpha)(decoded)
     # decoded = Dropout(dropout_value)(decoded)
     decoded = RepeatVector(timesteps, name="gen_repeate_vec")(dec_inputs)
-    # decoded = LSTM(word_index, return_sequences=True, name="gen_LSTM")(decoded)
-    # decoded = Dropout(dropout_value)(decoded)
+    decoded = LSTM(word_index, return_sequences=True, name="gen_LSTM")(decoded)
+    decoded = Dropout(dropout_value)(decoded)
     for i in range(2):
         conv = Conv1D(cnn_filters[i],
                       cnn_kernels[i],
@@ -195,7 +195,7 @@ def train(BATCH_SIZE=32):
                    decay=1e-8,
                    clipvalue=1.0)  # alternative
     #   compilation
-    gan.compile(loss=__custom_gan_loss, optimizer=gan_opt)
+    gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
     disc.trainable = True
     disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
     gan.summary(print_fn=logger.debug)
