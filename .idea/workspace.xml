@@ -5,8 +5,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dga_gan.py" afterPath="$PROJECT_DIR$/dga_gan.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/.log/disc/events.out.tfevents.1513126848.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/.log/gan/events.out.tfevents.1513126847.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-020044/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/.log/disc/events.out.tfevents.1513159475.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/.log/gan/events.out.tfevents.1513159475.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-110432/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/.log/disc/events.out.tfevents.1513160158.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/.log/gan/events.out.tfevents.1513160157.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111554/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/.log/disc/events.out.tfevents.1513160329.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/.log/gan/events.out.tfevents.1513160329.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-111845/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/.log/disc/events.out.tfevents.1513160649.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/.log/gan/events.out.tfevents.1513160649.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112405/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/.log/disc/events.out.tfevents.1513160954.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/.log/gan/events.out.tfevents.1513160954.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-112910/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/.log/disc/events.out.tfevents.1513162765.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/.log/gan/events.out.tfevents.1513162765.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-115922/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/.log/disc/events.out.tfevents.1513163070.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/.log/gan/events.out.tfevents.1513163070.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120426/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/.log/disc/events.out.tfevents.1513163307.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/.log/gan/events.out.tfevents.1513163307.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-120822/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/.log/disc/events.out.tfevents.1513163593.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/.log/gan/events.out.tfevents.1513163593.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-121310/model/generator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/.log/disc/events.out.tfevents.1513164005.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/.log/gan/events.out.tfevents.1513164005.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/discriminator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/generator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/model/discriminator.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/model/gan.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-122001/model/generator.h5" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/dga_gan.py" afterPath="$PROJECT_DIR$/dga_gan.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,37 +93,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/adversarial_DGA$cnn_imdb.coverage" NAME="cnn_imdb Coverage Results" MODIFIED="1507120011133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$gan_model.coverage" NAME="gan_model Coverage Results" MODIFIED="1511871456229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$gan.coverage" NAME="gan Coverage Results" MODIFIED="1511190167402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan_autoencoder.coverage" NAME="alternative_dgagan autoencoder Coverage Results" MODIFIED="1512496398213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$tonkenized.coverage" NAME="tonkenized Coverage Results" MODIFIED="1511870294704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan.coverage" NAME="alternative_dgagan Coverage Results" MODIFIED="1512487542479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_train.coverage" NAME="dga_gan train Coverage Results" MODIFIED="1513024364504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_gan.coverage" NAME="alternative_gan Coverage Results" MODIFIED="1511924278344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example.coverage" NAME="lstm_example Coverage Results" MODIFIED="1506956633377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan_test_autoencoder.coverage" NAME="alternative_dgagan test autoencoder Coverage Results" MODIFIED="1512498796504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$tinba.coverage" NAME="tinba Coverage Results" MODIFIED="1504173991028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DGA_algs" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$sample_layer.coverage" NAME="sample_layer Coverage Results" MODIFIED="1511437794836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$example_autoencoder.coverage" NAME="example_autoencoder Coverage Results" MODIFIED="1511434855887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_train_autoencoder.coverage" NAME="dga_gan train autoencoder Coverage Results" MODIFIED="1512646592360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1507680158029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA/features" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$detect_DGA.coverage" NAME="detect_DGA Coverage Results" MODIFIED="1506958159775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$try.coverage" NAME="try Coverage Results" MODIFIED="1508532771401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$example_sequence_autoencoder.coverage" NAME="example_sequence_autoencoder Coverage Results" MODIFIED="1511470266761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_generate.coverage" NAME="dga_gan generate Coverage Results" MODIFIED="1513161279458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$sample_layer.coverage" NAME="sample_layer Coverage Results" MODIFIED="1511437794836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan_autoencoder.coverage" NAME="alternative_dgagan autoencoder Coverage Results" MODIFIED="1512496398213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_train.coverage" NAME="dga_gan train Coverage Results" MODIFIED="1513164000196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1507680158029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA/features" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_text_generation.coverage" NAME="lstm_text_generation Coverage Results" MODIFIED="1508512788277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$tonkenized.coverage" NAME="tonkenized Coverage Results" MODIFIED="1511870294704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_gan.coverage" NAME="alternative_gan Coverage Results" MODIFIED="1511924278344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$gan_model.coverage" NAME="gan_model Coverage Results" MODIFIED="1511871456229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$examples.coverage" NAME="examples Coverage Results" MODIFIED="1506533111783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan.coverage" NAME="alternative_dgagan Coverage Results" MODIFIED="1512487542479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$check_hyrum.coverage" NAME="check_hyrum Coverage Results" MODIFIED="1511466244203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_train_autoencoder.coverage" NAME="dga_gan train autoencoder Coverage Results" MODIFIED="1512646592360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$gan.coverage" NAME="gan Coverage Results" MODIFIED="1511190167402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$tinba.coverage" NAME="tinba Coverage Results" MODIFIED="1504173991028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DGA_algs" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstmseq2seq.coverage" NAME="lstmseq2seq Coverage Results" MODIFIED="1511458985315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$main.coverage" NAME="main Coverage Results" MODIFIED="1507104640285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan_train.coverage" NAME="alternative_dgagan train Coverage Results" MODIFIED="1512645159416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$example_sequence_autoencoder.coverage" NAME="example_sequence_autoencoder Coverage Results" MODIFIED="1511470266761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$lstmseq2seq.coverage" NAME="lstmseq2seq Coverage Results" MODIFIED="1511458985315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan_test_autoencoder.coverage" NAME="alternative_dgagan test autoencoder Coverage Results" MODIFIED="1512498796504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$alternative_dgagan__1_.coverage" NAME="alternative_dgagan (1) Coverage Results" MODIFIED="1512478434646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/alt_gan" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_text_generation.coverage" NAME="lstm_text_generation Coverage Results" MODIFIED="1508512788277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$detect_DGA.coverage" NAME="detect_DGA Coverage Results" MODIFIED="1506958159775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../detect_DGA" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$examples.coverage" NAME="examples Coverage Results" MODIFIED="1506533111783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan.coverage" NAME="dga_gan Coverage Results" MODIFIED="1511877918147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example__1_.coverage" NAME="lstm_example (1) Coverage Results" MODIFIED="1507104522192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$cnn_imdb.coverage" NAME="cnn_imdb Coverage Results" MODIFIED="1507120011133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$dcgan_mnist.coverage" NAME="dcgan_mnist Coverage Results" MODIFIED="1511457167042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$autoencoder.coverage" NAME="autoencoder Coverage Results" MODIFIED="1511458752322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$simple_cnn.coverage" NAME="simple_cnn Coverage Results" MODIFIED="1506972507829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$check_hyrum.coverage" NAME="check_hyrum Coverage Results" MODIFIED="1511466244203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan.coverage" NAME="dga_gan Coverage Results" MODIFIED="1511877918147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$dcgan_mnist.coverage" NAME="dcgan_mnist Coverage Results" MODIFIED="1511457167042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example__1_.coverage" NAME="lstm_example (1) Coverage Results" MODIFIED="1507104522192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan_generate.coverage" NAME="dga_gan generate Coverage Results" MODIFIED="1513089925020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example.coverage" NAME="lstm_example Coverage Results" MODIFIED="1506956633377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -64,26 +141,49 @@
       <file leaf-file-name="dga_gan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dga_gan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="278" column="25" lean-forward="false" selection-start-line="278" selection-start-column="25" selection-end-line="278" selection-end-column="25" />
+            <state relative-caret-position="292">
+              <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
               <folding>
-                <marker date="1513090003024" expanded="false" signature="0:7" ph="import ..." />
+                <element signature="e#803#828#0" expanded="false" />
+                <element signature="e#927#2697#0" expanded="false" />
+                <element signature="e#927#1179#1" expanded="false" />
+                <element signature="e#1488#1529#0" expanded="false" />
+                <element signature="e#1966#2381#0" expanded="false" />
+                <element signature="e#2743#4814#0" expanded="false" />
+                <element signature="e#2743#3061#1" expanded="false" />
+                <element signature="e#3437#3511#0" expanded="false" />
+                <element signature="e#3877#4287#0" expanded="false" />
+                <element signature="e#4712#4801#0" expanded="false" />
+                <element signature="e#4844#5060#0" expanded="false" />
+                <element signature="e#4844#4960#1" expanded="false" />
+                <element signature="e#5092#6700#0" expanded="false" />
+                <element signature="e#5282#5375#0" expanded="false" />
+                <element signature="e#5691#6160#0" expanded="false" />
+                <element signature="e#6455#6553#0" expanded="false" />
+                <element signature="e#6731#7422#0" expanded="false" />
+                <element signature="e#7177#7275#0" expanded="false" />
+                <element signature="e#12556#13124#0" expanded="false" />
+                <element signature="e#12584#12654#0" expanded="false" />
+                <element signature="e#12719#12842#0" expanded="false" />
+                <element signature="e#12944#13058#0" expanded="false" />
+                <element signature="e#13279#14226#0" expanded="false" />
+                <element signature="e#14024#14226#0" expanded="false" />
+                <element signature="e#14274#14572#0" expanded="false" />
+                <element signature="e#14619#14981#0" expanded="false" />
+                <element signature="e#14619#14837#1" expanded="false" />
+                <element signature="e#15032#15278#0" expanded="false" />
+                <element signature="e#15091#15259#0" expanded="false" />
+                <element signature="e#15155#15230#0" expanded="false" />
+                <element signature="e#15335#15919#0" expanded="false" />
+                <element signature="e#15370#15668#0" expanded="false" />
+                <element signature="e#15419#15668#0" expanded="false" />
+                <element signature="e#15687#15919#0" expanded="false" />
+                <element signature="e#15942#16182#0" expanded="false" />
+                <element signature="e#16216#16869#0" expanded="false" />
+                <element signature="e#16347#16735#0" expanded="false" />
+                <element signature="e#16544#16622#0" expanded="false" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="discriminator.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/experiments/20171211-191329/discriminator.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generator.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/experiments/20171211-191329/generator.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -214,10 +314,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="1" />
-    <option name="width" value="1280" />
-    <option name="height" value="1269" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="8" />
+    <option name="y" value="24" />
+    <option name="width" value="1342" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -259,6 +360,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="adversarial_DGA" type="cbb8eebc:String" user="adversarial_DGA" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="adversarial_DGA" type="cbb8eebc:String" user="adversarial_DGA" />
+              <item name="saved models" type="cbb8eebc:String" user="saved models" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,21 +388,17 @@
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
             <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="adversarial_DGA" type="cbb8eebc:String" user="adversarial_DGA" />
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="adversarial_DGA" type="cbb8eebc:String" user="adversarial_DGA" />
-              <item name="saved models" type="cbb8eebc:String" user="saved models" />
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -347,6 +460,7 @@
       <option name="PARAMETERS" value="--mode generate" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="dga_gan test autoencoder" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -365,6 +479,7 @@
       <option name="PARAMETERS" value="--mode test-autoencoder" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="dga_gan train autoencoder" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -383,6 +498,7 @@
       <option name="PARAMETERS" value="--mode autoencoder" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="dga_gan train" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -401,6 +517,7 @@
       <option name="PARAMETERS" value="--mode train" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.dga_gan train autoencoder" />
@@ -779,19 +896,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="1" width="1280" height="1269" extended-state="0" />
+    <frame x="0" y="1" width="1360" height="737" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9082569" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32698414" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.88156724" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.411315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -799,12 +919,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3180428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -919,34 +1036,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/utils/vis_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/utils/generic_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/numpy/random/mtrand.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="1585" column="4" lean-forward="false" selection-start-line="1585" selection-start-column="4" selection-end-line="1585" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="1372" column="4" lean-forward="false" selection-start-line="1372" selection-start-column="4" selection-end-line="1372" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/examples/alt_gan/discriminator.png" />
     <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -982,7 +1071,6 @@
     <entry file="file://$PROJECT_DIR$/resources/examples/lstm_text_generation.py" />
     <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171205-185323/notes.txt" />
     <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171206-122149/notes.txt" />
-    <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171206-124914/notes.txt" />
     <entry file="file:///usr/lib/python2.7/site-packages/keras/layers/pooling.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -1020,7 +1108,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output.log" />
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-1247972723/numpy/core/multiarray.py" />
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-1247972723/numpy/random/mtrand.py" />
     <entry file="file:///usr/lib/python2.7/site-packages/numpy/random/__init__.py">
@@ -1134,16 +1221,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/callbacks.py">
+    <entry file="file://$PROJECT_DIR$/output.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="384" column="0" lean-forward="false" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
+        <state relative-caret-position="315392">
+          <caret line="13148" column="105" lean-forward="false" selection-start-line="13148" selection-start-column="105" selection-end-line="13148" selection-end-column="105" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/20171211-191329/discriminator.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/layers/advanced_activations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/20171211-191329/generator.png">
@@ -1151,12 +1242,96 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171211-191329/discriminator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171206-124914/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/examples/autoencoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/layers/normalization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-1247972723/numpy/core/umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-547">
+          <caret line="2819" column="4" lean-forward="false" selection-start-line="2819" selection-start-column="4" selection-end-line="2819" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5598">
+          <caret line="327" column="6" lean-forward="false" selection-start-line="327" selection-start-column="6" selection-end-line="327" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dga_gan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="278" column="25" lean-forward="false" selection-start-line="278" selection-start-column="25" selection-end-line="278" selection-end-column="25" />
+        <state relative-caret-position="292">
+          <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
           <folding>
-            <marker date="1513090003024" expanded="false" signature="0:7" ph="import ..." />
+            <element signature="e#803#828#0" expanded="false" />
+            <element signature="e#927#2697#0" expanded="false" />
+            <element signature="e#927#1179#1" expanded="false" />
+            <element signature="e#1488#1529#0" expanded="false" />
+            <element signature="e#1966#2381#0" expanded="false" />
+            <element signature="e#2743#4814#0" expanded="false" />
+            <element signature="e#2743#3061#1" expanded="false" />
+            <element signature="e#3437#3511#0" expanded="false" />
+            <element signature="e#3877#4287#0" expanded="false" />
+            <element signature="e#4712#4801#0" expanded="false" />
+            <element signature="e#4844#5060#0" expanded="false" />
+            <element signature="e#4844#4960#1" expanded="false" />
+            <element signature="e#5092#6700#0" expanded="false" />
+            <element signature="e#5282#5375#0" expanded="false" />
+            <element signature="e#5691#6160#0" expanded="false" />
+            <element signature="e#6455#6553#0" expanded="false" />
+            <element signature="e#6731#7422#0" expanded="false" />
+            <element signature="e#7177#7275#0" expanded="false" />
+            <element signature="e#12556#13124#0" expanded="false" />
+            <element signature="e#12584#12654#0" expanded="false" />
+            <element signature="e#12719#12842#0" expanded="false" />
+            <element signature="e#12944#13058#0" expanded="false" />
+            <element signature="e#13279#14226#0" expanded="false" />
+            <element signature="e#14024#14226#0" expanded="false" />
+            <element signature="e#14274#14572#0" expanded="false" />
+            <element signature="e#14619#14981#0" expanded="false" />
+            <element signature="e#14619#14837#1" expanded="false" />
+            <element signature="e#15032#15278#0" expanded="false" />
+            <element signature="e#15091#15259#0" expanded="false" />
+            <element signature="e#15155#15230#0" expanded="false" />
+            <element signature="e#15335#15919#0" expanded="false" />
+            <element signature="e#15370#15668#0" expanded="false" />
+            <element signature="e#15419#15668#0" expanded="false" />
+            <element signature="e#15687#15919#0" expanded="false" />
+            <element signature="e#15942#16182#0" expanded="false" />
+            <element signature="e#16216#16869#0" expanded="false" />
+            <element signature="e#16347#16735#0" expanded="false" />
+            <element signature="e#16544#16622#0" expanded="false" />
           </folding>
         </state>
       </provider>
