@@ -150,7 +150,7 @@ def adversarial(g, d):
     return adv_model
 
 
-def train(BATCH_SIZE=32):
+def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     """
     Training function.
     :param BATCH_SIZE
@@ -165,6 +165,8 @@ def train(BATCH_SIZE=32):
     logger.addHandler(hdlr)
 
     logger.debug(directory)
+    if original_model_name is not None:
+        logger.debug("MORE TRAINING on the model %s" % original_model_name)
 
     # load dataset
     latent_dim = 38
@@ -176,10 +178,12 @@ def train(BATCH_SIZE=32):
     print("Training set shape %s" % (X_train.shape,))
 
     # models
-    disc = discriminator_model(print_fn=logger.debug)
-    plot_model(disc, to_file=os.path.join(directory, "discriminator.png"), show_shapes=True)
-    genr = generator_model(print_fn=logger.debug)
-    plot_model(genr, to_file=os.path.join(directory, "generator.png"), show_shapes=True)
+    if disc is None:
+        disc = discriminator_model(print_fn=logger.debug)
+        plot_model(disc, to_file=os.path.join(directory, "discriminator.png"), show_shapes=True)
+    if genr is None:
+        genr = generator_model(print_fn=logger.debug)
+        plot_model(genr, to_file=os.path.join(directory, "generator.png"), show_shapes=True)
 
     gan = adversarial(genr, disc)
 
@@ -469,6 +473,10 @@ if __name__ == "__main__":
     args = get_args()
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
+    if args.mode == "moretrain":
+        disc = load_model("experiments/20171214-115137/model/discriminator.h5")
+        genr = load_model("experiments/20171214-115137/model/generator.h5")
+        train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name="20171214-115137")
     elif args.mode == "generate":
         model = load_model("experiments/20171213-112910/model/discriminator.h5")
         model.summary()
