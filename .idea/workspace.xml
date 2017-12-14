@@ -5,57 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/.log/disc/events.out.tfevents.1513168144.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/.log/gan/events.out.tfevents.1513168144.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-132900/output.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/.log/disc/events.out.tfevents.1513168205.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/.log/gan/events.out.tfevents.1513168205.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133002/output.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/.log/disc/events.out.tfevents.1513168279.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/.log/gan/events.out.tfevents.1513168279.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133116/output.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/.log/disc/events.out.tfevents.1513168520.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/.log/gan/events.out.tfevents.1513168520.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133516/output.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/.log/disc/events.out.tfevents.1513168741.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/.log/gan/events.out.tfevents.1513168740.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-133858/output.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/.log/disc/events.out.tfevents.1513168989.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/.log/gan/events.out.tfevents.1513168989.archlaptop" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/discriminator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/generator.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/model/discriminator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/model/gan.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/model/generator.h5" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171213-134306/output.log" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dga_gan.py" afterPath="$PROJECT_DIR$/dga_gan.py" />
-      <change beforePath="$PROJECT_DIR$/output.log" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,16 +63,16 @@
       <file leaf-file-name="dga_gan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dga_gan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="177" column="12" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+            <state relative-caret-position="370">
+              <caret line="476" column="37" lean-forward="true" selection-start-line="476" selection-start-column="22" selection-end-line="476" selection-end-column="37" />
               <folding>
-                <element signature="e#11236#12844#0" expanded="false" />
-                <element signature="e#12875#13566#0" expanded="false" />
-                <element signature="e#13721#14668#0" expanded="false" />
-                <element signature="e#14716#15014#0" expanded="false" />
-                <element signature="e#15061#15423#0" expanded="false" />
-                <element signature="e#15474#15720#0" expanded="false" />
-                <element signature="e#15777#16361#0" expanded="false" />
+                <element signature="e#11466#13074#0" expanded="false" />
+                <element signature="e#13105#13796#0" expanded="false" />
+                <element signature="e#13951#14898#0" expanded="false" />
+                <element signature="e#14946#15244#0" expanded="false" />
+                <element signature="e#15291#15653#0" expanded="false" />
+                <element signature="e#15704#15950#0" expanded="false" />
+                <element signature="e#16007#16591#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -139,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logger.info</find>
       <find>%</find>
       <find>self.now</find>
       <find>as rn</find>
@@ -169,6 +118,7 @@
       <find>128</find>
       <find>self.</find>
       <find>summary</find>
+      <find>room</find>
     </findStrings>
     <replaceStrings>
       <replace>self.directory</replace>
@@ -333,6 +283,27 @@
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171214-115137" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="20171214-115137" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -379,7 +350,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/output.log</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -387,13 +357,46 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/.log/disc/events.out.tfevents.1513246534.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/.log/gan/events.out.tfevents.1513246534.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-101532/model/generator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/.log/disc/events.out.tfevents.1513250307.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/.log/gan/events.out.tfevents.1513250307.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/model/discriminator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/model/gan.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/model/generator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111825/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/.log/disc/events.out.tfevents.1513250318.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/.log/gan/events.out.tfevents.1513250318.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/model/discriminator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/model/gan.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/model/generator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-111835/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/.log/disc/events.out.tfevents.1513251805.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/.log/gan/events.out.tfevents.1513251805.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/model/discriminator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/model/gan.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/model/generator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-114323/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/.log/disc/events.out.tfevents.1513252244.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/.log/gan/events.out.tfevents.1513252244.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/model/discriminator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/model/gan.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/model/generator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115041/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/.log/disc/events.out.tfevents.1513252300.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/.log/gan/events.out.tfevents.1513252300.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/discriminator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/generator.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/model/discriminator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/model/gan.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/model/generator.h5</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171214-115137/output.log</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -591,41 +594,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00027" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
-      <created>1505845540075</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1505845540075</updated>
-    </task>
-    <task id="LOCAL-00028" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
-      <created>1505846634254</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1505846634254</updated>
-    </task>
-    <task id="LOCAL-00029" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
-      <created>1505846745207</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1505846745207</updated>
-    </task>
-    <task id="LOCAL-00030" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
-      <created>1505849420775</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1505849420775</updated>
-    </task>
-    <task id="LOCAL-00031" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
-      <created>1505982873375</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1505982873375</updated>
     </task>
     <task id="LOCAL-00032" summary="esperimenti con 3 diverse baseline normalizzate. aggiunto tensorboard per confronto">
       <created>1505982998634</created>
@@ -935,7 +903,42 @@
       <option name="project" value="LOCAL" />
       <updated>1513165043911</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="testing su kula">
+      <created>1513169072893</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1513169072893</updated>
+    </task>
+    <task id="LOCAL-00077" summary="testing su kula">
+      <created>1513170698115</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1513170698116</updated>
+    </task>
+    <task id="LOCAL-00078" summary="testing su kula">
+      <created>1513171127100</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1513171127100</updated>
+    </task>
+    <task id="LOCAL-00079" summary="testing su kula">
+      <created>1513174484298</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1513174484298</updated>
+    </task>
+    <task id="LOCAL-00080" summary="testing su kula">
+      <created>1513174561853</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1513174561853</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TodoView">
@@ -949,6 +952,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1" width="1360" height="761" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
@@ -956,7 +960,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32568806" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25493172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1088,23 +1092,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python2.7/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="693" column="32" lean-forward="false" selection-start-line="693" selection-start-column="32" selection-end-line="693" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/matplotlib/figure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="1470" column="8" lean-forward="false" selection-start-line="1470" selection-start-column="8" selection-end-line="1470" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-172209/loss.png" />
-    <entry file="file://$PROJECT_DIR$/examples/alt_gan/autoencoder_experiments/20171205-172209/accuracy.png" />
-    <entry file="file://$PROJECT_DIR$/resources/examples/lstm_imdb.py" />
     <entry file="file://$PROJECT_DIR$/resources/examples/lstm_text_generation.py" />
     <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171205-185323/notes.txt" />
     <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171206-122149/notes.txt" />
@@ -1351,18 +1338,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171213-134306/discriminator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171213-134306/generator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171214-115137/generator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171214-115137/discriminator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/20171214-115137/output.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-557">
+          <caret line="10108" column="47" lean-forward="true" selection-start-line="10108" selection-start-column="47" selection-end-line="10108" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dga_gan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="177" column="12" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+        <state relative-caret-position="370">
+          <caret line="476" column="37" lean-forward="true" selection-start-line="476" selection-start-column="22" selection-end-line="476" selection-end-column="37" />
           <folding>
-            <element signature="e#11236#12844#0" expanded="false" />
-            <element signature="e#12875#13566#0" expanded="false" />
-            <element signature="e#13721#14668#0" expanded="false" />
-            <element signature="e#14716#15014#0" expanded="false" />
-            <element signature="e#15061#15423#0" expanded="false" />
-            <element signature="e#15474#15720#0" expanded="false" />
-            <element signature="e#15777#16361#0" expanded="false" />
+            <element signature="e#11466#13074#0" expanded="false" />
+            <element signature="e#13105#13796#0" expanded="false" />
+            <element signature="e#13951#14898#0" expanded="false" />
+            <element signature="e#14946#15244#0" expanded="false" />
+            <element signature="e#15291#15653#0" expanded="false" />
+            <element signature="e#15704#15950#0" expanded="false" />
+            <element signature="e#16007#16591#0" expanded="false" />
           </folding>
         </state>
       </provider>

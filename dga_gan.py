@@ -464,6 +464,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", type=str, default='train')
     parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--model", type=str, default='empty')
     parser.set_defaults(nice=False)
     args = parser.parse_args()
     return args
@@ -474,7 +475,7 @@ if __name__ == "__main__":
     if args.mode == "train":
         train(BATCH_SIZE=args.batch_size)
     if args.mode == "moretrain":
-        model_name = "20171214-115137"
+        model_name = args.model
         disc = load_model("experiments/%s/model/discriminator.h5" % model_name)
         genr = load_model("experiments/%s/model/generator.h5" % model_name)
         train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name=model_name)
