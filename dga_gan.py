@@ -176,7 +176,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     latent_dim = 38
     maxlen = 15
     n_samples = 20000
-    data_dict = __build_dataset(maxlen=maxlen, n_samples=int(n_samples+n_samples*0.33))
+    data_dict = __build_dataset(maxlen=maxlen, n_samples=int(n_samples + n_samples * 0.33))
     X_train = data_dict['X_train']
 
     print("Training set shape %s" % (X_train.shape,))
@@ -240,23 +240,28 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
             # labels = np.concatenate([np.ones((BATCH_SIZE, 1)), np.zeros((BATCH_SIZE, 1))]) # 1 = real, 0 = fake
             # labels += 0.05 * np.random.random(labels.shape)
 
-            # alternative training mode:
             labels_size = (BATCH_SIZE, 1)
             labels_real = np.random.uniform(0.9, 1.1, size=labels_size)  # ~1 = real. Label Smoothing technique
             labels_fake = np.zeros(shape=labels_size)  # 0 = fake
-            if index % 2 == 0:
-                training_domains = alexa_domains
-                labels = labels_real
-            else:
-                training_domains = generated_domains
-                labels = labels_fake
-
-            logger.debug("training set shape\t%s" % (training_domains.shape,))
-            logger.debug("target shape %s" % (labels.shape,))
+            # alternative training mode:
+            # if index % 2 == 0:
+            #     training_domains = alexa_domains
+            #     labels = labels_real
+            # else:
+            #     training_domains = generated_domains
+            #     labels = labels_fake
+            #
+            # logger.debug("training set shape\t%s" % (training_domains.shape,))
+            # logger.debug("target shape %s" % (labels.shape,))
 
             # training discriminator on both alexa and generated domains
             disc.trainable = True
-            disc_history = disc.train_on_batch(training_domains, labels)
+            # disc_history = disc.train_on_batch(training_domains, labels)
+            # ##### DOUBLE TRAINING MODE
+            disc_history1 = disc.train_on_batch(alexa_domains, labels_real)
+            disc_history2 = disc.train_on_batch(generated_domains, labels_fake)
+            disc_history = np.mean([disc_history1, disc_history2])
+            # ##########################
             disc.trainable = False
 
             # training generator model inside the adversarial model
@@ -282,7 +287,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
 
             batch_no += 1
 
-        generate(generated_domains, n_samples=10, inv_map=data_dict['inv_map'])
+        generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], print_preds=True)
 
 
 def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
