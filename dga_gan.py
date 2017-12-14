@@ -152,8 +152,12 @@ def adversarial(g, d):
 
 def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     """
-    Training function.
-    :param BATCH_SIZE
+
+    :param BATCH_SIZE:
+    :param disc:
+    :param genr:
+    :param original_model_name:
+    :return:
     """
     directory = os.path.join("experiments", datetime.now().strftime("%Y%m%d-%H%M%S"))
     if not os.path.exists(directory):
@@ -171,8 +175,8 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     # load dataset
     latent_dim = 38
     maxlen = 15
-    n_samples = int(10000 + 1000 * 0.33)
-    data_dict = __build_dataset(maxlen=maxlen, n_samples=n_samples)
+    n_samples = 20000
+    data_dict = __build_dataset(maxlen=maxlen, n_samples=int(n_samples+n_samples*0.33))
     X_train = data_dict['X_train']
 
     print("Training set shape %s" % (X_train.shape,))
@@ -188,15 +192,15 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0005,
+    discr_opt = RMSprop(lr=0.005,
                         clipvalue=1.0,
-                        decay=1e-8)
+                        decay=2e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
-    gan_opt = adam(lr=0.0004,
+    gan_opt = adam(lr=0.004,
                    beta_1=0.9,
                    beta_2=0.999,
                    epsilon=1e-8,
-                   decay=1e-8,
+                   decay=2e-8,
                    clipvalue=1.0)  # alternative
     #   compilation
     gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
@@ -213,7 +217,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     tb_disc.set_model(disc)
 
     batch_no = 0
-    for epoch in range(300):
+    for epoch in range(700):
         logger.info("Epoch is %s" % epoch)
         logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
         logger.debug("Batch size: %s" % BATCH_SIZE)
