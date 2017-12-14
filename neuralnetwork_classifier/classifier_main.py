@@ -121,47 +121,7 @@ def sample(preds, temperature=1.0):
     return np.argmax(probas)
 
 if __name__ == '__main__':
-    X, y, maxlen, chars = LSTM_generator_dataset()
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-    print(X_train)
-    model = Model(model=lstm_baseline(maxlen, chars), directory="lstm_model")
-    model.fit(X_train, y_train, stdscaler=False, batch_size=32, epochs=128, validation_split=0.33, early=False)
 
-    diversity = 1.2
-    print('----- diversity:', diversity)
-    generated = ''
-
-    text = open("dataset/xaa").read().lower()
-    char_indices = dict((c, i) for i, c in enumerate(chars))
-    indices_char = dict((i, c) for i, c in enumerate(chars))
-
-    import random
-    start_index = random.randint(0, len(text) - maxlen - 1)
-    sentence = text[start_index: start_index + maxlen]
-    generated += sentence
-    print('----- Generating with seed: ' + sentence)
-    print(generated)
-    for i in range(400):
-        x = np.zeros((1, maxlen, len(chars)))
-
-        for t, char in enumerate(sentence):
-            x[0, t, char_indices[char]] = 1.
-
-        print(x)
-        preds = model.model.predict_(x, verbose=0)[0]
-        print(preds)
-        next_index = sample(preds, diversity)
-        next_char = indices_char[next_index]
-
-        generated += next_char
-        print(generated)
-        sentence = sentence[1:] + next_char
-        print(sentence)
-
-        sys.stdout.write(next_char)
-        sys.stdout.flush()
-
-    print()
 
     # model.classification_report(X_test, y_test, plot=False)
     # X, y = test_lstm()
@@ -173,10 +133,10 @@ if __name__ == '__main__':
     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split)
     # batch_size = 40
     # # for batch_size in range(10, 110, 10):
-    # model = Model(directory="saved_models/test_60/pieraz_35_BEST")
+    model = Model(directory="saved_models/test_60/pieraz_35_BEST")
     # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
     # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
     # model.classification_report(X, y, plot=False)
-
+    print(model.get_model().predict(['ronncacncoouctm']))
     # model.plot_AUC(X_test, y_test)
     pass

@@ -275,12 +275,14 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
                             names=disc.metrics_names,
                             logs=disc_history,
                             batch_no=batch_no)
+
                 gan.save(os.path.join(directory, 'model/gan.h5'))
                 disc.save(os.path.join(directory, 'model/discriminator.h5'))
                 genr.save(os.path.join(directory, 'model/generator.h5'))
-                generate(generated_domains, inv_map=data_dict['inv_map'])
 
             batch_no += 1
+
+        generate(generated_domains, n_samples=10, inv_map=data_dict['inv_map'])
 
 
 def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
@@ -484,14 +486,12 @@ if __name__ == "__main__":
         genr = load_model("experiments/%s/model/generator.h5" % model_name)
         train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name=model_name)
     elif args.mode == "generate":
-        model = load_model("experiments/20171213-112910/model/discriminator.h5")
-        model.summary()
-        emb_weights = list(model.layers)
-        for e in emb_weights:
-            print(e)
-        # preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 38)))
-        # generate(predictions=preds, n_samples=args.batch_size, temperature=1.0, print_preds=True)
-        pass
+        model = load_model("experiments/20171214-173747/model/generator.h5")
+        preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 38)))
+        print("temperature 1.0")
+        generate(predictions=preds, n_samples=args.batch_size, print_preds=True)
+        print("\n\nTemperature 0.5")
+        generate(predictions=preds, n_samples=args.batch_size, temperature=0.5, print_preds=True)
     elif args.mode == "autoencoder":
         train_autoencoder()
     elif args.mode == "test-autoencoder":
