@@ -192,15 +192,15 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.005,
+    discr_opt = RMSprop(lr=0.0005,
                         clipvalue=1.0,
-                        decay=2e-8)
+                        decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
     gan_opt = adam(lr=0.004,
                    beta_1=0.9,
                    beta_2=0.999,
                    epsilon=1e-8,
-                   decay=2e-8,
+                   decay=1e-8,
                    clipvalue=1.0)  # alternative
     #   compilation
     gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
