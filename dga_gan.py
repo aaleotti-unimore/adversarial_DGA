@@ -86,7 +86,7 @@ def discriminator_model(summary=True, print_fn=None):
     :param summary: set to True to have a summary printed to output and a plot to file at "images/discriminator.png"
     :return: Discriminator model
     """
-    dropout_value = 0.4
+    dropout_value = 0.5
     cnn_filters = [20, 10]
     cnn_kernels = [2, 3]
     cnn_strides = [1, 1]
@@ -192,7 +192,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0008,
+    discr_opt = RMSprop(lr=0.0006,
                         clipvalue=1.0,
                         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
