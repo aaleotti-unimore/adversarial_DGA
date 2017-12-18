@@ -175,7 +175,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     # load dataset
     latent_dim = 38
     maxlen = 15
-    n_samples = 20000
+    n_samples = 10000
     data_dict = __build_dataset(maxlen=maxlen, n_samples=int(n_samples + n_samples * 0.33))
     X_train = data_dict['X_train']
 
@@ -192,11 +192,11 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0005,
+    discr_opt = RMSprop(lr=0.0008,
                         clipvalue=1.0,
                         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
-    gan_opt = adam(lr=0.004,
+    gan_opt = adam(lr=0.0004,
                    beta_1=0.9,
                    beta_2=0.999,
                    epsilon=1e-8,
@@ -219,7 +219,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     batch_no = 0
     for epoch in range(700):
         logger.info("Epoch is %s" % epoch)
-        logger.info("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
+        logger.debug("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
         logger.debug("Batch size: %s" % BATCH_SIZE)
 
         for index in range(int(X_train.shape[0] / BATCH_SIZE)):
@@ -244,23 +244,23 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
             labels_real = np.random.uniform(0.9, 1.1, size=labels_size)  # ~1 = real. Label Smoothing technique
             labels_fake = np.zeros(shape=labels_size)  # 0 = fake
             # alternative training mode:
-            # if index % 2 == 0:
-            #     training_domains = alexa_domains
-            #     labels = labels_real
-            # else:
-            #     training_domains = generated_domains
-            #     labels = labels_fake
-            #
-            # logger.debug("training set shape\t%s" % (training_domains.shape,))
-            # logger.debug("target shape %s" % (labels.shape,))
+            if index % 2 == 0:
+                 training_domains = alexa_domains
+                 labels = labels_real
+            else:
+                 training_domains = generated_domains
+                 labels = labels_fake
+            
+            logger.debug("training set shape\t%s" % (training_domains.shape,))
+            logger.debug("target shape %s" % (labels.shape,))
 
             # training discriminator on both alexa and generated domains
             disc.trainable = True
-            # disc_history = disc.train_on_batch(training_domains, labels)
+            disc_history = disc.train_on_batch(training_domains, labels)
             # ##### DOUBLE TRAINING MODE
-            disc_history1 = disc.train_on_batch(alexa_domains, labels_real)
-            disc_history2 = disc.train_on_batch(generated_domains, labels_fake)
-            disc_history = np.mean([disc_history1, disc_history2])
+            # disc_history1 = disc.train_on_batch(alexa_domains, labels_real)
+            # disc_history2 = disc.train_on_batch(generated_domains, labels_fake)
+            # disc_history = np.mean([disc_history1, disc_history2])
             # ##########################
             disc.trainable = False
 
@@ -271,7 +271,6 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
 
             if index % 10 == 9:
                 d_log = ("epoch %d\tmini-batch %d\t[ DISC\tloss : %f ]" % (epoch, index, disc_history))
-                logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
                 __write_log(callback=tb_gan,
                             names=gan.metrics_names,
                             logs=gan_history,
@@ -287,6 +286,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
 
             batch_no += 1
 
+        logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
         generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], print_preds=True)
 
 
@@ -491,7 +491,7 @@ if __name__ == "__main__":
         genr = load_model("experiments/%s/model/generator.h5" % model_name)
         train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name=model_name)
     elif args.mode == "generate":
-        model = load_model("experiments/20171214-173747/model/generator.h5")
+        model = load_model("experiments/%s/model/generator.h5" % args.model)
         preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 38)))
         print("temperature 1.0")
         generate(predictions=preds, n_samples=args.batch_size, print_preds=True)
