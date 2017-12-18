@@ -44,7 +44,7 @@ def generator_model(summary=True, print_fn=None):
     cnn_strides = [1, 1]
     dec_convs = []
     leaky_relu_alpha = 0.2
-    latent_vector = 38
+    latent_vector = 20
     timesteps = 15
     word_index = 38
 
@@ -95,7 +95,7 @@ def discriminator_model(summary=True, print_fn=None):
     leaky_relu_alpha = 0.2
     timesteps = 15
     word_index = 38
-    latent_vector = 38
+    latent_vector = 20
 
     discr_inputs = Input(shape=(timesteps, word_index),
                          name="Discriminator_Input")
@@ -110,20 +110,20 @@ def discriminator_model(summary=True, print_fn=None):
                       padding='same',
                       strides=cnn_strides[i],
                       name='discr_conv%s' % i)(discr_inputs)
-        # conv = BatchNormalization(momentum=0.9)(conv)
+        conv = BatchNormalization()(conv)
         conv = LeakyReLU(alpha=leaky_relu_alpha)(conv)
         conv = Dropout(dropout_value, name='discr_dropout%s' % i)(conv)
-        # conv = AveragePooling1D()(conv)
+        conv = AveragePooling1D()(conv)
         enc_convs.append(conv)
 
     # concatenating CNNs. expected output (batch_size, 7, 30)
     discr = concatenate(enc_convs)
-    discr = Flatten()(discr)
-    # discr = LSTM(latent_vector)(discr)
+    # discr = Flatten()(discr)
+    discr = LSTM(latent_vector)(discr)
     # discr = Dropout(dropout_value)(discr)
-    discr = Dense(1, activation='sigmoid',
-                  kernel_initializer='normal'
-                  )(discr)
+    # discr = Dense(1, activation='sigmoid',
+    #               kernel_initializer='normal'
+    #               )(discr)
 
     D = Model(inputs=discr_inputs, outputs=discr, name='Discriminator')
 
@@ -132,7 +132,7 @@ def discriminator_model(summary=True, print_fn=None):
             D.summary(print_fn=print_fn)
         else:
             D.summary()
-        # plot_model(D, to_file="images/discriminator.png", show_shapes=True)
+            # plot_model(D, to_file="images/discriminator.png", show_shapes=True)
     return D
 
 
@@ -173,7 +173,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
         logger.debug("MORE TRAINING on the model %s" % original_model_name)
 
     # load dataset
-    latent_dim = 38
+    latent_dim = 20
     maxlen = 15
     n_samples = 10000
     data_dict = __build_dataset(maxlen=maxlen, n_samples=int(n_samples + n_samples * 0.33))
@@ -192,20 +192,21 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0006,
-                        clipvalue=1.0,
-                        decay=1e-8)
-    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
-    gan_opt = adam(lr=0.0004,
-                   beta_1=0.9,
-                   beta_2=0.999,
-                   epsilon=1e-8,
-                   decay=1e-8,
-                   clipvalue=1.0)  # alternative
+    # discr_opt = RMSprop(lr=0.0006,
+    #                     clipvalue=1.0,
+    #                     decay=1e-8)
+    # # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
+    # gan_opt = adam(lr=0.0004,
+    #                beta_1=0.9,
+    #                beta_2=0.999,
+    #                epsilon=1e-8,
+    #                decay=1e-8,
+    #                clipvalue=1.0)  # alternative
+
     #   compilation
-    gan.compile(loss='binary_crossentropy', optimizer=gan_opt)
+    gan.compile(loss='binary_crossentropy', optimizer='adam')
     disc.trainable = True
-    disc.compile(loss='binary_crossentropy', optimizer=discr_opt)
+    disc.compile(loss='binary_crossentropy', optimizer='adam')
     gan.summary(print_fn=logger.debug)
 
     # callbacks
@@ -217,7 +218,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     tb_disc.set_model(disc)
 
     batch_no = 0
-    for epoch in range(700):
+    for epoch in range(300):
         logger.info("Epoch is %s" % epoch)
         logger.debug("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
         logger.debug("Batch size: %s" % BATCH_SIZE)
@@ -245,12 +246,12 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
             labels_fake = np.zeros(shape=labels_size)  # 0 = fake
             # alternative training mode:
             if index % 2 == 0:
-                 training_domains = alexa_domains
-                 labels = labels_real
+                training_domains = alexa_domains
+                labels = labels_real
             else:
-                 training_domains = generated_domains
-                 labels = labels_fake
-            
+                training_domains = generated_domains
+                labels = labels_fake
+
             logger.debug("training set shape\t%s" % (training_domains.shape,))
             logger.debug("target shape %s" % (labels.shape,))
 
@@ -312,7 +313,7 @@ def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_pred
 
 
 def train_autoencoder():
-    data_dict = __build_dataset(n_samples=10000)
+    data_dict = __build_dataset(n_samples=100000)
 
     directory = os.path.join("autoencoder_experiments", datetime.now().strftime("%Y%m%d-%H%M%S"))
     if not os.path.exists(directory):
@@ -322,30 +323,30 @@ def train_autoencoder():
 
     d = discriminator_model()
     g = generator_model()
-    model = Sequential()
-    model.add(d)
-    model.add(g)
+    aenc = Sequential()
+    aenc.add(d)
+    aenc.add(g)
 
-    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(data_dict['X_train'], data_dict['X_train'],
-              verbose=2,
-              callbacks=[TensorBoard(log_dir=os.path.join(directory, ".logs"),
-                                     histogram_freq=0,
-                                     write_graph=0),
-                         ModelCheckpoint(os.path.join(directory, "weights/autoencoder.h5"),
-                                         monitor='val_loss',
-                                         verbose=2,
-                                         save_best_only=True, mode='auto')
-                         ],
-              validation_split=0.33,
-              # batch_size=32,
-              epochs=500)
+    aenc.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    aenc.fit(data_dict['X_train'], data_dict['X_train'],
+             verbose=2,
+             callbacks=[TensorBoard(log_dir=os.path.join(directory, ".logs"),
+                                    histogram_freq=0,
+                                    write_graph=0),
+                        ModelCheckpoint(os.path.join(directory, "weights/autoencoder.h5"),
+                                        monitor='val_loss',
+                                        verbose=2,
+                                        save_best_only=True,
+                                        mode='auto')
+                        ],
+             validation_split=0.33,
+             batch_size=128,
+             epochs=500)
 
-    split = 50
     print("X_test")
-    print(data_dict['X_test'][:split])
+    print(data_dict['X_test'].shape())
 
-    predictions = model.predict(data_dict['X_test'][:split], verbose=0)
+    predictions = aenc.predict(data_dict['X_test'], verbose=0)
     sampled = []
     for x in predictions:
         word = []
@@ -367,9 +368,8 @@ def test_autoencoder():
     model.add(d)
     model.add(g)
     model.load_weights("autoencoder_experiments/20171205-185323/weights/autoencoder.h5")
-    split = 50
     print("X_test")
-    print(data_dict['X_test'][:split])
+    print(data_dict['X_test'])
 
     predictions = model.predict(data_dict['X_test'][:split], verbose=0)
     sampled = []
@@ -424,7 +424,7 @@ def __np_sample(preds, temperature=1.0):
     preds = np.log(preds) / temperature
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
-    # preds = np.random.multinomial(1, preds, 1)
+    preds = np.random.multinomial(1, preds, 1)
     return np.argmax(preds)
 
 
