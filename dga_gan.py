@@ -187,11 +187,13 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
     gan = adversarial(genr, disc)
 
     #   optimizers
-    discr_opt = RMSprop(lr=0.0006,
+    discr_opt = RMSprop(
+            #lr=0.0002,
                         clipvalue=1.0,
                         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
-    gan_opt = adam(lr=0.0004,
+    gan_opt = adam(
+                    #lr=0.001,
                    beta_1=0.9,
                    beta_2=0.999,
                    epsilon=1e-8,
@@ -281,7 +283,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
         d_log = ("epoch %d\t[ DISC\tloss : %f ]" % (epoch, disc_history))
         logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
         generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], print_preds=True)
-        if disc_history < 0.0:
+        if float(disc_history) < 0.1:
             logger.error("D loss too low, failure state. terminating...")
             exit(1)
 
