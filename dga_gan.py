@@ -193,7 +193,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
     gan_opt = adam(
-        lr=0.0005,
+        lr=0.0001,
         beta_1=0.9,
         beta_2=0.999,
         epsilon=1e-8,
