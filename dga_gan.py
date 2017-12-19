@@ -193,7 +193,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
     gan_opt = adam(
-        lr=0.0001,
+        lr=0.0005,
         beta_1=0.9,
         beta_2=0.999,
         epsilon=1e-8,
@@ -214,7 +214,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
                           batch_size=BATCH_SIZE)
     tb_disc.set_model(disc)
 
-    for epoch in range(300):
+    for epoch in range(200):
         logger.info("Epoch is %s" % epoch)
         logger.debug("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
         logger.debug("Batch size: %s" % BATCH_SIZE)
