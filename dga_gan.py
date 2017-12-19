@@ -188,7 +188,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
 
     #   optimizers
     discr_opt = RMSprop(
-        lr=0.01,
+        lr=0.1,
         clipvalue=1.0,
         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
