@@ -282,13 +282,13 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
 
         d_log = ("epoch %d\t[ DISC\tloss : %f ]" % (epoch, disc_history))
         logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
-        generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], print_preds=True)
+        generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], add_vecs=True)
         if float(disc_history) < 0.1:
             logger.error("D loss too low, failure state. terminating...")
             exit(1)
 
 
-def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
+def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, add_vecs=False, save_file=False, model_dir=None):
     if inv_map is None:
         datas_dict = __build_dataset()
         inv_map = datas_dict['inv_map']
@@ -301,12 +301,18 @@ def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_pred
         sampled.append(word)
 
     readable = __to_readable_domain(np.array(sampled), inv_map=inv_map)
-    if print_preds:
+    if add_vecs:
         import itertools
         for s, r in itertools.izip(sampled, readable):
             logger.info("%s\t%s" % (s, r))
     else:
         logger.info("Generated sample: %s " % readable)
+    if save_file:
+        with open("experiments/%s/samples.txt" % model_dir, 'w') as fp:
+            for r in readable:
+                if len(r) > 0:
+                    fp.write("%s\n" % r)
+            print("file saved to %s" % fp)
 
 
 def train_autoencoder():
@@ -474,7 +480,7 @@ def get_args():
     parser.add_argument("--mode", type=str, default='train')
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--model", type=str, default='empty')
-    parser.set_defaults(nice=False)
+    parser.add_argument("--save-file", type=bool, default=False)
     args = parser.parse_args()
     return args
 
@@ -491,10 +497,8 @@ if __name__ == "__main__":
     elif args.mode == "generate":
         model = load_model("experiments/%s/model/generator.h5" % args.model)
         preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 20)))
-        print("temperature 1.0")
-        generate(predictions=preds, n_samples=args.batch_size, print_preds=True)
-        print("\n\nTemperature 0.5")
-        generate(predictions=preds, n_samples=args.batch_size, temperature=0.5, print_preds=True)
+        generate(predictions=preds, n_samples=args.batch_size, add_vecs=False, save_file=args.save_file,
+                 model_dir=args.model)
     elif args.mode == "autoencoder":
         train_autoencoder()
     elif args.mode == "test-autoencoder":

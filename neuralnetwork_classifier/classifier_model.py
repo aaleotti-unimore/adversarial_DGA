@@ -96,6 +96,7 @@ class Model:
             model = model_from_json(open(os.path.join(self.directory, 'model_architecture.json')).read())
             model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
             model.compile(loss='binary_crossentropy', optimizer='adam')
+            self.logger.debug("Model %s loaded" % self.directory)
             return model
         except IOError as e:
             self.logger.error(e)
@@ -186,10 +187,12 @@ class Model:
                        )
         self.save_model()
 
-    def plot_AUC(self, X_test, y_test, save=True):
+    def plot_AUC(self, X_test, y_test, save=True, directory=None):
+        if directory is None:
+            directory = self.directory
         std = StandardScaler()
         X_test = std.fit_transform(X_test)
-        self.model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
+        # self.model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
         y_score = self.model.predict_proba(X_test)
 
         # y_score = [round(x) for x in y_score]
@@ -210,7 +213,7 @@ class Model:
         plt.title('Receiver operating characteristic')
         plt.legend(loc="lower right")
         if save:
-            dirplt = os.path.join(self.directory, 'roc_plot.png')
+            dirplt = os.path.join(directory, 'roc_plot.png')
             plt.savefig(dirplt, format="png", bbox_inches='tight')
         else:
             plt.show()

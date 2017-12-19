@@ -44,8 +44,8 @@ def both_datasets():
     y_legit = np.ravel(np.ones(len(legit), dtype=int))
 
     generated = pd.read_csv(
-        "/home/archeffect/PycharmProjects/adversarial_DGA/autoencoder_experiments/20171218-101804/samples.txt",
-        index_col=None, header=None).sample(5000)
+        "experiments/20171219-235309/samples.txt",
+        index_col=None, header=None)
     y_generated = np.ravel(np.zeros(len(generated), dtype=int))
 
     X = pd.concat((generated, legit), axis=0)
@@ -94,11 +94,11 @@ if __name__ == '__main__':
     # # for batch_size in range(10, 110, 10):
     model = Model(
         directory="/home/archeffect/PycharmProjects/adversarial_DGA/neuralnetwork_classifier/saved_models/pieraz_norm_30_100")
-    model.classification_report(X=X, y=y, plot=False, save=False,
-                                directory="/home/archeffect/PycharmProjects/adversarial_DGA/autoencoder_experiments/20171218-101804")
+    model.classification_report(X=X, y=y, plot=True, save=True,
+                                directory="experiments/20171219-235309")
     # # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
     # # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
     # # model.classification_report(X, y, plot=False)
     # print(model.get_model().predict(['ronncacncoouctm']))
-    # model.plot_AUC(X_test, y_test)
+    model.plot_AUC(X, y, save=True, directory="experiments/20171219-235309")
     pass
