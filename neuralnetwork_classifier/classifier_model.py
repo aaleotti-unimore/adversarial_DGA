@@ -138,12 +138,14 @@ class Model:
     def get_directory(self):
         return self.directory
 
-    def classification_report(self, X, y, plot=True, save=True):
+    def classification_report(self, X, y, plot=True, save=True, directory=None):
+        if directory is None:
+            directory = self.directory
         std = StandardScaler()
         std.fit(X=X)
         X = std.transform(X=X)
         self.model.load_weights(os.path.join(self.directory, 'model_weights.h5'))
-        pred = self.model.predict_(X)
+        pred = self.model.predict(X)
         y_pred = [round(x) for x in pred]
 
         report = classification_report(y_pred=y_pred, y_true=y, target_names=['DGA', 'Legit'])
@@ -151,11 +153,12 @@ class Model:
             self.logger.info("\n%s" % report)
             if plot:
                 plot_classification_report(classification_report=report,
-                                           directory=self.directory)
+                                           directory=directory)
         else:
             print(report)
 
-    def fit(self, X, y, stdscaler=True, validation_data=None, validation_split=None, batch_size=5, epochs=100, verbose=2, early=True):
+    def fit(self, X, y, stdscaler=True, validation_data=None, validation_split=None, batch_size=5, epochs=100,
+            verbose=2, early=True):
         dirtemp = os.path.join(self.directory, "tensorboard")
         dirwe = os.path.join(self.directory, 'model_weights.h5')
 
@@ -365,5 +368,3 @@ def lstm_baseline(maxlen, chars):
     optimizer = RMSprop(lr=0.01)
     model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=optimizer)
     return model
-
-

@@ -8,3 +8,10 @@
 
 avg / total       0.88      0.88      0.88     54888
 
+2017-12-18 16:28:18,581 INFO 
+             precision    recall  f1-score   support
+
+        DGA       1.00      1.00      1.00        10
+
+avg / total       1.00      1.00      1.00        10
+

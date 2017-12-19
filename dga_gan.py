@@ -217,7 +217,6 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
                           batch_size=BATCH_SIZE)
     tb_disc.set_model(disc)
 
-    batch_no = 0
     for epoch in range(300):
         logger.info("Epoch is %s" % epoch)
         logger.debug("Number of batches %s" % int(X_train.shape[0] / BATCH_SIZE))
@@ -270,23 +269,21 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
             misleading_targets = np.random.uniform(0.9, 1.1, size=labels_size)
             gan_history = gan.train_on_batch(noise, misleading_targets)
 
-            if index % 10 == 9:
-                d_log = ("epoch %d\tmini-batch %d\t[ DISC\tloss : %f ]" % (epoch, index, disc_history))
-                __write_log(callback=tb_gan,
-                            names=gan.metrics_names,
-                            logs=gan_history,
-                            batch_no=batch_no)
-                __write_log(callback=tb_disc,
-                            names=disc.metrics_names,
-                            logs=disc_history,
-                            batch_no=batch_no)
+        # every epoch do this
+        __write_log(callback=tb_gan,
+                    names=gan.metrics_names,
+                    logs=gan_history,
+                    batch_no=epoch)
+        __write_log(callback=tb_disc,
+                    names=disc.metrics_names,
+                    logs=disc_history,
+                    batch_no=epoch)
 
-                gan.save(os.path.join(directory, 'model/gan.h5'))
-                disc.save(os.path.join(directory, 'model/discriminator.h5'))
-                genr.save(os.path.join(directory, 'model/generator.h5'))
+        gan.save(os.path.join(directory, 'model/gan.h5'))
+        disc.save(os.path.join(directory, 'model/discriminator.h5'))
+        genr.save(os.path.join(directory, 'model/generator.h5'))
 
-            batch_no += 1
-
+        d_log = ("epoch %d\t[ DISC\tloss : %f ]" % (epoch, disc_history))
         logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
         generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], print_preds=True)
 
@@ -343,6 +340,7 @@ def train_autoencoder():
              batch_size=128,
              epochs=500)
 
+    aenc.save(os.path.join(directory, 'aenc_model.h5'))
     print("X_test")
     print(data_dict['X_test'].shape())
 
@@ -361,17 +359,16 @@ def train_autoencoder():
 
 
 def test_autoencoder():
-    data_dict = __build_dataset(n_samples=1000)
+    directory = "autoencoder_experiments/20171218-101804"
+    data_dict = __build_dataset(n_samples=12000)
     d = discriminator_model()
     g = generator_model()
-    model = Sequential()
-    model.add(d)
-    model.add(g)
-    model.load_weights("autoencoder_experiments/20171205-185323/weights/autoencoder.h5")
-    print("X_test")
-    print(data_dict['X_test'])
+    aenc = Sequential()
+    aenc.add(d)
+    aenc.add(g)
+    aenc.load_weights(os.path.join(directory, 'weights/autoencoder.h5'))
 
-    predictions = model.predict(data_dict['X_test'][:split], verbose=0)
+    predictions = aenc.predict(data_dict['X_train'], verbose=0)
     sampled = []
     for x in predictions:
         word = []
@@ -381,8 +378,9 @@ def test_autoencoder():
 
     print("results")
     readable = __to_readable_domain(np.array(sampled), inv_map=data_dict['inv_map'])
-    for r in readable:
-        print(r)
+    with open(os.path.join(directory, 'samples.txt'), 'w') as fp:
+        for r in readable:
+            fp.write("%s\n" % r)
 
 
 def __custom_gan_loss(y_true, y_pred):

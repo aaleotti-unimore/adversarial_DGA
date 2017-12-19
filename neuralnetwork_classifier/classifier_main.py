@@ -30,29 +30,28 @@ np.random.seed(42)
 rn.seed(12345)
 
 
-def test_suppobox(X_test, y_test):
-    X_test2, y_test2 = load_features_dataset(dataset="suppobox")
-    X_test = np.concatenate((X_test, X_test2))
-    y_test = np.concatenate((y_test, y_test2))
-    return shuffle(X_test, y_test, random_state=42)
+# def test_suppobox(X_test, y_test):
+#     X_test2, y_test2 = load_features_dataset(dataset="suppobox")
+#     X_test = np.concatenate((X_test, X_test2))
+#     y_test = np.concatenate((y_test, y_test2))
+#     return shuffle(X_test, y_test, random_state=42)
 
 
-def test_lstm():
+def both_datasets():
     legit = pd.DataFrame(
-        pd.read_csv('dataset/xaa',
+        pd.read_csv('/home/archeffect/PycharmProjects/adversarial_DGA/resources/datasets/all_legit.txt',
                     header=None,
                     index_col=False
-                    ).sample(100)
+                    ).sample(5000)
     )
-    lstm_generated = pd.DataFrame(
-        pd.read_csv('saved_models/lstm/generated.txt',
-                    header=None,
-                    index_col=False)
-    )
-    y_generated = np.ravel(np.zeros(len(lstm_generated), dtype=int))
     y_legit = np.ravel(np.ones(len(legit), dtype=int))
 
-    X = pd.concat((lstm_generated, legit), axis=0)
+    generated = pd.read_csv(
+        "/home/archeffect/PycharmProjects/adversarial_DGA/autoencoder_experiments/20171218-101804/samples.txt",
+        index_col=None, header=None).sample(5000)
+    y_generated = np.ravel(np.zeros(len(generated), dtype=int))
+
+    X = pd.concat((generated, legit), axis=0)
     y = np.concatenate((y_generated, y_legit))
     from sklearn.preprocessing import LabelBinarizer
     lb = LabelBinarizer()
@@ -74,43 +73,6 @@ def load_domains(n_samples=None):
     return X, y
 
 
-def LSTM_generator_dataset(path="dataset/xaa"):
-    config = tf.ConfigProto(
-        device_count={'GPU': 0}
-    )
-    sess = tf.Session(config=config)
-    os.environ['CUDA_VISIBLE_DEVICES'] = ''
-    sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-
-    # path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-    text = open(path).read().lower()
-    print('corpus length:', len(text))
-
-    chars = sorted(list(set(text)))
-    print('total chars:', len(chars))
-    char_indices = dict((c, i) for i, c in enumerate(chars))
-    indices_char = dict((i, c) for i, c in enumerate(chars))
-
-    # cut the text in semi-redundant sequences of maxlen characters
-    maxlen = 15
-    step = 3
-    sentences = []
-    next_chars = []
-    for i in range(0, len(text) - maxlen, step):
-        sentences.append(text[i: i + maxlen])
-        next_chars.append(text[i + maxlen])
-    print('nb sequences:', len(sentences))
-
-    print('Vectorization...')
-    X = np.zeros((len(sentences), maxlen, len(chars)), dtype=np.bool)
-    y = np.zeros((len(sentences), len(chars)), dtype=np.bool)
-    for i, sentence in enumerate(sentences):
-        for t, char in enumerate(sentence):
-            X[i, t, char_indices[char]] = 1
-        y[i, char_indices[next_chars[i]]] = 1
-
-    return X, y, maxlen, chars
-
 def sample(preds, temperature=1.0):
     # helper function to sample an index from a probability array
     preds = np.asarray(preds).astype('float64')
@@ -120,23 +82,25 @@ def sample(preds, temperature=1.0):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
+
 if __name__ == '__main__':
-
-
     # model.classification_report(X_test, y_test, plot=False)
-    # X, y = test_lstm()
+    X, y = both_datasets()
+    # X = X.sample(n=1000, random_state=42)
+    # print(X)
 
-    # X, y = load_both_datasets()
     # test_split = 0.33
     # batch_size = 30
     # epochs = 60
     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split)
     # batch_size = 40
     # # for batch_size in range(10, 110, 10):
-    model = Model(directory="saved_models/test_60/pieraz_35_BEST")
-    # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
-    # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
-    # model.classification_report(X, y, plot=False)
-    print(model.get_model().predict(['ronncacncoouctm']))
+    model = Model(
+        directory="/home/archeffect/PycharmProjects/adversarial_DGA/neuralnetwork_classifier/saved_models/pieraz_norm_30_100")
+    model.classification_report(X=X, y=y, plot=False, save=False,directory="/home/archeffect/PycharmProjects/adversarial_DGA/autoencoder_experiments/20171218-101804")
+    # # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
+    # # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
+    # # model.classification_report(X, y, plot=False)
+    # print(model.get_model().predict(['ronncacncoouctm']))
     # model.plot_AUC(X_test, y_test)
     pass
