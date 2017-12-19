@@ -3,18 +3,17 @@ import logging
 import os
 import string
 from datetime import datetime
-
 import numpy as np
 import pandas as pd
 import tensorflow as tf
 from keras import Input
 from keras import backend as K
+from keras.optimizers import RMSprop, adam
 from keras.callbacks import TensorBoard, ModelCheckpoint
 from keras.layers import Conv1D, Dropout, concatenate, LSTM, RepeatVector, Dense, TimeDistributed, \
-    LeakyReLU, BatchNormalization, Flatten, AveragePooling1D
+    LeakyReLU, BatchNormalization, AveragePooling1D
 from keras.models import Sequential, Model
 from keras.models import load_model
-from keras.optimizers import RMSprop, adam
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical, plot_model
@@ -121,9 +120,9 @@ def discriminator_model(summary=True, print_fn=None):
     # discr = Flatten()(discr)
     discr = LSTM(latent_vector)(discr)
     # discr = Dropout(dropout_value)(discr)
-    # discr = Dense(1, activation='sigmoid',
-    #               kernel_initializer='normal'
-    #               )(discr)
+    discr = Dense(1, activation='sigmoid',
+                  kernel_initializer='normal'
+                  )(discr)
 
     D = Model(inputs=discr_inputs, outputs=discr, name='Discriminator')
 
@@ -150,15 +149,7 @@ def adversarial(g, d):
     return adv_model
 
 
-def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
-    """
-
-    :param BATCH_SIZE:
-    :param disc:
-    :param genr:
-    :param original_model_name:
-    :return:
-    """
+def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights=False):
     directory = os.path.join("experiments", datetime.now().strftime("%Y%m%d-%H%M%S"))
     if not os.path.exists(directory):
         # crea la cartella
@@ -175,7 +166,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
     # load dataset
     latent_dim = 20
     maxlen = 15
-    n_samples = 10000
+    n_samples = 25000
     data_dict = __build_dataset(maxlen=maxlen, n_samples=int(n_samples + n_samples * 0.33))
     X_train = data_dict['X_train']
 
@@ -189,24 +180,28 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
         genr = generator_model(print_fn=logger.debug)
         plot_model(genr, to_file=os.path.join(directory, "generator.png"), show_shapes=True)
 
+    if weights:
+        disc.load_weights(filepath='autoencoder_experiments/20171218-101804/weights/autoencoder.h5', by_name=True)
+        genr.load_weights(filepath='autoencoder_experiments/20171218-101804/weights/autoencoder.h5', by_name=True)
+
     gan = adversarial(genr, disc)
 
     #   optimizers
-    # discr_opt = RMSprop(lr=0.0006,
-    #                     clipvalue=1.0,
-    #                     decay=1e-8)
-    # # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
-    # gan_opt = adam(lr=0.0004,
-    #                beta_1=0.9,
-    #                beta_2=0.999,
-    #                epsilon=1e-8,
-    #                decay=1e-8,
-    #                clipvalue=1.0)  # alternative
+    discr_opt = RMSprop(lr=0.0006,
+                        clipvalue=1.0,
+                        decay=1e-8)
+    # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
+    gan_opt = adam(lr=0.0004,
+                   beta_1=0.9,
+                   beta_2=0.999,
+                   epsilon=1e-8,
+                   decay=1e-8,
+                   clipvalue=1.0)  # alternative
 
     #   compilation
-    gan.compile(loss='binary_crossentropy', optimizer='adam')
+    gan.compile(loss='binary_crossentropy', optimizer=discr_opt)
     disc.trainable = True
-    disc.compile(loss='binary_crossentropy', optimizer='adam')
+    disc.compile(loss='binary_crossentropy', optimizer=gan_opt)
     gan.summary(print_fn=logger.debug)
 
     # callbacks
@@ -286,6 +281,9 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None):
         d_log = ("epoch %d\t[ DISC\tloss : %f ]" % (epoch, disc_history))
         logger.info("%s\t[ ADV\tloss : %f ]" % (d_log, gan_history))
         generate(generated_domains, n_samples=15, inv_map=data_dict['inv_map'], print_preds=True)
+        if disc_history < 0.0:
+            logger.error("D loss too low, failure state. terminating...")
+            exit(1)
 
 
 def generate(predictions, inv_map=None, n_samples=5, temperature=1.0, print_preds=False):
@@ -482,7 +480,7 @@ def get_args():
 if __name__ == "__main__":
     args = get_args()
     if args.mode == "train":
-        train(BATCH_SIZE=args.batch_size)
+        train(BATCH_SIZE=args.batch_size, weights=True)
     if args.mode == "moretrain":
         model_name = args.model
         disc = load_model("experiments/%s/model/discriminator.h5" % model_name)

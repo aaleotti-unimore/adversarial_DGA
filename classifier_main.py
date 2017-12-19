@@ -2,21 +2,18 @@ import logging
 import os
 import random as rn
 import sys
-import pandas as pd
-import tensorflow as tf
-import keras as K
+
 import matplotlib
 import numpy as np
-from sklearn.utils import shuffle
+import pandas as pd
 
 # Force matplotlib to not use any Xwindows backend.
 matplotlib.use('Agg')
 sys.path.append("../detect_DGA")
 
-from sklearn.model_selection import train_test_split
-from classifier_model import Model, pierazzi_baseline, pierazzi_normalized_baseline, verysmall_baseline, lstm_baseline
-# from features.data_generator import load_features_dataset, load_both_datasets
-from detect_DGA import MyClassifier
+from neuralnetwork_classifier.classifier_model import Model
+
+from features.data_generator import load_features_dataset, load_both_datasets
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -97,7 +94,8 @@ if __name__ == '__main__':
     # # for batch_size in range(10, 110, 10):
     model = Model(
         directory="/home/archeffect/PycharmProjects/adversarial_DGA/neuralnetwork_classifier/saved_models/pieraz_norm_30_100")
-    model.classification_report(X=X, y=y, plot=False, save=False,directory="/home/archeffect/PycharmProjects/adversarial_DGA/autoencoder_experiments/20171218-101804")
+    model.classification_report(X=X, y=y, plot=False, save=False,
+                                directory="/home/archeffect/PycharmProjects/adversarial_DGA/autoencoder_experiments/20171218-101804")
     # # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
     # # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
     # # model.classification_report(X, y, plot=False)
