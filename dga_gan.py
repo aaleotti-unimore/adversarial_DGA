@@ -193,7 +193,7 @@ def train(BATCH_SIZE=32, disc=None, genr=None, original_model_name=None, weights
         decay=1e-8)
     # gan_opt = RMSprop(lr=0.0004, clipvalue=1.0, decay=1e-8) #usual
     gan_opt = adam(
-        lr=0.0001,
+        lr=0.005,
         beta_1=0.9,
         beta_2=0.999,
         epsilon=1e-8,
@@ -490,7 +490,7 @@ if __name__ == "__main__":
         train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name=model_name)
     elif args.mode == "generate":
         model = load_model("experiments/%s/model/generator.h5" % args.model)
-        preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 38)))
+        preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 20)))
         print("temperature 1.0")
         generate(predictions=preds, n_samples=args.batch_size, print_preds=True)
         print("\n\nTemperature 0.5")
