@@ -39,12 +39,12 @@ def both_datasets():
         pd.read_csv('/home/archeffect/PycharmProjects/adversarial_DGA/resources/datasets/all_legit.txt',
                     header=None,
                     index_col=False
-                    ).sample(5000)
+                    ).sample(10000)
     )
     y_legit = np.ravel(np.ones(len(legit), dtype=int))
 
     generated = pd.read_csv(
-        "experiments/20171219-235309/samples.txt",
+        "experiments/20171219-235309 BEST/samples.txt",
         index_col=None, header=None)
     y_generated = np.ravel(np.zeros(len(generated), dtype=int))
 
@@ -95,10 +95,10 @@ if __name__ == '__main__':
     model = Model(
         directory="/home/archeffect/PycharmProjects/adversarial_DGA/neuralnetwork_classifier/saved_models/pieraz_norm_30_100")
     model.classification_report(X=X, y=y, plot=True, save=True,
-                                directory="experiments/20171219-235309")
+                                directory="experiments/20171219-235309 BEST")
     # # model = Model(model=verysmall_baseline(), directory="test_%s/verysmall_%s" % (epochs, batch_size))
     # # model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
     # # model.classification_report(X, y, plot=False)
     # print(model.get_model().predict(['ronncacncoouctm']))
-    model.plot_AUC(X, y, save=True, directory="experiments/20171219-235309")
+    model.plot_AUC(X, y, save=True, directory="experiments/20171219-235309 BEST")
     pass

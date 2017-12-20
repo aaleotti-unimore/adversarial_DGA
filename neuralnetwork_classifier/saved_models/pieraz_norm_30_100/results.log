@@ -24,3 +24,12 @@ avg / total       1.00      1.00      1.00        10
 
 avg / total       0.54      0.53      0.44      9672
 
+2017-12-19 19:39:20,043 DEBUG Model /home/archeffect/PycharmProjects/adversarial_DGA/neuralnetwork_classifier/saved_models/pieraz_norm_30_100 loaded
+2017-12-19 19:39:20,732 INFO 
+             precision    recall  f1-score   support
+
+        DGA       0.56      0.12      0.19      9323
+      Legit       0.53      0.92      0.67     10000
+
+avg / total       0.54      0.53      0.44     19323
+
