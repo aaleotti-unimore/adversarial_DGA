@@ -14,7 +14,7 @@ import numpy as np
 import tensorflow as tf
 from keras.callbacks import EarlyStopping, TensorBoard, ModelCheckpoint
 from keras.layers import Dense, Dropout
-from keras.models import Sequential, model_from_json
+from keras.models import Sequential, model_from_json, save_model
 from keras.utils import plot_model
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
@@ -47,7 +47,7 @@ class Model:
         self.model = model
         self.directory = directory
         if not os.path.exists(self.directory):
-            self.directory = os.path.join("saved_models", directory)
+            self.directory = os.path.join("neuralnetwork_classifier/saved_models", directory)
             # crea la cartella
             os.makedirs(self.directory)
 
@@ -75,12 +75,14 @@ class Model:
     #         directory = "kula_" + directory
     #     return directory
 
-    def save_model(self):
+    def _save_model(self):
         # saving model
         json_model = self.model.to_json()
         dirmod = os.path.join(self.directory, 'model_architecture.json')
         open(dirmod, 'w').write(json_model)
         self.logger.info("model saved to %s" % dirmod)
+
+        self.model.save_mode(self.directory + "full_model.h5")
         # saving weights
         # dirwe = os.path.join(self.directory, 'model_weights.h5')
         # self.model.save_weights(dirwe, overwrite=True)
@@ -185,7 +187,7 @@ class Model:
                        validation_split=validation_split,
                        verbose=verbose,
                        )
-        self.save_model()
+        self._save_model()
 
     def plot_AUC(self, X_test, y_test, save=True, directory=None):
         if directory is None:
@@ -330,6 +332,25 @@ def pierazzi_baseline(weights_path=None):
     model = Sequential()
 
     model.add(Dense(9, input_dim=9, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(128, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(64, kernel_initializer='normal', activation='relu'))
+
+    model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
+
+    if weights_path:
+        model.load_weights(weights_path)
+
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+def pierazzi_baseline_NEW(weights_path=None):
+    model = Sequential()
+
+    model.add(Dense(15, input_dim=15, kernel_initializer='normal', activation='relu'))
 
     model.add(Dense(128, kernel_initializer='normal', activation='relu'))
 

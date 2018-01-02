@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171219-235309 BEST/Figure_1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/experiments/20171219-235309 BEST/chars_histogram.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/char_utilities.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/datasets/all_legit_char_distr.png" />
+    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="fine lavoro GAN">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/classifier_main.py" afterPath="$PROJECT_DIR$/classifier_main.py" />
-      <change beforePath="$PROJECT_DIR$/experiments/20171219-235309 BEST/class_rep.png" afterPath="$PROJECT_DIR$/experiments/20171219-235309 BEST/class_rep.png" />
-      <change beforePath="$PROJECT_DIR$/experiments/20171219-235309 BEST/roc_plot.png" afterPath="$PROJECT_DIR$/experiments/20171219-235309 BEST/roc_plot.png" />
-      <change beforePath="$PROJECT_DIR$/experiments/20171219-235309 BEST/samples.txt" afterPath="$PROJECT_DIR$/experiments/20171219-235309 BEST/samples.txt" />
-      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/results.log" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/results.log" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/err_domains" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +44,8 @@
     <SUITE FILE_PATH="coverage/adversarial_DGA$dga_gan.coverage" NAME="dga_gan Coverage Results" MODIFIED="1511877918147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example__1_.coverage" NAME="lstm_example (1) Coverage Results" MODIFIED="1507104522192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$cnn_imdb.coverage" NAME="cnn_imdb Coverage Results" MODIFIED="1507120011133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$classifier_main.coverage" NAME="classifier_main Coverage Results" MODIFIED="1513708241396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$char_utilities.coverage" NAME="char_utilities Coverage Results" MODIFIED="1513725350487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/resources" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$classifier_main.coverage" NAME="classifier_main Coverage Results" MODIFIED="1514893037310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$dcgan_mnist.coverage" NAME="dcgan_mnist Coverage Results" MODIFIED="1511457167042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$autoencoder.coverage" NAME="autoencoder Coverage Results" MODIFIED="1511458752322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$simple_cnn.coverage" NAME="simple_cnn Coverage Results" MODIFIED="1506972507829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
@@ -70,7 +64,112 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="dga_gan.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dga_gan.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="320" column="96" lean-forward="false" selection-start-line="320" selection-start-column="56" selection-end-line="320" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#793#818#0" expanded="false" />
+                <element signature="e#932#2720#0" expanded="false" />
+                <element signature="e#932#1184#1" expanded="false" />
+                <element signature="e#1493#1534#0" expanded="false" />
+                <element signature="e#1925#2342#0" expanded="false" />
+                <element signature="e#2634#2707#0" expanded="false" />
+                <element signature="e#2781#4980#0" expanded="false" />
+                <element signature="e#2781#3099#1" expanded="false" />
+                <element signature="e#3475#3549#0" expanded="false" />
+                <element signature="e#3915#4367#0" expanded="false" />
+                <element signature="e#4794#4967#0" expanded="false" />
+                <element signature="e#4874#4967#0" expanded="false" />
+                <element signature="e#5010#5242#0" expanded="false" />
+                <element signature="e#5010#5126#1" expanded="false" />
+                <element signature="e#5338#11172#0" expanded="false" />
+                <element signature="e#5466#5557#0" expanded="false" />
+                <element signature="e#6105#6251#0" expanded="false" />
+                <element signature="e#6281#6419#0" expanded="false" />
+                <element signature="e#6445#6666#0" expanded="false" />
+                <element signature="e#7672#11172#0" expanded="false" />
+                <element signature="e#7918#10262#0" expanded="false" />
+                <element signature="e#7948#8032#0" expanded="false" />
+                <element signature="e#8512#8532#0" expanded="false" />
+                <element signature="e#9102#9171#0" expanded="false" />
+                <element signature="e#9206#9279#0" expanded="false" />
+                <element signature="e#9615#9643#0" expanded="false" />
+                <element signature="e#11091#11172#0" expanded="false" />
+                <element signature="e#11299#12100#0" expanded="false" />
+                <element signature="e#11327#11397#0" expanded="false" />
+                <element signature="e#11462#11585#0" expanded="false" />
+                <element signature="e#11684#11798#0" expanded="false" />
+                <element signature="e#11891#12100#0" expanded="false" />
+                <element signature="e#11967#12100#0" expanded="false" />
+                <element signature="e#12002#12057#0" expanded="false" />
+                <element signature="e#12323#12416#0" expanded="false" />
+                <element signature="e#12725#13227#0" expanded="false" />
+                <element signature="e#13550#13648#0" expanded="false" />
+                <element signature="e#13826#14561#0" expanded="false" />
+                <element signature="e#14230#14328#0" expanded="false" />
+                <element signature="e#14510#14561#0" expanded="false" />
+                <element signature="e#14607#14637#0" expanded="false" />
+                <element signature="e#14716#15663#0" expanded="false" />
+                <element signature="e#15711#16007#0" expanded="false" />
+                <element signature="e#16054#16416#0" expanded="false" />
+                <element signature="e#16054#16272#1" expanded="false" />
+                <element signature="e#16467#16713#0" expanded="false" />
+                <element signature="e#16526#16694#0" expanded="false" />
+                <element signature="e#16590#16665#0" expanded="false" />
+                <element signature="e#16770#17354#0" expanded="false" />
+                <element signature="e#16805#17103#0" expanded="false" />
+                <element signature="e#16854#17103#0" expanded="false" />
+                <element signature="e#17122#17354#0" expanded="false" />
+                <element signature="e#17377#17708#0" expanded="false" />
+                <element signature="e#17742#18635#0" expanded="false" />
+                <element signature="e#17886#18161#0" expanded="false" />
+                <element signature="e#18204#18501#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classifier_main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classifier_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#2673#2695#0" expanded="false" />
+                <element signature="e#4002#4300#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classifier_model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="84" column="61" lean-forward="false" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+              <folding>
+                <element signature="e#6274#6335#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/site-packages/keras/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -184,10 +283,10 @@
         <option value="$PROJECT_DIR$/../detect_DGA/detect_DGA.py" />
         <option value="$PROJECT_DIR$/neuralnetwork_classifier/classifier_main.py" />
         <option value="$PROJECT_DIR$/dga_gan.py" />
-        <option value="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" />
         <option value="$PROJECT_DIR$/../detect_DGA/features/features_extractors.py" />
-        <option value="$PROJECT_DIR$/classifier_main.py" />
         <option value="$PROJECT_DIR$/resources/char_utilities.py" />
+        <option value="$PROJECT_DIR$/classifier_main.py" />
+        <option value="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" />
       </list>
     </option>
   </component>
@@ -259,26 +358,30 @@
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="20171219-235309 BEST" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="detect_DGA" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="detect_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="datas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="detect_DGA" type="462c0819:PsiDirectoryNode" />
               <item name="datasets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -542,7 +645,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.char_utilities">
+  <component name="RunManager" selected="Python.classifier_main">
     <configuration name="char_utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -684,13 +787,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00037" summary="aggiunto modulo gan e numerosi test">
-      <created>1506344170667</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1506344170667</updated>
     </task>
     <task id="LOCAL-00038" summary="aggiunto modulo gan e numerosi test">
       <created>1506497819059</created>
@@ -1028,7 +1124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513707630971</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="fine lavoro GAN">
+      <created>1513731712856</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1513731712856</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1045,7 +1148,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29816514" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5321101" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32539684" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1053,7 +1156,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31719965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31651375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3861912" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.411315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1129,7 +1232,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="aggiunto modulo gan e numerosi test" />
     <MESSAGE value="lstm prove" />
     <MESSAGE value="SETUP CNN" />
     <MESSAGE value="test lstm 2" />
@@ -1154,7 +1256,8 @@
     <MESSAGE value="pretraining autoencoder" />
     <MESSAGE value="testing GAN con pretraining autoencoder e parametri DeepDGA (spazio latente da 20, batch da 128)" />
     <MESSAGE value="Trovato Modello che mette in crisi pesantemente il classificatore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trovato Modello che mette in crisi pesantemente il classificatore" />
+    <MESSAGE value="fine lavoro GAN" />
+    <option name="LAST_COMMIT_MESSAGE" value="fine lavoro GAN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1181,45 +1284,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171206-124914/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/examples/autoencoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1134">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-1247972723/numpy/core/umath.py" />
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5598">
-          <caret line="327" column="6" lean-forward="false" selection-start-line="327" selection-start-column="6" selection-end-line="327" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/error.log" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171213-133858/output.log" />
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/engine/topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="2700" column="21" lean-forward="false" selection-start-line="2700" selection-start-column="21" selection-end-line="2702" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/20171213-134306/output.log" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171213-134306/discriminator.png" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171213-134306/generator.png" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171214-115137/generator.png" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171214-115137/discriminator.png" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171214-115137/output.log" />
     <entry file="file://$PROJECT_DIR$/.vimrc" />
     <entry file="file://$PROJECT_DIR$/experiments/20171214-124755/output.log" />
     <entry file="file://$PROJECT_DIR$/experiments/20171214-161400/output.log" />
@@ -1248,14 +1312,6 @@
           <folding>
             <element signature="e#16#35#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/pandas/io/parsers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3085">
-          <caret line="712" column="0" lean-forward="false" selection-start-line="712" selection-start-column="0" selection-end-line="712" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1315,14 +1371,6 @@
     <entry file="file://$PROJECT_DIR$/experiments/20171219-162456/generator.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="199" column="35" lean-forward="true" selection-start-line="199" selection-start-column="35" selection-end-line="199" selection-end-column="35" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/err_domains">
@@ -1391,24 +1439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classifier_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-707">
-          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dga_gan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2548">
-          <caret line="505" column="0" lean-forward="true" selection-start-line="505" selection-start-column="0" selection-end-line="505" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/site-packages/pandas/core/frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
@@ -1422,7 +1452,7 @@
         <state relative-caret-position="198">
           <caret line="11" column="61" lean-forward="false" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1453,6 +1483,201 @@
     <entry file="file://$PROJECT_DIR$/resources/datasets/all_legit_char_distr.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="712" column="0" lean-forward="false" selection-start-line="712" selection-start-column="0" selection-end-line="712" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../detect_DGA/datasets/legit_dga_domains.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test/model.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/datasets/suppodict.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/datasets/featured_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/DGA_algs/suppobox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../detect_DGA/datasets/062000_00.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../detect_DGA/datasets/all_samples_DGA.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-1066916">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../detect_DGA/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../detect_DGA/datas/suppobox_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-123341/results.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dga_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="320" column="96" lean-forward="false" selection-start-line="320" selection-start-column="56" selection-end-line="320" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#793#818#0" expanded="false" />
+            <element signature="e#932#2720#0" expanded="false" />
+            <element signature="e#932#1184#1" expanded="false" />
+            <element signature="e#1493#1534#0" expanded="false" />
+            <element signature="e#1925#2342#0" expanded="false" />
+            <element signature="e#2634#2707#0" expanded="false" />
+            <element signature="e#2781#4980#0" expanded="false" />
+            <element signature="e#2781#3099#1" expanded="false" />
+            <element signature="e#3475#3549#0" expanded="false" />
+            <element signature="e#3915#4367#0" expanded="false" />
+            <element signature="e#4794#4967#0" expanded="false" />
+            <element signature="e#4874#4967#0" expanded="false" />
+            <element signature="e#5010#5242#0" expanded="false" />
+            <element signature="e#5010#5126#1" expanded="false" />
+            <element signature="e#5338#11172#0" expanded="false" />
+            <element signature="e#5466#5557#0" expanded="false" />
+            <element signature="e#6105#6251#0" expanded="false" />
+            <element signature="e#6281#6419#0" expanded="false" />
+            <element signature="e#6445#6666#0" expanded="false" />
+            <element signature="e#7672#11172#0" expanded="false" />
+            <element signature="e#7918#10262#0" expanded="false" />
+            <element signature="e#7948#8032#0" expanded="false" />
+            <element signature="e#8512#8532#0" expanded="false" />
+            <element signature="e#9102#9171#0" expanded="false" />
+            <element signature="e#9206#9279#0" expanded="false" />
+            <element signature="e#9615#9643#0" expanded="false" />
+            <element signature="e#11091#11172#0" expanded="false" />
+            <element signature="e#11299#12100#0" expanded="false" />
+            <element signature="e#11327#11397#0" expanded="false" />
+            <element signature="e#11462#11585#0" expanded="false" />
+            <element signature="e#11684#11798#0" expanded="false" />
+            <element signature="e#11891#12100#0" expanded="false" />
+            <element signature="e#11967#12100#0" expanded="false" />
+            <element signature="e#12002#12057#0" expanded="false" />
+            <element signature="e#12323#12416#0" expanded="false" />
+            <element signature="e#12725#13227#0" expanded="false" />
+            <element signature="e#13550#13648#0" expanded="false" />
+            <element signature="e#13826#14561#0" expanded="false" />
+            <element signature="e#14230#14328#0" expanded="false" />
+            <element signature="e#14510#14561#0" expanded="false" />
+            <element signature="e#14607#14637#0" expanded="false" />
+            <element signature="e#14716#15663#0" expanded="false" />
+            <element signature="e#15711#16007#0" expanded="false" />
+            <element signature="e#16054#16416#0" expanded="false" />
+            <element signature="e#16054#16272#1" expanded="false" />
+            <element signature="e#16467#16713#0" expanded="false" />
+            <element signature="e#16526#16694#0" expanded="false" />
+            <element signature="e#16590#16665#0" expanded="false" />
+            <element signature="e#16770#17354#0" expanded="false" />
+            <element signature="e#16805#17103#0" expanded="false" />
+            <element signature="e#16854#17103#0" expanded="false" />
+            <element signature="e#17122#17354#0" expanded="false" />
+            <element signature="e#17377#17708#0" expanded="false" />
+            <element signature="e#17742#18635#0" expanded="false" />
+            <element signature="e#17886#18161#0" expanded="false" />
+            <element signature="e#18204#18501#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/keras/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="84" column="61" lean-forward="false" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+          <folding>
+            <element signature="e#6274#6335#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classifier_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#2673#2695#0" expanded="false" />
+            <element signature="e#4002#4300#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
