@@ -1,0 +1,10 @@
+2018-01-02 13:13:39,909 INFO model saved to neuralnetwork_classifier/saved_models/2018test20180102-130900/model_architecture.json
+2018-01-02 13:13:40,150 INFO network diagram saved to neuralnetwork_classifier/saved_models/2018test20180102-130900/model.png 
+2018-01-02 13:13:41,176 INFO 
+             precision    recall  f1-score   support
+
+        DGA       0.84      0.92      0.88     22351
+      Legit       0.91      0.82      0.86     21539
+
+avg / total       0.87      0.87      0.87     43890
+

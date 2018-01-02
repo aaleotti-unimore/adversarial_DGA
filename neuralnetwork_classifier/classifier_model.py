@@ -82,7 +82,6 @@ class Model:
         open(dirmod, 'w').write(json_model)
         self.logger.info("model saved to %s" % dirmod)
 
-        self.model.save_mode(self.directory + "full_model.h5")
         # saving weights
         # dirwe = os.path.join(self.directory, 'model_weights.h5')
         # self.model.save_weights(dirwe, overwrite=True)
