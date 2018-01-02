@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="fine lavoro GAN">
+    <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/classifier_main.py" afterPath="$PROJECT_DIR$/classifier_main.py" />
       <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" />
-      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/err_domains" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -137,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/classifier_main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
-              <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
+              <caret line="153" column="97" lean-forward="false" selection-start-line="153" selection-start-column="97" selection-end-line="153" selection-end-column="97" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#2673#2695#0" expanded="false" />
@@ -150,10 +149,10 @@
       <file leaf-file-name="classifier_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="84" column="61" lean-forward="false" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+            <state relative-caret-position="163">
+              <caret line="176" column="87" lean-forward="false" selection-start-line="176" selection-start-column="87" selection-end-line="176" selection-end-column="87" />
               <folding>
-                <element signature="e#6274#6335#0" expanded="false" />
+                <element signature="e#6275#6336#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -788,13 +787,6 @@
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
     </task>
-    <task id="LOCAL-00038" summary="aggiunto modulo gan e numerosi test">
-      <created>1506497819059</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1506497819059</updated>
-    </task>
     <task id="LOCAL-00039" summary="lstm prove">
       <created>1506501375673</created>
       <option name="number" value="00039" />
@@ -1131,7 +1123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513731712856</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="esperimento classificatore neurale">
+      <created>1514893088316</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1514893088316</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1152,7 +1151,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32539684" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2693475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2693475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1232,7 +1231,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="lstm prove" />
     <MESSAGE value="SETUP CNN" />
     <MESSAGE value="test lstm 2" />
     <MESSAGE value="test lstm" />
@@ -1257,7 +1255,8 @@
     <MESSAGE value="testing GAN con pretraining autoencoder e parametri DeepDGA (spazio latente da 20, batch da 128)" />
     <MESSAGE value="Trovato Modello che mette in crisi pesantemente il classificatore" />
     <MESSAGE value="fine lavoro GAN" />
-    <option name="LAST_COMMIT_MESSAGE" value="fine lavoro GAN" />
+    <MESSAGE value="esperimento classificatore neurale" />
+    <option name="LAST_COMMIT_MESSAGE" value="esperimento classificatore neurale" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1660,10 +1659,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="84" column="61" lean-forward="false" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+        <state relative-caret-position="163">
+          <caret line="176" column="87" lean-forward="false" selection-start-line="176" selection-start-column="87" selection-end-line="176" selection-end-column="87" />
           <folding>
-            <element signature="e#6274#6335#0" expanded="false" />
+            <element signature="e#6275#6336#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1671,7 +1670,7 @@
     <entry file="file://$PROJECT_DIR$/classifier_main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
-          <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
+          <caret line="153" column="97" lean-forward="false" selection-start-line="153" selection-start-column="97" selection-end-line="153" selection-end-column="97" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#2673#2695#0" expanded="false" />

@@ -151,7 +151,7 @@ if __name__ == '__main__':
     epochs = X_train.shape[0] // batch_size
 
     model = Model(model=pierazzi_baseline_NEW(), directory="2018test" + datetime.now().strftime("%Y%m%d-%H%M%S"))
-    model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=test_split, early=False)
+    model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=test_split)
     model.classification_report(X_test, y_test)
     # batch_size = 40
     # # for batch_size in range(10, 110, 10):

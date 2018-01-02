@@ -174,7 +174,7 @@ class Model:
         ]
 
         if early:
-            callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=2, mode='auto'))
+            callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=2, mode='auto'))
 
         if stdscaler:
             std = StandardScaler()
