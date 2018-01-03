@@ -493,11 +493,23 @@ if __name__ == "__main__":
         model_name = args.model
         disc = load_model("experiments/%s/model/discriminator.h5" % model_name)
         genr = load_model("experiments/%s/model/generator.h5" % model_name)
-        train(BATCH_SIZE=args.batch_size, disc=disc, genr=genr, original_model_name=model_name)
+        train(BATCH_SIZE=args.batch_size,
+              disc=disc,
+              genr=genr,
+              original_model_name=model_name)
+    if args.mode == "plot":
+        model_name = args.model
+        disc = load_model("experiments/%s/model/discriminator.h5" % model_name)
+        genr = load_model("experiments/%s/model/generator.h5" % model_name)
+        plot_model(disc, "experiments/%s/model/discriminator.png" % model_name, show_shapes=True)
+        plot_model(genr, "experiments/%s/model/generator.png" % model_name, show_shapes=True)
     elif args.mode == "generate":
         model = load_model("experiments/%s/model/generator.h5" % args.model)
         preds = model.predict_on_batch(np.random.normal(size=(args.batch_size, 20)))
-        generate(predictions=preds, n_samples=args.batch_size, add_vecs=False, save_file=args.save_file,
+        generate(predictions=preds,
+                 n_samples=args.batch_size,
+                 add_vecs=False,
+                 save_file=args.save_file,
                  model_dir=args.model)
     elif args.mode == "autoencoder":
         train_autoencoder()
