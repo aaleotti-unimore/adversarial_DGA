@@ -75,7 +75,7 @@ class Model:
     #         directory = "kula_" + directory
     #     return directory
 
-    def _save_model(self):
+    def __save_model(self):
         # saving model
         json_model = self.model.to_json()
         dirmod = os.path.join(self.directory, 'model_architecture.json')
@@ -173,7 +173,7 @@ class Model:
         ]
 
         if early:
-            callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=2, mode='auto'))
+            callbacks.append(EarlyStopping(monitor='val_loss', min_delta=0, patience=100, verbose=2, mode='auto'))
 
         if stdscaler:
             std = StandardScaler()
@@ -186,7 +186,7 @@ class Model:
                        validation_split=validation_split,
                        verbose=verbose,
                        )
-        self._save_model()
+        self.__save_model()
 
     def plot_AUC(self, X_test, y_test, save=True, directory=None):
         if directory is None:
@@ -350,11 +350,11 @@ def pierazzi_baseline_NEW(weights_path=None):
     model = Sequential()
 
     model.add(Dense(15, input_dim=15, kernel_initializer='normal', activation='relu'))
-
+    # model.add(Dropout(0.2))
     model.add(Dense(128, kernel_initializer='normal', activation='relu'))
-
+    model.add(Dropout(0.2))
     model.add(Dense(64, kernel_initializer='normal', activation='relu'))
-
+    model.add(Dropout(0.2))
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
 
     if weights_path:

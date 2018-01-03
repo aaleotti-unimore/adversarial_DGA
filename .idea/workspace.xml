@@ -2,9 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e38e4fe-a532-41b4-8bf4-3be0f98ee551" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/class_rep.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/model.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/model_architecture.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/model_weights.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/results.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/roc_plot.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/tensorboard/events.out.tfevents.1514905444.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/class_rep.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/model.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/model_architecture.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/model_weights.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/results.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/roc_plot.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/tensorboard/events.out.tfevents.1514905941.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/class_rep.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/model.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/model_architecture.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/model_weights.h5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/results.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/roc_plot.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/tensorboard/events.out.tfevents.1514906127.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/large BatchNormalized/tensorboard/events.out.tfevents.1505983151.classificatoredga" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/pieraz_BatchNormalized/tensorboard/events.out.tfevents.1505833553.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/early_stopped/reduced BatchNormalized/tensorboard/events.out.tfevents.1505983742.classificatoredga" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/lstm_model/tensorboard/events.out.tfevents.1507105150.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_30_100/tensorboard/events.out.tfevents.1506098247.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_batchNorm_noearly/tensorboard/events.out.tfevents.1506004241.classificatoredga" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/tensorboard/events.out.tfevents.1506095393.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_100/pieraz_10/tensorboard/events.out.tfevents.1506172189.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_100/pieraz_20/tensorboard/events.out.tfevents.1506273902.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_100/pieraz_30/tensorboard/events.out.tfevents.1506300238.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_100/pieraz_40/tensorboard/events.out.tfevents.1506301438.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_100/pieraz_50/tensorboard/events.out.tfevents.1506324748.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_100/pieraz_60/tensorboard/events.out.tfevents.1506325733.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_10/tensorboard/events.out.tfevents.1506103891.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_15/tensorboard/events.out.tfevents.1506104908.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_20/tensorboard/events.out.tfevents.1506105608.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_25/tensorboard/events.out.tfevents.1506106147.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_30/tensorboard/events.out.tfevents.1506106592.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_35/tensorboard/events.out.tfevents.1506106956.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_40/tensorboard/events.out.tfevents.1506107278.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_45/tensorboard/events.out.tfevents.1506107562.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_30/pieraz_5/tensorboard/events.out.tfevents.1506101954.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_10/tensorboard/events.out.tfevents.1506163090.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_15/tensorboard/events.out.tfevents.1506165092.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_20/tensorboard/events.out.tfevents.1506166471.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_25/tensorboard/events.out.tfevents.1506167527.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_30/tensorboard/events.out.tfevents.1506168393.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_35_BEST/tensorboard/events.out.tfevents.1506169200.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_40/tensorboard/events.out.tfevents.1506169888.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_45/tensorboard/events.out.tfevents.1506170470.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_5/tensorboard/events.out.tfevents.1506159155.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_50/tensorboard/events.out.tfevents.1506170983.archlaptop" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/verysmall_35/tensorboard/events.out.tfevents.1506337569.archlaptop" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/classifier_main.py" afterPath="$PROJECT_DIR$/classifier_main.py" />
       <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" afterPath="$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125235/model_architecture.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125235/model_weights.h5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125235/results.log" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125900/model_architecture.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125900/model_weights.h5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125900/results.log" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,7 +104,7 @@
     <SUITE FILE_PATH="coverage/adversarial_DGA$lstm_example__1_.coverage" NAME="lstm_example (1) Coverage Results" MODIFIED="1507104522192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$cnn_imdb.coverage" NAME="cnn_imdb Coverage Results" MODIFIED="1507120011133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$char_utilities.coverage" NAME="char_utilities Coverage Results" MODIFIED="1513725350487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/resources" />
-    <SUITE FILE_PATH="coverage/adversarial_DGA$classifier_main.coverage" NAME="classifier_main Coverage Results" MODIFIED="1514893037310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/adversarial_DGA$classifier_main.coverage" NAME="classifier_main Coverage Results" MODIFIED="1514906124559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$dcgan_mnist.coverage" NAME="dcgan_mnist Coverage Results" MODIFIED="1511457167042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$autoencoder.coverage" NAME="autoencoder Coverage Results" MODIFIED="1511458752322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/adversarial_DGA$simple_cnn.coverage" NAME="simple_cnn Coverage Results" MODIFIED="1506972507829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
@@ -64,79 +124,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dga_gan.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dga_gan.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="320" column="96" lean-forward="false" selection-start-line="320" selection-start-column="56" selection-end-line="320" selection-end-column="96" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#793#818#0" expanded="false" />
-                <element signature="e#932#2720#0" expanded="false" />
-                <element signature="e#932#1184#1" expanded="false" />
-                <element signature="e#1493#1534#0" expanded="false" />
-                <element signature="e#1925#2342#0" expanded="false" />
-                <element signature="e#2634#2707#0" expanded="false" />
-                <element signature="e#2781#4980#0" expanded="false" />
-                <element signature="e#2781#3099#1" expanded="false" />
-                <element signature="e#3475#3549#0" expanded="false" />
-                <element signature="e#3915#4367#0" expanded="false" />
-                <element signature="e#4794#4967#0" expanded="false" />
-                <element signature="e#4874#4967#0" expanded="false" />
-                <element signature="e#5010#5242#0" expanded="false" />
-                <element signature="e#5010#5126#1" expanded="false" />
-                <element signature="e#5338#11172#0" expanded="false" />
-                <element signature="e#5466#5557#0" expanded="false" />
-                <element signature="e#6105#6251#0" expanded="false" />
-                <element signature="e#6281#6419#0" expanded="false" />
-                <element signature="e#6445#6666#0" expanded="false" />
-                <element signature="e#7672#11172#0" expanded="false" />
-                <element signature="e#7918#10262#0" expanded="false" />
-                <element signature="e#7948#8032#0" expanded="false" />
-                <element signature="e#8512#8532#0" expanded="false" />
-                <element signature="e#9102#9171#0" expanded="false" />
-                <element signature="e#9206#9279#0" expanded="false" />
-                <element signature="e#9615#9643#0" expanded="false" />
-                <element signature="e#11091#11172#0" expanded="false" />
-                <element signature="e#11299#12100#0" expanded="false" />
-                <element signature="e#11327#11397#0" expanded="false" />
-                <element signature="e#11462#11585#0" expanded="false" />
-                <element signature="e#11684#11798#0" expanded="false" />
-                <element signature="e#11891#12100#0" expanded="false" />
-                <element signature="e#11967#12100#0" expanded="false" />
-                <element signature="e#12002#12057#0" expanded="false" />
-                <element signature="e#12323#12416#0" expanded="false" />
-                <element signature="e#12725#13227#0" expanded="false" />
-                <element signature="e#13550#13648#0" expanded="false" />
-                <element signature="e#13826#14561#0" expanded="false" />
-                <element signature="e#14230#14328#0" expanded="false" />
-                <element signature="e#14510#14561#0" expanded="false" />
-                <element signature="e#14607#14637#0" expanded="false" />
-                <element signature="e#14716#15663#0" expanded="false" />
-                <element signature="e#15711#16007#0" expanded="false" />
-                <element signature="e#16054#16416#0" expanded="false" />
-                <element signature="e#16054#16272#1" expanded="false" />
-                <element signature="e#16467#16713#0" expanded="false" />
-                <element signature="e#16526#16694#0" expanded="false" />
-                <element signature="e#16590#16665#0" expanded="false" />
-                <element signature="e#16770#17354#0" expanded="false" />
-                <element signature="e#16805#17103#0" expanded="false" />
-                <element signature="e#16854#17103#0" expanded="false" />
-                <element signature="e#17122#17354#0" expanded="false" />
-                <element signature="e#17377#17708#0" expanded="false" />
-                <element signature="e#17742#18635#0" expanded="false" />
-                <element signature="e#17886#18161#0" expanded="false" />
-                <element signature="e#18204#18501#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classifier_main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="classifier_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classifier_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="153" column="97" lean-forward="false" selection-start-line="153" selection-start-column="97" selection-end-line="153" selection-end-column="97" />
+            <state relative-caret-position="-62">
+              <caret line="141" column="36" lean-forward="false" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#2673#2695#0" expanded="false" />
@@ -149,20 +141,64 @@
       <file leaf-file-name="classifier_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="176" column="87" lean-forward="false" selection-start-line="176" selection-start-column="87" selection-end-line="176" selection-end-column="87" />
+            <state relative-caret-position="327">
+              <caret line="354" column="27" lean-forward="true" selection-start-line="354" selection-start-column="27" selection-end-line="354" selection-end-column="27" />
               <folding>
-                <element signature="e#6275#6336#0" expanded="false" />
+                <element signature="e#6214#6275#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/site-packages/keras/models.py">
+      <file leaf-file-name="class_rep.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/class_rep.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/results.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/results.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roc_plot.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/roc_plot.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/results.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/results.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -369,6 +405,46 @@
             <path>
               <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
               <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+              <item name="2018test20180102-130900" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+              <item name="2018test20180102-160401" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+              <item name="2018test20180102-161219" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+              <item name="2018test20180102-161526" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="adversarial_DGA" type="462c0819:PsiDirectoryNode" />
+              <item name="neuralnetwork_classifier" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+              <item name="early_stopped" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adversarial_DGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adversarial_DGA" type="47feb1d3:ProjectViewModuleNode" />
               <item name="detect_DGA" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -442,7 +518,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dga_gan.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -450,100 +526,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/.log/disc/events.out.tfevents.1513698322.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/.log/gan/events.out.tfevents.1513698321.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-154518/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/.log/disc/events.out.tfevents.1513698914.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/.log/gan/events.out.tfevents.1513698914.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-155510/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/.log/disc/events.out.tfevents.1513700499.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/.log/gan/events.out.tfevents.1513700499.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162135/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/.log/disc/events.out.tfevents.1513700665.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/.log/gan/events.out.tfevents.1513700665.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162421/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/.log/disc/events.out.tfevents.1513700810.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/.log/gan/events.out.tfevents.1513700810.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162646/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/.log/disc/events.out.tfevents.1513700865.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/.log/gan/events.out.tfevents.1513700865.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-162741/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/.log/disc/events.out.tfevents.1513701668.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/.log/gan/events.out.tfevents.1513701668.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-164104/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/.log/disc/events.out.tfevents.1513704368.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/.log/gan/events.out.tfevents.1513704368.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-172604/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/.log/disc/events.out.tfevents.1513723376.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/.log/gan/events.out.tfevents.1513723376.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224252/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/.log/disc/events.out.tfevents.1513723540.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/.log/gan/events.out.tfevents.1513723540.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-224536/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/.log/disc/events.out.tfevents.1513725386.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/.log/gan/events.out.tfevents.1513725385.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/discriminator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/generator.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-231622/output.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-235309/.log/disc/events.out.tfevents.1513727592.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-235309/.log/gan/events.out.tfevents.1513727592.classificatoredga</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-235309/model/discriminator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-235309/model/gan.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-235309/model/generator.h5</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/experiments/20171219-235309/output.log</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125235/tensorboard/events.out.tfevents.1514897559.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-125900/tensorboard/events.out.tfevents.1514897944.classificatoredga</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/tensorboard/events.out.tfevents.1514898544.classificatoredga</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -786,13 +771,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504165637002</updated>
-    </task>
-    <task id="LOCAL-00039" summary="lstm prove">
-      <created>1506501375673</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1506501375673</updated>
     </task>
     <task id="LOCAL-00040" summary="lstm prove">
       <created>1506505252643</created>
@@ -1130,7 +1108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514893088316</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="esperimento classificatore neurale">
+      <created>1514897222277</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1514897222277</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1147,15 +1132,15 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66883117" sideWeight="0.50758725" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5321101" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9021407" sideWeight="0.49241275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32539684" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2693475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2693475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31651375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3149847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3861912" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.411315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1283,55 +1268,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.vimrc" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171214-124755/output.log" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171214-161400/output.log" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171214-173747/output.log" />
-    <entry file="file://$PROJECT_DIR$/experiments/20171218-082155/output.log" />
-    <entry file="file:///usr/lib/python2.7/site-packages/keras/layers/normalization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoencoder_experiments/20171218-101804/autoenc_log.log" />
-    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="414" column="4" lean-forward="false" selection-start-line="414" selection-start-column="4" selection-end-line="414" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../detect_DGA/detect_DGA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="114" column="8" lean-forward="false" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
-          <folding>
-            <element signature="e#16#35#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/err_domains">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/test_60/pieraz_35_BEST/class_rep.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/roc_plot.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/pieraz_norm_30_100/class_rep.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1588,7 +1524,7 @@
         <state relative-caret-position="252">
           <caret line="320" column="96" lean-forward="false" selection-start-line="320" selection-start-column="56" selection-end-line="320" selection-end-column="96" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
             <element signature="e#793#818#0" expanded="false" />
             <element signature="e#932#2720#0" expanded="false" />
             <element signature="e#932#1184#1" expanded="false" />
@@ -1657,26 +1593,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="176" column="87" lean-forward="false" selection-start-line="176" selection-start-column="87" selection-end-line="176" selection-end-column="87" />
-          <folding>
-            <element signature="e#6275#6336#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/model.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/model.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/roc_plot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/roc_plot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classifier_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="153" column="97" lean-forward="false" selection-start-line="153" selection-start-column="97" selection-end-line="153" selection-end-column="97" />
+        <state relative-caret-position="-62">
+          <caret line="141" column="36" lean-forward="false" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#2673#2695#0" expanded="false" />
             <element signature="e#4002#4300#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/class_rep.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161219/results.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-161526/results.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/classifier_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="354" column="27" lean-forward="true" selection-start-line="354" selection-start-column="27" selection-end-line="354" selection-end-column="27" />
+          <folding>
+            <element signature="e#6214#6275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-160401/results.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/results.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnetwork_classifier/saved_models/2018test20180102-130900/roc_plot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>

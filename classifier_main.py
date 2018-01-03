@@ -139,13 +139,13 @@ if __name__ == '__main__':
     from neuralnetwork_classifier.classifier_model import pierazzi_baseline_NEW
 
     # model.classification_report(X_test, y_test, plot=False)
-    X, y = __build_dataset(int(100000 * 1.33))
+    X, y = __build_dataset(int(10000 * 1.33))
 
     # print(y)
     # X = X.sample(n=1000, random_state=42)
     # print(X)
     test_split = 0.33
-    batch_size = 30
+    batch_size = 32
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split)
 
     epochs = X_train.shape[0] // batch_size
